@@ -1,18 +1,16 @@
-# T2b4 Theme
-
-The **T2b4** Theme is for [Grav CMS](http://github.com/getgrav/grav).  This README.md file should be modified to describe the features, installation, configuration, and general usage of this theme.
+# T2B4 Theme
 
 ## Description
 
-TomSquared Bootstrap Theme
-
-Includes the following:
+The **T2B4** Theme is for [Grav CMS](http://github.com/getgrav/grav). It includes numerous customisation options, such as navbar styles and web-app settings, as well as comprehensive favicon support. It includes the following:
 
 * Bootstrap 4.6.0
 * Bootswatch 4.5.2
 * FontAwesome 5.15.3
 * Hover.css 2.3.1
 * Animate.css 4.1.1
+
+---
 
 # Installation
 
@@ -34,6 +32,16 @@ You should now have all the theme files under
 
     /path/to/grav/user/themes/t2bootstrap4
 
+# Setup
+
+To configure your site to use T2B4 you will need to do the following:
+
+* Edit `/user/config/system.yaml` to have the following properties:
+    * Set `theme:` setting to `theme: t2b4`.
+    * Set `absolute_urls:` setting to `absolute_urls: true`.
+* Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
+
+
 ### Dependencies
 
 The t2b4 theme depends on the following plugins. If you install via GPM, you should be prompted to also install these plugins. 
@@ -47,6 +55,8 @@ If you were not prompted to install these automatically you can install them via
     bin/gpm install error
     bin/gpm install problems
     bin/gpm install sitemap
+
+---
 
 ## Customisation
 
@@ -71,6 +81,8 @@ You may wish to toggle the "Use minified CSS" option in the theme options during
 ### Favicons:
 
 The theme has comprehensive support for favicons and will automatically resize images to a variety of sizes to ensure maxium compatibility with popular browsers and devices.
+
+Upload your favicons to the folder `/user/images/icons` and select them via the Theme config page in the admin panel.
 
 To enable support for ICO files in the theme configuration page add the following to `user/config/media.yaml`:
 

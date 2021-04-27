@@ -66,9 +66,9 @@ To customise the theme and rebuild the css first do the following:
 2) Run: `npm install`
 3) Run: `npm run watch` to trigger the gulp build
 
-*) Custom styles can be added and changed in `t2b4/src/scss/custom/_styles.scss`
-*) Google Fonts can be added and changed in `t2b4/src/scss/custom/_typography.scss`
-*) The most common Boostrap variables are in `t2b4/src/scss/custom/_variables.scss`
+* Custom styles can be added and changed in `t2b4/src/scss/custom/_styles.scss`
+* Google Fonts can be added and changed in `t2b4/src/scss/custom/_typography.scss`
+* The most common Boostrap variables are in `t2b4/src/scss/custom/_variables.scss`
 
 By default the Bootstrap/Bootswatch libraries are included from CDNs and are not included in `theme.css` If you wish to use a customised local Bootstrap style:
 

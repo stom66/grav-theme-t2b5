@@ -1,0 +1,131 @@
+name: T2b4
+slug: t2b4
+type: theme
+version: 0.1.0
+description: TomSquared Bootstrap Theme
+icon: rebel
+author:
+  name: stom
+  email: tomsteventon@gmail.com
+homepage: https://github.com/29757739/grav-theme-t2b4
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/29757739/grav-theme-t2b4/issues
+readme: https://github.com/29757739/grav-theme-t2b4/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+
+  fields:
+
+
+    fieldset1:
+      type: fieldset
+      title: CSS settings
+      icon: cog
+      help: may contain bugs. erk.
+      collapsible: true
+      collapsed: false
+      import@:
+        type: css
+        context: themes://t2b4/blueprints/theme
+        
+    fieldset2:
+      type: fieldset
+      title: JavaScript settings
+      icon: cog
+      help: may contain bugs. erk.
+      collapsible: true
+      collapsed: false
+      import@:
+        type: js
+        context: themes://t2b4/blueprints/theme
+
+    fieldset3:
+      type: fieldset
+      title: NavBar settings
+      icon: navicon
+      info: Contains settings pertaining to the top navbar element
+      help: may contain bugs. erk.
+      collapsible: true
+      collapsed: false
+      import@:
+        type: navbar
+        context: themes://t2b4/blueprints/theme
+
+    fieldset4:
+      type: fieldset
+      title: Favicon settings
+      icon: star-o
+      info: Favicons should be placed in user/images/favicons
+      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+      collapsible: true
+      collapsed: false
+      import@:
+        type: favicon
+        context: themes://t2b4/blueprints/theme
+
+    fieldset5:
+      type: fieldset
+      title: Meta data options
+      icon: cogs
+      info: Contains various webapp settings
+      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+      collapsible: true
+      collapsed: false
+      import@:
+        type: metadata
+        context: themes://t2b4/blueprints/theme
+
+    fieldset6:
+      type: fieldset
+      title: Chrome/webkit settings
+      icon: cogs
+      info: Contains various webapp settings
+      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+      collapsible: true
+      collapsed: false
+      import@:
+        type: chrome
+        context: themes://t2b4/blueprints/theme
+
+    fieldset7:
+      type: fieldset
+      title: Microsoft/Ie/Edge settings
+      icon: cogs
+      info: Contains various webapp settings
+      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+      collapsible: true
+      collapsed: false
+      import@:
+        type: msie
+        context: themes://t2b4/blueprints/theme
+
+    fieldset8:
+      type: fieldset
+      title: Apple/iOS settings
+      icon: cogs
+      info: Contains various webapp settings
+      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+      collapsible: true
+      collapsed: false
+      import@:
+        type: appleios
+        context: themes://t2b4/blueprints/theme
+
+    fieldset9:
+      type: fieldset
+      title: Map settings
+      icon: map
+      info: Choose options for Google Maps or OpenStreetMap
+      help: You will need a valid API key to use either of these maps.
+      collapsible: true
+      collapsed: false
+      import@:
+        type: map
+        context: themes://t2b4/blueprints/theme
+

@@ -1,0 +1,18 @@
+form:
+  fields:
+    ms.theme_color:
+      type: colorpicker
+      label: Theme color
+      size: medium
+      default: '#424a50'
+
+    ms.tile_color:
+      type: colorpicker
+      label: Tile color
+      size: medium
+      default: '#424a50'
+
+    ms.browserconfig:
+      label: browserconfig.xml location
+      type: pages
+      size: medium

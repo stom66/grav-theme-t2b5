@@ -1,0 +1,101 @@
+form:
+  fields:
+    navbar.type:
+      type   : select
+      label  : Type
+      size   : medium
+      default: navbar
+      options:
+        navbar      : Default
+        fixed-top   : Fixed top
+        fixed-bottom: Fixed bottom
+        sticky-top  : Sticky top
+
+    navbar.style:
+      type   : select
+      label  : Style
+      size   : medium
+      default: navbar-light
+      options:
+        navbar-dark: Dark (light text)
+        navbar-light: Light (dark text)
+
+    navbar.container:
+      type   : select
+      label  : Container
+      size   : medium
+      default: none
+      options:
+        none  : No container
+        links : Navbar contents 
+        navbar: Navbar
+
+    navbar.bgstyle:
+      type   : select
+      label  : Background style
+      size   : medium
+      default: bg-light
+      options:
+        bg-dark       : Dark
+        bg-light      : Light
+        bg-primary    : Primary
+        bg-secondary  : Secondary
+        bg-success    : Success
+        bg-danger     : Danger
+        bg-warning    : Warning
+        bg-info       : Info
+        bg-white      : White
+        bg-transparent: Transparent
+
+    navbar.bgcolor:
+      type   : colorpicker
+      label  : Background color
+      size   : small
+      default: '#ffffff'
+      help   : Overrides the NavBar BG Style. Set to blank or #ffffff to disable.
+
+    navbar.dropdown:
+      type     : toggle
+      label    : Dropdown in navbar
+      highlight: 1
+      default  : 1
+      options  : 
+        1: Enabled
+        0: Disabled
+
+    navbar.expand:
+      type   : select
+      label  : Expand breakpoint
+      size   : small
+      default: none
+      options: 
+        none: None
+        navbar-expand-sm: Small
+        navbar-expand-md: Medium
+        navbar-expand-lg: Large
+        navbar-expand-xl: Extra Large
+
+    navbar.icon:
+      type          : filepicker
+      size          : medium
+      folder        : 'user://images/icons'
+      label         : Brand icon
+      preview_images: true
+      on_demand     : true
+      accept        : 
+        - .png
+        - .jpg
+
+    navbar.icon_size:
+      type    : range
+      label   : Brand size
+      default : 32
+      validate: 
+        min: 24
+        max: 96
+          
+    navbar.classes:
+      type : text
+      size : medium
+      label: Custom classes
+      info : Any custom classes you wish applied t0 the navbar element

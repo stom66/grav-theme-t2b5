@@ -1,0 +1,1 @@
+// Blank app.js file, is automatically included

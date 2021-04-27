@@ -1,0 +1,57 @@
+form:
+  fields:
+    
+    chrome.theme_color:
+      type: colorpicker
+      label: Theme color (Webkit, Firefox)
+      info: Android, Chrome, Firefox OS, and Opera header and address bar color
+      size: medium
+      default: '#424a50'
+
+    chrome.app_capable:
+      type: toggle
+      label: App capable? (mobile-app-capable)
+      highlight: yes
+      default: no
+      options:
+        no: Disabled
+        yes: Enabled
+
+    chrome.app_display:
+      type: select
+      label: Chrome app manifest display setting
+      size: medium
+      default: standalone
+      options:
+        browser: browser
+        fullscreen: fullscreen
+        standalone: standalone
+        minimal-ui: minimal-ui
+
+    chrome.app_manifest:
+      label: Manifest.json location
+      type: pages
+      size: medium
+
+    chrome.app_start_url:
+      label: App start page
+      type: pages
+      size: medium
+
+    chrome.app_scope:
+      label: App scope
+      type: text
+      default: /
+      size: medium
+
+    chrome.app_name:
+      label: App name
+      type: text
+      default: 
+      size: medium
+
+    chrome.app_short_name:
+      label: App short_name
+      type: text
+      default: 
+      size: medium

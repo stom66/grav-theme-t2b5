@@ -1,0 +1,15 @@
+form:
+  fields:
+    map.type:
+      type: select
+      label: Type
+      size: medium
+      default: google
+      options:
+        google: Google Maps
+        osm: Open Street Map
+
+    map.api_key:
+      type: text
+      label: API Key
+      size: medium

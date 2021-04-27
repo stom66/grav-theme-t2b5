@@ -1,0 +1,20 @@
+form:
+  fields:
+    ios.theme_color:
+      type: select
+      label: Theme color
+      size: medium
+      default: default
+      options:
+        default: Default
+        black: Black
+        black-translucent: Black translucent
+
+    ios.app_capable:
+      type: toggle
+      label: App capable? (apple-mobile-web-app-capable)
+      highlight: yes
+      default: no
+      options:
+        no: Disabled
+        yes: Enabled

@@ -1,0 +1,47 @@
+{% spaceless %}
+
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+
+{% block javascripts %}
+	{% if theme_config.cdn_jquery_js %}
+		{% do assets.add('https://code.jquery.com/jquery-3.6.0.min.js', {
+			integrity: "sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==",
+			crossorigin: "anonymous",
+    		priority: 100
+		}) %}
+	{% endif %}
+
+	{% if theme_config.cdn_bootstrap_js %}
+		{% do assets.add('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', {
+			integrity: "sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A==",
+			crossorigin: "anonymous",
+    		priority: 90
+		}) %}
+	{% endif %}
+
+	{% if theme_config.cdn_modernizr_js %}
+		{% do assets.add('https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', {
+		integrity: "sha512-3n19xznO0ubPpSwYCRRBgHh63DrV+bdZfHK52b1esvId4GsfwStQNPJFjeQos2h3JwCmZl0/LgLxSKMAI55hgw==",
+		crossorigin: "anonymous",
+    		priority: 80
+		}) %}
+	{% endif %}
+
+	{% do assets.add('theme://js/app.js', {group:'bottom'}) %}
+
+	{% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+			<!-- HTML5 Shiv for IE -->
+		{% do assets.add('https://oss.maxcdn.com/respond/1.4.2/respond.min.js', {
+			integrity: "sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo",
+			crossorigin: "anonymous",
+    		priority: 60
+		}) %}
+		{% do assets.add('https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js', {
+			integrity: "sha512-RCtZMoZSQ5csGk1zBPGImR8OY+NJfe0IsaFrDD649yYrSBgCf3kYiP79AfWT9/idKbpWYteQmswChxbXC7YHig==",
+			crossorigin: "anonymous",
+    		priority: 50
+		}) %}
+	{% endif %}
+{% endblock %}
+
+{% endspaceless %}

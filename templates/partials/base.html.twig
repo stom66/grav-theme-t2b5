@@ -1,0 +1,51 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+<!DOCTYPE html>
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}">
+    <head>
+        {% block head %}
+            {% include 'partials/metadata.html.twig' %}
+
+            {% include 'partials/css.html.twig' %}
+
+            {% include 'partials/js.html.twig' %}
+        {% endblock head %}
+
+        {% block assets deferred %}
+            {{ assets.css()|raw }}
+            {{ assets.js()|raw }}
+        {% endblock %}
+    </head>
+
+{% set navbar = theme_var('navbar') %}
+
+<body class="{% spaceless %}
+        {% block body_classes %}
+            {{ page.header.body_classes }}
+            {% if navbar.type!='navbar' %} 
+                mt-5 pt-5
+            {% endif %}
+        {% endblock %}
+    {% endspaceless %}">
+
+        {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+
+        {% block body %}
+            <section id="body">
+                <div class="wrapper padding">
+                {% block content %}{% endblock %}
+                </div>
+            </section>
+        {% endblock %}
+
+        {% block footer %}
+            {% include 'partials/footer.html.twig' %}
+        {% endblock %}
+
+        {% block bottom %}
+            {{ assets.js('bottom')|raw }}
+        {% endblock %}
+
+    </body>
+</html>

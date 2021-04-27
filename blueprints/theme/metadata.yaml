@@ -1,0 +1,28 @@
+form:
+  fields:
+    fb_app_id:
+      type: text
+      size: medium
+      label: Facebook App ID
+      validate:
+          type: int
+          min: 0
+          
+    twitter_handle:
+      type: text
+      size: medium
+      label: Twitter handle
+      info: Your full handle, including prefix, eg @stom66
+      validate:
+          type: int
+          min: 0
+
+    og_image:
+      type: filepicker
+      size: medium
+      folder: 'user/images'
+      label: Default OpenGraph image
+      info: OpenGraph images should be served at 19.1:10 aspect ratio
+      preview_images: true
+      accept:
+        - .png

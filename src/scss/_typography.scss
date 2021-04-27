@@ -1,0 +1,31 @@
+// T2B4
+//
+// typography.scss 
+// 
+// Make changes to your tyopgraphics settings here. This will affect both CDN and 
+// local implementations of the Botostrap framework.
+
+@mixin google-font($family) {
+    @import url("http://fonts.googleapis.com/css?family=#{$family}&display=swap");
+}
+
+// Imports fonts from Google Fonts
+@include google-font("Roboto Condensed");
+@include google-font("Montserrat");
+
+//Set the fonts to vars
+$custom-font-1: 'Roboto Condensed', sans-serif;
+$custom-font-2: 'Montserrat', sans-serif;
+
+// Add those fonts to the Bootstrap vars
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+// Assign different fonts to different header sizes
+html, body, h4, h5, h6 {
+    font-family: $custom-font-2;
+}
+h1, h2, h3 {
+    font-family: $custom-font-1;    
+}

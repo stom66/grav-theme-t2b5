@@ -1,0 +1,22 @@
+// T2B4
+// theme.scss
+// 
+// This is the main scss file that is watched by npm when running: npm run watch
+//
+// By default it does not import the bootstrap framework as the 
+// template is set to include these from the CDN. If you wish to customise 
+// the bootstrap and/or bootswatch frameworks then uncomment the lines below to import 
+// them and be sure to disable the CDN inclusions in the settings for this theme.
+
+// Theme variables
+@import "vendor/variables";
+
+// Typography settings
+@import "typography";
+
+// Bootstrap framework customisation
+// If you're customising the theme then you will want to uncomment the following includes
+//@import "vendor/bootstrap";
+
+// Additional styles
+@import "styles";

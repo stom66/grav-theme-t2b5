@@ -1,0 +1,29 @@
+form:
+  fields:
+      
+    cdn_jquery_js:
+      type: toggle
+      label: Include jQuery from CDN
+      highlight: 1
+      default: 1
+      options:
+        0: Disabled
+        1: Enabled
+
+    cdn_bootstrap_js:
+      type: toggle
+      label: Include Bootstrap JS from CDN
+      highlight: 1
+      default: 1
+      options:
+        0: Disabled
+        1: Enabled
+      
+    cdn_modernizr_js:
+      type: toggle
+      label: Include modernizr JS from CDN
+      highlight: 1
+      default: 1
+      options:
+        0: Disabled
+        1: Enabled

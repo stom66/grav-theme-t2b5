@@ -9,14 +9,14 @@
 // them and be sure to disable the CDN inclusions in the settings for this theme.
 
 // Theme variables
-@import "vendor/variables";
+@import "custom/variables";
 
 // Typography settings
-@import "typography";
+@import "custom/typography";
 
 // Bootstrap framework customisation
 // If you're customising the theme then you will want to uncomment the following includes
 //@import "vendor/bootstrap";
 
 // Additional styles
-@import "styles";
+@import "custom/styles";

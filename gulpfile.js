@@ -5,25 +5,27 @@ var csscomb      = require('gulp-csscomb');
 var rename       = require('gulp-rename');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps   = require('gulp-sourcemaps');
+var concat       = require('gulp-concat');
+var uglify       = require('gulp-uglify');
 
 // configure the paths
-var watch_dir = './src/scss/**/*.scss';
-var src_dir   = './src/scss/*.scss';
-var dest_dir  = './dist';
+var sass_watch_dir = './src/scss/**/*.scss';
+var sass_src_dir   = './src/scss/*.scss';
+var js_watch_dir   = './src/js/**/*.js';
+var dest_dir       = './dist';
 
 var paths = {
-    source: src_dir
+    source: sass_src_dir
 };
 
 function watch() {
-  return gulp.watch(watch_dir, build);
+  return gulp.watch([sass_watch_dir, js_watch_dir], build);
 }
 
 function build() {
   return gulp.src(paths.source)
       .pipe(sourcemaps.init())
-      .pipe(sass().on('error', sass.logError)
-      )
+      .pipe(sass().on('error', sass.logError))
       .pipe(sourcemaps.write())
       .pipe(autoprefixer())
       .pipe(gulp.dest(dest_dir))
@@ -34,7 +36,12 @@ function build() {
       .pipe(rename({
         suffix: '.min'
       }))
-      .pipe(gulp.dest(dest_dir));
+      .pipe(gulp.dest(dest_dir)), 
+    gulp.src(['src/js/*.js'])
+      .pipe(concat('app.js'))
+      .pipe(uglify())
+      .pipe(rename({suffix: '.min'}))
+      .pipe(gulp.dest('dist'));
 }
 
 exports.watch = watch;

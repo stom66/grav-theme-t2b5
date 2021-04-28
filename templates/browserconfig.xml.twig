@@ -1,0 +1,19 @@
+{% spaceless %}
+
+    {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+    {% set mstile_sq = media['image://favicons/'~theme_config.favicon.mstile_sq] %}
+    {% set mstile_re = media['image://favicons/'~theme_config.favicon.mstile_re] %}
+
+{% endspaceless %}
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo   src="{{ mstile_sq.resize(128).url() }}"/>
+            <square150x150logo src="{{ mstile_sq.resize(270).url() }}"/>
+            <square310x310logo src="{{ mstile_sq.resize(558).url() }}"/>
+            <wide310x150logo   src="{{ mstile_re.resize(558,270).url() }}"/>
+            <TileColor>{{ theme_config.tile_color_ms }}</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

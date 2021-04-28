@@ -4,7 +4,7 @@
 	{% set app_name         = theme_config.chrome_app_name ?: site.title %}
 
 	{% set meta_title       = header.title ? header.title|e('html')~" | "~site.title|e('html') : site.title|e('html') %}
-	{% set meta_author      = page.metadata.author.content ?: page.header.author ?: site.title %}
+	{% set meta_author      = page.metadata.author.content ?: page.header.author ?: theme_config.default_author ?: site.title %}
 	{% set meta_keywords    = page.metadata.keywords.content ?: page.header.keywords ?: theme_config.metadata.keywords %}
 	{% set meta_description = page.header.description ?: page.metadata.description.content %}
 	{% set meta_robots      = page.metadata.robots.content ?: 'index,follow' %}
@@ -48,8 +48,8 @@
 			<meta property = "og:url"          content = "{{ page.url(true, true) }}" />
 
 		  <!-- Twitter meta data -->
-			<meta name = "twitter:card"        content = "summary" />
-			<meta name = "twitter:creator"     content = "{{ tw_handle }}" />
+			<meta name = "twitter:card"        content = "summary" />{% if tw_handle %}
+			<meta name = "twitter:creator"     content = "{{ tw_handle }}" />{% endif %}
 			<meta name = "twitter:description" content = "{{ page.header.description ?: page.metadata.description.content }}" />
 			<meta name = "twitter:domain"      content = "{{ base_url }}/" />
 			<meta name = "twitter:image"       content = "{{ og_image }}" />
@@ -73,4 +73,4 @@
 		    <link rel = "manifest" href = "{{ base_url ~ theme_config.chrome.app_manifest }}" />
 
 {% endif %}
-{% include 'partials/favicons.html.twig' %}
+{% include 'meta/favicons.html.twig' %}

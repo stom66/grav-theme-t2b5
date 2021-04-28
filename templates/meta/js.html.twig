@@ -27,8 +27,6 @@
 		}) %}
 	{% endif %}
 
-	{% do assets.add('theme://js/app.js', {group:'bottom'}) %}
-
 	{% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
 			<!-- HTML5 Shiv for IE -->
 		{% do assets.add('https://oss.maxcdn.com/respond/1.4.2/respond.min.js', {
@@ -42,6 +40,8 @@
     		priority: 50
 		}) %}
 	{% endif %}
+
+	{% do assets.add('theme://dist/app.min.js', {group:'bottom'}) %}
 {% endblock %}
 
 {% endspaceless %}

@@ -93,3 +93,27 @@ To enable support for ICO files in the theme configuration page add the followin
     mime: image/x-icon
     image: null
 ```
+
+### manifest.json and browserconfig.xml
+
+To enable browserconfig.xml create the file `pages/browserconfig/default.md` with the following contents:
+```
+---
+slug: browserconfig.xml
+title: browserconfig.xml
+append_url_extension: '.xml'
+template_format: xml
+template: browserconfig
+---
+```
+
+To enable manifest.json create the file `pages/manifest/default.md` with the following contents:
+```
+---
+slug: manifest
+title: manifest.json
+append_url_extension: '.json'
+template_format: json
+template: manifest
+---
+```

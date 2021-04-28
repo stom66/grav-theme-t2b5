@@ -1,0 +1,41 @@
+{% spaceless %}
+
+    {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+
+	{% set ico_png    = media['user://images/icons/'~theme_config.favicon.png] %}
+	{% set app        = theme_config.chrome %}
+	
+	{% set start_url  = app.app_start_url ?: base_url %}
+	{% set name       = app.app_name ?: site.title %}
+	{% set short_name = app.app_short_name ?: name %}
+
+	{% set json = {
+		"short_name": short_name,
+		"name": name,
+		"icons": [
+			{
+				"src": ico_png.resize(192).url(),
+				"type": "image/png",
+				"sizes": "192x192"
+			},
+			{
+				"src": ico_png.resize(512).url(),
+				"type": "image/png",
+				"sizes": "512x512"
+			}
+		],
+		"start_url"       : start_url,
+		"background_color": app.theme_color,
+		"display"         : app.app_display,
+		"theme_color"     : app.theme_color
+	}
+	%}
+	{% if app.app_scope != '' %}
+		{% set json = json|merge({
+    		"scope": app.app_scope
+		}) %}
+	{% endif %}
+
+
+{% endspaceless %}
+{{ json|json_encode|raw }}

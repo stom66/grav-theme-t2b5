@@ -1,8 +1,11 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    <div class="lead text-center">
-        <h1>Error!</h1>
-        {{ page.content|raw }}
+    <div class="main-content">
+        <div class="container">
+            <h1>Error!</h1>
+            
+            {{ page.content|raw }}
+        </div>
     </div>
 {% endblock %}

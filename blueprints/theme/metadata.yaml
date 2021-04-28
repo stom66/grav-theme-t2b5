@@ -9,20 +9,26 @@ form:
           min: 0
           
     twitter_handle:
-      type: text
-      size: medium
+      type : text
+      size : medium
       label: Twitter handle
-      info: Your full handle, including prefix, eg @stom66
+      help : Your full handle, including prefix, eg @stom66
       validate:
           type: int
           min: 0
 
     og_image:
-      type: filepicker
-      size: medium
+      type  : filepicker
+      size  : medium
       folder: 'user/images'
-      label: Default OpenGraph image
-      info: OpenGraph images should be served at 19.1:10 aspect ratio
+      label : Default OpenGraph image
+      help  : OpenGraph images should be served at 19.1:10 aspect ratio
       preview_images: true
       accept:
         - .png
+
+    default_author:
+      type: text
+      size: medium
+      label: Default author
+      help: The default author for pages (falls-back to site name)

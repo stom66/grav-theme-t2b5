@@ -39,6 +39,7 @@ function build() {
       .pipe(gulp.dest(dest_dir)), 
     gulp.src(['src/js/*.js'])
       .pipe(concat('app.js'))
+      .pipe(gulp.dest('dist'))
       .pipe(uglify())
       .pipe(rename({suffix: '.min'}))
       .pipe(gulp.dest('dist'));

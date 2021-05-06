@@ -29,7 +29,7 @@ form:
       icon: cog
       help: may contain bugs. erk.
       collapsible: true
-      collapsed: false
+      collapsed: true
       import@:
         type: css
         context: themes://t2b4/blueprints/theme
@@ -40,21 +40,9 @@ form:
       icon: cog
       help: may contain bugs. erk.
       collapsible: true
-      collapsed: false
+      collapsed: true
       import@:
         type: js
-        context: themes://t2b4/blueprints/theme
-
-    fieldset3:
-      type: fieldset
-      title: NavBar settings
-      icon: navicon
-      info: Contains settings pertaining to the top navbar element
-      help: may contain bugs. erk.
-      collapsible: true
-      collapsed: false
-      import@:
-        type: navbar
         context: themes://t2b4/blueprints/theme
 
     fieldset4:
@@ -64,9 +52,32 @@ form:
       info: Favicons should be placed in user/images/favicons
       help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
       collapsible: true
-      collapsed: false
+      collapsed: true
       import@:
         type: favicon
+        context: themes://t2b4/blueprints/theme
+
+    fieldset3:
+      type: fieldset
+      title: NavBar settings
+      icon: navicon
+      info: Contains settings for the stlye and behaviour of the top navbar element
+      help: may contain bugs. erk.
+      collapsible: true
+      collapsed: true
+      import@:
+        type: navbar
+        context: themes://t2b4/blueprints/theme
+
+    fieldset10:
+      type: fieldset
+      title: Footer settings
+      icon: list
+      info: Choose styles and settings for the footer
+      collapsible: true
+      collapsed: true
+      import@:
+        type: footer
         context: themes://t2b4/blueprints/theme
 
     fieldset5:
@@ -76,7 +87,7 @@ form:
       info: Contains various webapp settings
       help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
       collapsible: true
-      collapsed: false
+      collapsed: true
       import@:
         type: metadata
         context: themes://t2b4/blueprints/theme
@@ -88,7 +99,7 @@ form:
       info: Contains various webapp settings
       help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
       collapsible: true
-      collapsed: false
+      collapsed: true
       import@:
         type: chrome
         context: themes://t2b4/blueprints/theme
@@ -100,7 +111,7 @@ form:
       info: Contains various webapp settings
       help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
       collapsible: true
-      collapsed: false
+      collapsed: true
       import@:
         type: msie
         context: themes://t2b4/blueprints/theme
@@ -112,7 +123,7 @@ form:
       info: Contains various webapp settings
       help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
       collapsible: true
-      collapsed: false
+      collapsed: true
       import@:
         type: appleios
         context: themes://t2b4/blueprints/theme
@@ -124,7 +135,7 @@ form:
       info: Choose options for Google Maps or OpenStreetMap
       help: You will need a valid API key to use either of these maps.
       collapsible: true
-      collapsed: false
+      collapsed: true
       import@:
         type: map
         context: themes://t2b4/blueprints/theme

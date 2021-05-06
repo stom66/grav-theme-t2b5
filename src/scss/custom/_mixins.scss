@@ -1,0 +1,7 @@
+// T2B4 ~ mixins.scss 
+//
+// Mixin for importing fonts from Google Fonts
+
+@mixin google-font($family) {
+    @import url("https://fonts.googleapis.com/css?family=#{$family}&display=swap");
+}

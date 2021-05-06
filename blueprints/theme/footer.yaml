@@ -1,0 +1,26 @@
+form:
+  fields:
+        
+    footer.classes:
+      type : text
+      size : medium
+      label: Custom classes
+      info : Any custom classes you wish applied t0 the footer element
+
+    footer.bgstyle:
+      type   : select
+      label  : Background style
+      size   : medium
+      default: none
+      options:
+        none          : None (default)
+        bg-dark       : Dark
+        bg-light      : Light
+        bg-primary    : Primary
+        bg-secondary  : Secondary
+        bg-success    : Success
+        bg-danger     : Danger
+        bg-warning    : Warning
+        bg-info       : Info
+        bg-white      : White
+        bg-transparent: Transparent

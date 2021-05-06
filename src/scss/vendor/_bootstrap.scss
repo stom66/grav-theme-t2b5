@@ -1,10 +1,10 @@
-// Bootstrap 4.6
+// T2B4 ~ bootstrap.scss
 // 
-// The order in which bootstrap+bootswatch must be include are as follows: 
-//	my variable overrides (optional), 
-//  bootswatch _variables
-//	bootstrap
-//	bootswatch _bootswatch
+//  The order in which bootstrap+bootswatch must be include are as follows: 
+//	 1) my variable overrides (optional), 
+//   2) bootswatch - _variables
+//	 3) bootstrap  - bootstrap
+//	 4) bootswatch - _bootswatch
 
 // Bootswatch Variables
 @import "../../../node_modules/bootswatch/dist/flatly/variables.scss";

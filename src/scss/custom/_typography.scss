@@ -1,13 +1,7 @@
-// T2B4
-//
-// typography.scss 
+// T2B4 ~ typography.scss 
 // 
 // Make changes to your tyopgraphics settings here. This will affect both CDN and 
-// local implementations of the Botostrap framework.
-
-@mixin google-font($family) {
-    @import url("http://fonts.googleapis.com/css?family=#{$family}&display=swap");
-}
+// local implementations of the Bootstrap framework.
 
 // Imports fonts from Google Fonts
 @include google-font("Roboto Condensed");

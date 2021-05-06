@@ -1,0 +1,8 @@
+title: Single Column
+'@extends': default
+form:
+  fields:
+    tabs:
+      import@:
+        type: blueprints/jumbotron
+        context: theme://

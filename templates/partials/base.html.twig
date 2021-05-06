@@ -16,9 +16,9 @@
         {% endblock %}
     </head>
 
-{% set navbar = theme_var('navbar') %}
+    <!-- Neck -->
 
-<body class="{% spaceless %}
+    <body class="{% spaceless %}
         {% block body_classes %}
             {{ page.header.body_classes }}
             {% if navbar.type!='navbar' %} 
@@ -27,31 +27,31 @@
         {% endblock %}
     {% endspaceless %}">
 
-        {% block header_navigation %}
-            {% include 'partials/navigation.html.twig' %}
-        {% endblock %}
+    {% block header_navigation %}
+        {% include 'partials/navigation.html.twig' %}
+    {% endblock %}
 
-        {% block body %}
-            <section id="body">
-                <div class="wrapper padding">
-                {% block content %}{% endblock %}
-                </div>
-            </section>
-        {% endblock %}
+    {% block jumbotron %}{% endblock %}
 
-        {% block footer %}
-            {% include 'partials/footer.html.twig' %}
-        {% endblock %}
+    {% block body %}
+        <section id="body">
+            {% block content %}{% endblock %}
+        </section>
+    {% endblock %}
 
-		{% if theme_var('map.api_key') and theme_var('map.type') == 'google' %}
-			{%  include 'partials/map-google-js.html.twig' %}
-		{% elseif theme_var('map.type') == 'osm' %}
-			{%  include 'partials/map-osm-js.html.twig' %}
-		{% endif %}
+    {% block footer %}
+        {% include 'partials/footer.html.twig' %}
+    {% endblock %}
 
-        {% block bottom %}
-            {{ assets.js('bottom')|raw }}
-        {% endblock %}
+    {% if theme_var('map.api_key') and theme_var('map.type') == 'google' %}
+        {%  include 'partials/map-google-js.html.twig' %}
+    {% elseif theme_var('map.type') == 'osm' %}
+        {%  include 'partials/map-osm-js.html.twig' %}
+    {% endif %}
+
+    {% block bottom %}
+        {{ assets.js('bottom')|raw }}
+    {% endblock %}
 
     </body>
 </html>

@@ -12,8 +12,8 @@
 	{% endif %}
 
 	{% if theme_config.cdn_bootstrap_js %}
-		{% do assets.add('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', {
-			integrity: "sha512-Ah5hWYPzDsVHf9i2EejFBFrG2ZAPmpu4ZJtW4MfSgpZacn+M9QHDt+Hd/wL1tEkk1UgbzqepJr6KnhZjFKB+0A==",
+		{% do assets.add('https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js', {
+			integrity: "sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==",
 			crossorigin: "anonymous",
     		priority: 90
 		}) %}

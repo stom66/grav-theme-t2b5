@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stom66/grav-ts-bootstrap.git"
+    "url": "git+https://github.com/stom66/grav-t2b4.git"
   },
   "keywords": [
     "grav",
@@ -18,9 +18,9 @@
   "author": "stom",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/stom66/grav-ts-bootstrap/issues"
+    "url": "https://github.com/stom66/grav-t2b4/issues"
   },
-  "homepage": "https://github.com/stom66/grav-ts-bootstrap#readme",
+  "homepage": "https://github.com/stom66/grav-t2b4#readme",
   "devDependencies": {
     "bootstrap": "^4.6.0",
     "bootswatch": "^4.6.0",

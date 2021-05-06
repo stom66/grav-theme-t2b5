@@ -17,7 +17,7 @@
 {% endif %}
                 <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
                     {% if navbar.icon %}
-                        {{ media['image://'~navbar.icon].resize(navbar.icon_size ?: 36).html() }}
+                        {{ media['user://images/icons/'~navbar.icon].resize(navbar.icon_size ?: 36).html()|raw }}
                     {% endif %}
                     {{ site.title|e('html') }}
                 </a>

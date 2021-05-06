@@ -5,7 +5,17 @@ form:
       type : text
       size : medium
       label: Custom classes
-      info : Any custom classes you wish applied t0 the footer element
+      info : Any custom classes you wish applied to the footer element
+
+    footer.sticky:
+      type: toggle
+      label: Sticky footer
+      highlight: 1
+      default: 0
+      options: 
+        0: Disabled
+        1: Enabled
+      validate: bool
 
     footer.bgstyle:
       type   : select
@@ -24,3 +34,19 @@ form:
         bg-info       : Info
         bg-white      : White
         bg-transparent: Transparent
+
+    footer.content:
+      type: markdown
+      rows: 6
+      validate:
+          type: textarea
+
+    footer.container:
+      type   : select
+      label  : Container
+      size   : medium
+      default: container-fluid
+      options:
+        none           : None (default)
+        container      : Container
+        container-fluid: Container-fluid

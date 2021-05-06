@@ -1,11 +1,12 @@
 
-<div class="footer text-center container">
+{% set footer = theme_var('footer') %}
+
+<div class="footer {{ footer.container }} {{ footer.bgstyle }} {{ footer.classes }} {% if footer.sticky %} mt-auto{% endif %}">
     <div class="row">
-        <div class="col text-right mr-1">
-            <i class="fas fa-code"></i> with <a href="https://getgrav.org">Grav</a>
-        </div>
-        <div class="col text-left ml-1">
-            Site and design by TomSquared
+        <div class="col">
+            {{ footer.content|markdown }}
         </div>
     </div>
 </div>
+
+

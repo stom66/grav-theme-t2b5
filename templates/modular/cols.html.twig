@@ -1,0 +1,5 @@
+{% for item in page.header.columns %}
+    <div class="{{ item.class ?: 'col'}}">        
+        {{ item.content }}
+    </div> 
+{% endfor %}

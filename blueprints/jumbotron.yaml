@@ -13,14 +13,27 @@ form:
             0: Disabled
             1: Enabled
           validate: bool
+
+        header.jumbotron_container:
+          type   : select
+          label  : Container
+          size   : medium
+          default: none
+          options:
+            none           : None (default)
+            container      : Container
+            container-fluid: Container-fluid
+
         header.jumbotron_classes:
           type: text
           label: Classes
+
         header.jumbotron_content:
           type: markdown
           rows: 16
           validate:
               type: textarea
+              
         header.jumbotron_image:
           type: pagemediaselect
           label: Background image

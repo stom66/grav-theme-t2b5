@@ -2,7 +2,7 @@
 
 ## Description
 
-The **T2B4** Theme is for [Grav CMS](http://github.com/getgrav/grav). It includes numerous customisation options, such as navbar styles and web-app settings, as well as comprehensive favicon support. It includes the following:
+The **T2B4** Theme is for [Grav CMS](http://github.com/getgrav/grav). It includes numerous customisation options, such as navbar styles and web-app settings, as well as comprehensive favicon support. It supports using the following:
 
 * Bootstrap 4.6.0
 * Bootswatch 4.5.2
@@ -22,7 +22,7 @@ The recommended way to use the theme is by starting with the [grav-t2b4-skeleton
 
 TO add the theme to an existing site first clone the repository into your `/user/themes` folder:
 
-	git clone https://github.com/stom66/grav-t2b4 /path/to/grav/user/themes/t2bootstrap
+	git clone https://github.com/stom66/grav-t2b4 /path/to/grav/user/themes/t2b4
 
 To configure your site to use T2B4 you will need to do the following:
 
@@ -31,13 +31,13 @@ To configure your site to use T2B4 you will need to do the following:
     * Set `absolute_urls:` setting to `absolute_urls: true`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
 * Install the dependencies below
-* Add the ico media type (described below)
+* Add the ICO media type (described below)
 * Add the `manifest.json` and `browserconfig.xml` pages (described below)
 
 
 ### Dependencies
 
-The t2b4 theme depends on the following plugins. If you install via GPM, you should be prompted to also install these plugins. 
+The T2B4 theme depends on the following plugins. If you install via GPM, you should be prompted to also install these plugins. 
 
 * [Error](https://github.com/getgrav/grav-theme-error) 
 * [Problems](https://github.com/getgrav/grav-plugin-problems)

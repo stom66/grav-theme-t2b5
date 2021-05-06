@@ -7,11 +7,11 @@ icon: rebel
 author:
   name: stom
   email: tomsteventon@gmail.com
-homepage: https://github.com/29757739/grav-theme-t2b4
+homepage: https://github.com/stom66/grav-t2b4
 demo: http://demo.yoursite.com
 keywords: grav, theme, etc
-bugs: https://github.com/29757739/grav-theme-t2b4/issues
-readme: https://github.com/29757739/grav-theme-t2b4/blob/develop/README.md
+bugs: https://github.com/stom66/grav-t2b4/issues
+readme: https://github.com/stom66/grav-t2b4/blob/main/README.md
 license: MIT
 
 dependencies:

@@ -14,25 +14,15 @@ The **T2B4** Theme is for [Grav CMS](http://github.com/getgrav/grav). It include
 
 # Installation
 
-### Terminal
+### New sites
 
-The easiest way to install the theme is via the terminal. Simply clone this repository by doing the following:
+The recommended way to use the theme is by starting with the [grav-t2b4-skeleton](https://github.com/stom66/grav-t2b4-skeleton) repository. This includes this theme as well as the required pages, sample icons, and plugins.
+
+### Existing sites
+
+TO add the theme to an existing site first clone the repository into your `/user/themes` folder:
 
 	git clone https://github.com/stom66/grav-t2b4 /path/to/grav/user/themes/t2bootstrap
-
-### Zip method
-
-To install this theme via FTP or file browser:
-
-1) Download the zip version of this repository
-2) Unzip it under `/path/to/grav/user/themes`
-3) Rename the folder to `t2b4`
-
-You should now have all the theme files under
-
-    /path/to/grav/user/themes/t2bootstrap4
-
-# Setup
 
 To configure your site to use T2B4 you will need to do the following:
 
@@ -40,6 +30,9 @@ To configure your site to use T2B4 you will need to do the following:
     * Set `theme:` setting to `theme: t2b4`.
     * Set `absolute_urls:` setting to `absolute_urls: true`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
+* Install the dependencies below
+* Add the ico media type (described below)
+* Add the `manifest.json` and `browserconfig.xml` pages (described below)
 
 
 ### Dependencies

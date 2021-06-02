@@ -1,15 +1,16 @@
 {% spaceless %}
 
-{% set jumbotron_image      = page.header.jumbotron_image ? page.media[page.header.jumbotron_image] %}
-{% set jumbotron_classes    = page.header.jumbotron_classes %}
-{% set jumbotron_container  = page.header.jumbotron_container %}
+{% set jumbotron_image     = page.header.jumbotron_image ?: page.media[page.header.jumbotron_image] %}
+{% set jumbotron_classes   = page.header.jumbotron_classes|default("col") %}
+{% set jumbotron_container = page.header.jumbotron_container|default("container") %}
+{% set jumbotron_content   = jumbotron_content ?: page.header.jumbotron_content ?: content %}
 
 {% endspaceless %}
 
 <div class="{{ jumbotron_container }}">
 
     <div class="jumbotron {{ jumbotron_classes }}" {% if jumbotron_image %}style="background-image: url('{{ jumbotron_image.url }}');"{% endif %}>
-        {{ page.header.jumbotron_content|markdown }}
+        {{ jumbotron_content|markdown }}
     </div>
 
 </div>

@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             {% for item in page.collection %}
-                {{ item.content }}
+                {{ item.content|raw }}
             {% endfor %}
         </div>
     </div>

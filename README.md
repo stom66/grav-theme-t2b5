@@ -16,19 +16,19 @@ The **T2B4** Theme is for [Grav CMS](http://github.com/getgrav/grav). It include
 
 ### New sites
 
-The recommended way to use the theme is by starting with the [grav-t2b4-skeleton](https://github.com/stom66/grav-t2b4-skeleton) repository. This includes this theme as well as the required pages, sample icons, and plugins.
+The recommended way to use the theme is by starting with the [grav-skeleton-t2b4](https://github.com/stom66/grav-skeleton-t2b4) repository. This includes this theme as well as the required pages, sample icons, and plugins.
 
 ### Existing sites
 
-TO add the theme to an existing site first clone the repository into your `/user/themes` folder:
+To add the theme to an existing site first clone the repository into your `/user/themes` folder:
 
 	git clone https://github.com/stom66/grav-t2b4 /path/to/grav/user/themes/t2b4
 
 To configure your site to use T2B4 you will need to do the following:
 
 * Edit `/user/config/system.yaml` to have the following properties:
-    * Set `theme:` setting to `theme: t2b4`.
-    * Set `absolute_urls:` setting to `absolute_urls: true`.
+    * Set `theme:` setting to `t2b4`.
+    * Set `absolute_urls:` setting to `true`.
 * Clear the Grav cache. The simplest way to do this is by going to the root Grav directory in Terminal and typing `bin/grav clear-cache`.
 * Install the dependencies below
 * Add the ICO media type (described below)

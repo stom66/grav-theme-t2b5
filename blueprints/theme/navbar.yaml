@@ -86,6 +86,15 @@ form:
         - .png
         - .jpg
 
+    navbar.show_title_in_navbar:
+      type     : toggle
+      label    : Show site title in navbar
+      highlight: 1
+      default  : 1
+      options  : 
+        1: Enabled
+        0: Disabled
+
     navbar.icon_size:
       type    : range
       label   : Brand size

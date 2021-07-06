@@ -19,7 +19,10 @@
                     {% if navbar.icon %}
                         {{ media['user://images/icons/'~navbar.icon].resize(navbar.icon_size ?: 36).html()|raw }}
                     {% endif %}
-                    {{ site.title|e('html') }}
+
+                    {% if navbar.show_title_in_navbar %}
+                        {{ site.title|e('html') }}
+                    {% endif %}
                 </a>
                 <button type      = "button" 
                     class         = "navbar-toggler" 

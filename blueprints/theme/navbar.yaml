@@ -101,7 +101,7 @@ form:
       default : 32
       validate: 
         min: 24
-        max: 196
+        max: 256
           
     navbar.classes:
       type : text

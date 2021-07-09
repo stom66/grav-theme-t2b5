@@ -1,16 +1,46 @@
+
 {% spaceless %}
 
-{% set jumbotron_image     = page.header.jumbotron_image ?: page.media[page.header.jumbotron_image] %}
-{% set jumbotron_classes   = page.header.jumbotron_classes|default("col") %}
-{% set jumbotron_container = page.header.jumbotron_container|default("container") %}
-{% set jumbotron_content   = jumbotron_content ?: page.header.jumbotron_content ?: content %}
+{% set j_container   = page.header.jumbotron_container|default("container") %}
+{% set j_classes     = page.header.jumbotron_classes|default("col") %}
+{% set j_style       = page.header.jumbotron_style %}
+{% set j_content     = jumbotron_content ?: page.header.jumbotron_content %}
+{% set j_min_height  = page.header.jumbotron_min_height|default("0") %}
+
+{% set j_image       = page.header.jumbotron_image ? page.media[page.header.jumbotron_image] %}
+{% set j_image_blur  = page.header.jumbotron_image_blur|default("0") %}
+{% set j_image_align = page.header.jumbotron_image_align %}
 
 {% endspaceless %}
 
-<div class="{{ jumbotron_container }}">
+<div class="{{ j_container }} {{ j_classes }}">
 
-    <div class="jumbotron {{ jumbotron_classes }}" {% if jumbotron_image %}style="background-image: url('{{ jumbotron_image.url }}');"{% endif %}>
-        {{ jumbotron_content|markdown }}
+    <div class="jumbotron" 
+        {% if j_style or j_image or j_min_height > 0 %}
+            style="{% spaceless %}
+            {% if j_image %} 
+                {% if j_image_blur > 0 %}
+                    background-image: url('{{ j_image.gaussianBlur(j_image_blur).url }}');
+                {% else %}
+                    background-image: url('{{ j_image.url }}');
+                {% endif %}
+                
+                {% if j_image_align %}
+                    background-position: {{ j_image_align|join(' ') }};
+                {% endif %}
+            {% endif %}
+
+            {% if j_min_height > 0 %} 
+                min-height: {{ j_min_height }}em; 
+            {% endif %}
+
+            {% if j_style %} 
+                {{ j_style }}; 
+            {% endif %}
+        {% endspaceless %}"
+    {% endif %}>
+        
+        {{ j_content|markdown }}
     </div>
 
 </div>

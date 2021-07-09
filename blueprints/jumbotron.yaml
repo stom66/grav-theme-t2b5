@@ -3,13 +3,14 @@ form:
     buttons:
       type: tab
       title: Jumbotron
+      help: Easily enable/disable the entire jumbotron
       fields:
         header.jumbotron_enabled:
-          type: toggle
-          label: Enabled
+          type     : toggle
+          label    : Enabled
           highlight: 1
-          default: 0
-          options: 
+          default  : 0
+          options  : 
             0: Disabled
             1: Enabled
           validate: bool
@@ -17,25 +18,68 @@ form:
         header.jumbotron_container:
           type   : select
           label  : Container
+          help   : You can change the jumbotrons overall width, to fill the whole screen or clamp to the columns
           size   : medium
           default: none
           options:
             none           : None (default)
             container      : Container
             container-fluid: Container-fluid
+            container-fluid px-0: Container-fluid (no-padding)
 
         header.jumbotron_classes:
           type: text
           label: Classes
+          help: Add custom CSS classes here, such as Bootstrap classes
 
-        header.jumbotron_content:
-          type: markdown
-          rows: 16
-          validate:
-              type: textarea
-              
+        header.jumbotron_style:
+          type : text
+          label: Custom style
+          help : "Add custom css rules here. Do not add 'style=' or quotes, these are added automatically. Example:   margin-top: -10em;"
+          
+        header.jumbotron_min_height:
+          type    : text
+          label   : Minimum Jumbotron height (em)
+          help    : Set the minimum height for the Jumbotron, best when using background images
+          size    : small
+          default : 0
+          validate: 
+            required: true
+            type: number
+            min: 0
+
         header.jumbotron_image:
-          type: pagemediaselect
-          label: Background image
+          type          : pagemediaselect
+          label         : Background image
           preview_images: true
-            
+
+        header.jumbotron_image_align:
+          type    : select
+          label   : Background image horizontal alignment
+          size    : large
+          default : center
+          multiple: true
+          validate: 
+            type: array
+          options: 
+            top   : Top
+            left  : Left
+            bottom: Bottom
+            right : Right
+            center: Center
+
+
+        header.jumbotron_image_blur:
+          type    : range
+          label   : Background blur strength
+          default : 0
+          size    : x-large
+          validate: 
+            min: 0
+            max: 6
+          
+        header.jumbotron_content:
+          type    : markdown
+          rows    : 16
+          validate: 
+              type: textarea

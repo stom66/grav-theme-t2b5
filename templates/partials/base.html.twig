@@ -1,5 +1,6 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
+{% set navbar = theme_var('navbar') %}
 {% set footer = theme_var('footer') %}
 <!DOCTYPE html>
 <html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}" {% if footer.sticky %} class="h-100"{% endif %}>
@@ -20,14 +21,18 @@
 
     <!-- Neck -->
 
-    <body class="{% spaceless %}
+
+    <body class="
         {% block body_classes %}
             {{ page.header.body_classes }}
             {% if footer.sticky %} 
                 d-flex flex-column h-100
-            {% endif %}
-        {% endblock %}
-    {% endspaceless %}">
+            {% endif %} 
+        {% endblock %}" 
+        {% if navbar.body_top_padding > 0 %}
+            style="padding-top: {{ navbar.body_top_padding }}em !important"
+        {% endif %}
+    >
 
     {% block header_navigation %}
         {% include 'partials/navigation.html.twig' %}

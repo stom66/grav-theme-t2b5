@@ -76,28 +76,39 @@ form:
                           default: 1
                           size: medium
                           options:
-                            1: '4:3'
-                            2: '16:9 (Full HD)'
-                            3: '2.35:1 (Widescreen)'
-                            4: '1:1 (Square)'
+                            1by1:  '1:1 (Square)'
+                            4by3:  '4:3'
+                            16by9: '16:9 (Full HD)'
+                            21by9: '2.35:1 (Widescreen)'
                         header.column:
                           type: select
-                          label: Map size
+                          label: Map width
                           default: col
+                          size: medium
                           options:
                             col: 'Auto (col)'
-                            col-1: '1/12 (col-1)'
-                            col-2: '1/6 (col-2)'
-                            col-3: 'One-quarter (col-3)'
-                            col-4: 'One-third (col-4)'
-                            col-5: '5/12 (col-5)'
-                            col-6: 'Half (col-6)'
-                            col-7: '7/12 (col-7)'
-                            col-8: 'Two-thirds (col-8)'
-                            col-9: 'Three-quarters (col-9)'
-                            col-10: '5/6 (col-10)'
-                            col-11: '11/12 (col-11)'
-                            col-12: 'Full (col-12)'
+                            col-1: 'col-1: 1/12'
+                            col-2: 'col-2: 1/6'
+                            col-3: 'col-3: One-quarter'
+                            col-4: 'col-4: One-third'
+                            col-5: 'col-5: 5/12'
+                            col-6: 'col-6: Half'
+                            col-7: 'col-7: 7/12'
+                            col-8: 'col-8: Two-thirds'
+                            col-9: 'col-9: Three-quarters'
+                            col-10: 'col-10: 5/6'
+                            col-11: 'col-11: 11/12'
+                            col-12: 'col-12: Full'
+                        header.custom_classes:
+                          type: text
+                          label: Custom class
+                          size: medium
+                          help: Specify custom CSS classes here
+                        header.custom_stylees:
+                          type:  text
+                          label: Custom styles
+                          size:  medium
+                          help:  Specify custom CSS styles here, omit the style= prefix and quotes
                         header.map.style:
                           type: textarea
                           label: Map style (only with Google Maps)
@@ -110,25 +121,54 @@ form:
                       title: Map info
                       underline: true
                       fields:
-                        header.showtitle:
-                          type: select
-                          label: Show title?
-                          highlight: 1
-                          default: 1
-                          options:
-                            0: "No"
-                            1: "Yes"
-                            2: "Only placeholder"
-                        header.title:
-                          type: text
-                          autofocus: true
-                          label: Title
                         header.map.description:
                           type: text
                           label: Map description
+                          size: medium
                         header.map.markertitle:
                           type: text
                           label: Marker title
+                          size: medium
+                        header.map.markericon:
+                          type          : filepicker
+                          size          : medium
+                          folder        : 'user://images/map-icons'
+                          label         : Marker icon
+                          preview_images: true
+                          on_demand     : true
+                          accept        : 
+                            - .png
+                            - .jpg
+                            - .svg
+                        header.map.markercolor:
+                          type: colorpicker
+                          label: Marker color (OSM only)
+                          default: '#D97210'
+                        header.map.markerscale:
+                          type: range
+                          label: Marker icon size
+                          default: 5
+                          validate:
+                            min: 1
+                            max: 20
+                        header.map.anchorX:
+                          label: Marker horizontal alignment
+                          default: 0
+                          size: medium
+                          type: select
+                          options:
+                            0: 'Left'
+                            5: 'Center'
+                            10: 'Right'
+                        header.map.anchorY:
+                          label: Marker vertical alignment
+                          default: 0
+                          size: medium
+                          type: select
+                          options:
+                            0: 'Top'
+                            5: 'Center'
+                            10: 'Bottom'
                         header.map.description_position:
                           type: select
                           label: Position of the image description
@@ -141,5 +181,6 @@ form:
                           type: textarea
                           rows: 4
                           label: Info window
+                          size: medium
 
 

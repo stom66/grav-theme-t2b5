@@ -1,29 +1,55 @@
 <script>
   function drawMaps(){
-    var map = [],
-      marker = [],
+    var map      = [],
+      marker     = [],
       infowindow = [],
-      style = [];
+      style      = [];
     $('.js-map').each(function( i ){
       if(this.getAttribute('map-style')){
         style = JSON.parse(this.getAttribute('map-style'));
       }
 
-      var cords = {lat: Number(this.getAttribute('map-lat')), lng: Number(this.getAttribute('map-lon'))};
+      const markerScale = this.getAttribute('map-marker-scale') / 20;
+      const markerSize  = this.getAttribute('map-marker-size') * markerScale;
+      console.log("markerScale: " + markerScale);
+      console.log("markerSize:  " + markerSize);
+
+      var cords = {
+        lat: Number(this.getAttribute('map-lat')), 
+        lng: Number(this.getAttribute('map-lon'))
+      };
+      console.log("Adding marker at cords: ", cords)
+
+      var anchor = {
+        x: Number(this.getAttribute('map-marker-anchor-x') * 0.1 * markerSize),
+        y: Number(this.getAttribute('map-marker-anchor-y') * 0.1 * markerSize)
+      }
+      console.log("Adding marker with anchor: ", anchor)
 
       mapOptions = {
-        zoom: Number(this.getAttribute('map-zoom')),
-        center: cords,
+        zoom            : Number(this.getAttribute('map-zoom')),
+        center          : cords,
         disableDefaultUI: Boolean(!this.getAttribute('map-controls')),
-        styles: style
+        styles          : style
       };
 
       map[i] = new google.maps.Map(this, mapOptions);
+
+      var markerImage = {
+        url       : this.getAttribute('map-marker-icon'),
+        scaledSize: new google.maps.Size(markerSize, markerSize),
+        origin    : new google.maps.Point(0, 0),
+        anchor    : new google.maps.Point(anchor.x, anchor.y),
+      }
+      console.log(markerImage);
+
       marker[i] = new google.maps.Marker({
         position: cords,
-        map: map[i],
-        title: String(this.getAttribute('map-markertitle'))
+        map     : map[i],
+        icon    : markerImage,
+        title   : String(this.getAttribute('map-marker-title'))
       });
+
       infowindow[i] = new google.maps.InfoWindow({
         content: this.getAttribute('map-infowindow')
       });

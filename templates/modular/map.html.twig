@@ -1,6 +1,6 @@
 {% set map   = page.header.map %}
 {% set image = page.header.image | first %}
-{% set color = page.header.map.markercolor|default('#D97210')|hex2rgb|split(",") %}
+{% set color = page.header.map.markercolor|default('#D97210')|hex2rgbRaw|split(",") %}
 {% set icon  = media['user://images/map-icons/'~map.markericon].colorize(color[0], color[1], color[2]) %}
 
 <div class="{{ header.column}} embed-responsive embed-responsive-{{ page.header.scale|default('1by1') }} {{ page.header.custom_classes }}"

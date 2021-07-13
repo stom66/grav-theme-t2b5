@@ -9,22 +9,18 @@
         style = JSON.parse(this.getAttribute('map-style'));
       }
 
-      const markerScale = this.getAttribute('map-marker-scale') / 20;
-      const markerSize  = this.getAttribute('map-marker-size') * markerScale;
-      console.log("markerScale: " + markerScale);
-      console.log("markerSize:  " + markerSize);
+      const markerScale = Number(this.getAttribute('map-marker-scale') / 20);
+      const markerSize  = Number(this.getAttribute('map-marker-size') * markerScale);
 
       var cords = {
         lat: Number(this.getAttribute('map-lat')), 
         lng: Number(this.getAttribute('map-lon'))
       };
-      console.log("Adding marker at cords: ", cords)
 
       var anchor = {
         x: Number(this.getAttribute('map-marker-anchor-x') * 0.1 * markerSize),
         y: Number(this.getAttribute('map-marker-anchor-y') * 0.1 * markerSize)
       }
-      console.log("Adding marker with anchor: ", anchor)
 
       mapOptions = {
         zoom            : Number(this.getAttribute('map-zoom')),
@@ -41,7 +37,6 @@
         origin    : new google.maps.Point(0, 0),
         anchor    : new google.maps.Point(anchor.x, anchor.y),
       }
-      console.log(markerImage);
 
       marker[i] = new google.maps.Marker({
         position: cords,

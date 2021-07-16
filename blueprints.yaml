@@ -1,5 +1,5 @@
-name: T2b4
-slug: t2b4
+name: T2b5
+slug: t2b5
 type: theme
 version: 0.1.0
 description: TomSquared Bootstrap Theme
@@ -7,11 +7,11 @@ icon: rebel
 author:
   name: stom
   email: tomsteventon@gmail.com
-homepage: https://github.com/stom66/grav-t2b4
+homepage: https://github.com/stom66/grav-t2b5
 demo: http://demo.yoursite.com
 keywords: grav, theme, etc
-bugs: https://github.com/stom66/grav-t2b4/issues
-readme: https://github.com/stom66/grav-t2b4/blob/main/README.md
+bugs: https://github.com/stom66/grav-t2b5/issues
+readme: https://github.com/stom66/grav-t2b5/blob/main/README.md
 license: MIT
 
 dependencies:
@@ -32,7 +32,7 @@ form:
       collapsed: true
       import@:
         type: css
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
         
     fieldset2:
       type: fieldset
@@ -43,7 +43,7 @@ form:
       collapsed: true
       import@:
         type: js
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 
     fieldset4:
       type: fieldset
@@ -55,7 +55,7 @@ form:
       collapsed: true
       import@:
         type: favicon
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 
     fieldset3:
       type: fieldset
@@ -67,7 +67,7 @@ form:
       collapsed: true
       import@:
         type: navbar
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 
     fieldset10:
       type: fieldset
@@ -78,7 +78,7 @@ form:
       collapsed: true
       import@:
         type: footer
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 
     fieldset5:
       type: fieldset
@@ -90,7 +90,7 @@ form:
       collapsed: true
       import@:
         type: metadata
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 
     fieldset6:
       type: fieldset
@@ -102,7 +102,7 @@ form:
       collapsed: true
       import@:
         type: chrome
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 
     fieldset7:
       type: fieldset
@@ -114,7 +114,7 @@ form:
       collapsed: true
       import@:
         type: msie
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 
     fieldset8:
       type: fieldset
@@ -126,7 +126,7 @@ form:
       collapsed: true
       import@:
         type: appleios
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 
     fieldset9:
       type: fieldset
@@ -138,5 +138,5 @@ form:
       collapsed: true
       import@:
         type: map
-        context: themes://t2b4/blueprints/theme
+        context: themes://t2b5/blueprints/theme
 

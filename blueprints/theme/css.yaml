@@ -25,27 +25,31 @@ form:
       default: 0
       options:
         0: Disabled
-        cerulean: Cerulean
-        cosmo: Cosmo
-        cyborg: Cyborg
-        darkly: Darkly
-        flatly: Flatly
-        journal: Journal
-        litera: Litera
-        lumen: Lumen
-        lux: Lux
-        materia: Materia
-        minty: Minty
-        pulse: Pulse
+        cerulean:  Cerulean
+        cosmo:     Cosmo
+        cyborg:    Cyborg
+        darkly:    Darkly
+        flatly:    Flatly
+        journal:   Journal
+        litera:    Litera
+        lumen:     Lumen
+        lux:       Lux
+        materia:   Materia
+        minty:     Minty
+        morph:     Morph
+        pulse:     Pulse
+        quartz:    Quartz
         sandstone: Sandstone
-        simplex: Simplex
-        sketchy: Sketchy
-        slate: Slate
-        solar: Solar
-        spacelab: Spacelab
+        simplex:   Simplex
+        sketchy:   Sketchy
+        slate:     Slate
+        solar:     Solar
+        spacelab:  Spacelab
         superhero: Superhero
-        united: United
-        yeti: Yeti
+        united:    United
+        vapor:     Vapor
+        yeti:      Yeti
+        zephyr:    Zephyr
       
     cdn_fontawesome_css:
       type: toggle

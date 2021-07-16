@@ -22,8 +22,11 @@
   },
   "homepage": "https://github.com/stom66/grav-t2b4#readme",
   "devDependencies": {
-    "bootstrap": "^4.6.0",
-    "bootswatch": "^4.6.0",
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.2",
+    "bootswatch": "^5.0.2",
+    "jquery": "^3.6.0",
+    "lodash": ">=4.17.21",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-clean-css": "^3.9.4",
@@ -33,10 +36,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.2",
-    "jquery": "^3.6.0",
-    "lodash": ">=4.17.21",
-    "popper.js": "^1.16.1"
+    "gulp-uglify": "^3.0.2"
   },
-  "_id": "t2b4@1.0.0"
+  "_id": "t2b4@1.0.0",
+  "dependencies": {}
 }

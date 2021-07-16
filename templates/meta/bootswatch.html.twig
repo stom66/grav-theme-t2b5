@@ -1,37 +1,42 @@
 {% spaceless %}
 
 	{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
-	{% set b_theme = theme_config.cdn_bootswatch_css %}
+	{% set b_theme      = theme_config.cdn_bootswatch_css %}
 	
 	{% if b_theme != "0" %}
 		{% set b_hashes = {
-			cerulean : "sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw",
-			cosmo    : "sha384-5QFXyVb+lrCzdN228VS3HmzpiE7ZVwLQtkt+0d9W43LQMzz4HBnnqvVxKg6O+04d",
-			cyborg   : "sha384-nEnU7Ae+3lD52AK+RGNzgieBWMnEfgTbRHIwEvp1XXPdqdO6uLTd/NwXbzboqjc2",
-			darkly   : "sha384-nNK9n28pDUDDgIiIqZ/MiyO3F4/9vsMtReZK39klb/MtkZI3/LtjSjlmyVPS3KdN",
-			flatly   : "sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK",
-			journal  : "sha384-QDSPDoVOoSWz2ypaRUidLmLYl4RyoBWI44iA5agn6jHegBxZkNqgm2eHb6yZ5bYs",
-			litera   : "sha384-enpDwFISL6M3ZGZ50Tjo8m65q06uLVnyvkFO3rsoW0UC15ATBFz3QEhr3hmxpYsn",
-			lumen    : "sha384-GzaBcW6yPIfhF+6VpKMjxbTx6tvR/yRd/yJub90CqoIn2Tz4rRXlSpTFYMKHCifX",
-			lux      : "sha384-9+PGKSqjRdkeAU7Eu4nkJU8RFaH8ace8HGXnkiKMP9I9Te0GJ4/km3L1Z8tXigpG",
-			materia  : "sha384-B4morbeopVCSpzeC1c4nyV0d0cqvlSAfyXVfrPJa25im5p+yEN/YmhlgQP/OyMZD",
-			minty    : "sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH",
-			pulse    : "sha384-L7+YG8QLqGvxQGffJ6utDKFwmGwtLcCjtwvonVZR/Ba2VzhpMwBz51GaXnUsuYbj",
-			sandstone: "sha384-zEpdAL7W11eTKeoBJK1g79kgl9qjP7g84KfK3AZsuonx38n8ad+f5ZgXtoSDxPOh",
-			simplex  : "sha384-FYrl2Nk72fpV6+l3Bymt1zZhnQFK75ipDqPXK0sOR0f/zeOSZ45/tKlsKucQyjSp",
-			sketchy  : "sha384-RxqHG2ilm4r6aFRpGmBbGTjsqwfqHOKy1ArsMhHusnRO47jcGqpIQqlQK/kmGy9R",
-			slate    : "sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ",
-			solar    : "sha384-NCwXci5f5ZqlDw+m7FwZSAwboa0svoPPylIW3Nf+GBDsyVum+yArYnaFLE9UDzLd",
-			spacelab : "sha384-F1AY0h4TrtJ8OCUQYOzhcFzUTxSOxuaaJ4BeagvyQL8N9mE4hrXjdDsNx249NpEc",
-			superhero: "sha384-HnTY+mLT0stQlOwD3wcAzSVAZbrBp141qwfR4WfTqVQKSgmcgzk+oP0ieIyrxiFO",
-			united   : "sha384-JW3PJkbqVWtBhuV/gsuyVVt3m/ecRJjwXC3gCXlTzZZV+zIEEl6AnryAriT7GWYm",
-			yeti     : "sha384-mLBxp+1RMvmQmXOjBzRjqqr0dP9VHU2tb3FK6VB0fJN/AOu7/y+CAeYeWJZ4b3ii"
+			cerulean:  "sha512-yTmD3eVCm6omGDRFz3vcOdjVhZoX6F3kFgyIGno1c4JQ3PWeSRhB5MaKR6TVb9B4TnHRlrYMy+pFMRJiPJ0bLA==",
+			cosmo:     "sha512-61f8/6Z0HBl96abjaKeob5XiSSCD4W8ZoElkIF8uvaekvpNCLa9u6TDLE5/Y7FWQCIHXWEfD3TYE9TzUbaBaNw==",
+			cyborg:    "sha512-X2u8dAWrVfvanPTlHwLh0fXttDDhkdV79q7cOibXR7hm9R3pRMFi53OwpGMdcbUiRk97isaXCRqFbm5LX1MiYw==",
+			darkly:    "sha512-KREAPYEoSKKkg2oqvahwsfZkMDfFe1i5G4cL/1y0xdAauwjoO5nNe6jdY2pEiNdh0Dqs39Pnilq7Zbl3e0FjGw==",
+			flatly:    "sha512-9MmHg28DhjKwWGDpuNCHK45mO9w7V20sx75eaJoyVvjw1q/YpAxfRaxEsQHbdzw6aQqcmqWe5UGTjgtpb7b7og==",
+			journal:   "sha512-GIB6jt9a1oXNpoZYC73CSn677XqWQn4c6/N2HU4L8j2420e27//Fdtiu337AUG3wm4r0cpRlpDMTWR+SzlORKA==",
+			litera:    "sha512-WC/IImFzoPRFTlJQpUSqaM1QOKsIWIfrmhkkXRXoDeB9hlArdsUAWOURes+oFcDRPUUZhuc2QdyfaZEGXjd6kg==",
+			lumen:     "sha512-uDVC5x/r8/AlBeeG0y/y8wwG6ZIhBzxMZGhx2uZWgRF6e17UWl6WWb6T2Lpp8lrlOeOX2LZfjXNQb7ng6MnwhA==",
+			lux:       "sha512-JQH/PgL2GI/QRtL8+26f9MUeF1nvl/wI7vBiHSvZdD6PRLu3/wOlVDOF0k/QLfV5kU8rmuDeFoJ2gPIT0qlDmQ==",
+			materia:   "sha512-lgjGHUJ8gespcWe81wqbY/6Kb8wyOes25otQkhbMllia1Shnc5E+RX+0JvucTKR9cA0F3q4LliKeeudfkhLJJg==",
+			minty:     "sha512-6j8uDbJ77NKFw5b7wK0md8qwdIL6a2iQK5QgZggbOBEPsiE+/SmTrOWRN6NI1OltrYNx6lMTW3fbCCz8TKCr5Q==",
+			morph:     "sha512-ZOEMfJac7enkyGovc+OFcqGo5A35ydWAA5kLlcQtjJWFRnTDX4OW2U80pmD5Eg5kvvV+X+agCqh7cYQgidfOPQ==",
+			pulse:     "sha512-NUuPVisIEFJ7qk9WguPDQK8j1sN+7J24qGcI/qoYfvav5nOow7uaQK3S/PNLYm7sm37jDVoNdVA8H+ZdEdECjA==",
+			quartz:    "sha512-RNvqvueJqHVPhG3gZcKphDvkOB8nRtU69XT6FzIxY97CktyooT+NyL2sg5JZhkolog46XfKfDhyIeyhE/TrL8A==",
+			sandstone: "sha512-vKQkYBxgn7QPg9pJJML1NT6HKNySAU3cmLX2t32/PYRfm/H2wzdNMAltzBemHcg8fdD1ZfnqFl8YHgylPyPYYg==",
+			simplex:   "sha512-hDfCzDhww/JE+45O/cXfPGG7bBJ/0k6ui8wfwn/iGU7tIuXoReRskkvEvy8waAnM2nO5ezNiDNEmITviUxM9SQ==",
+			sketchy:   "sha512-2GcSNOCUZR36TLjO0B1GyFqk//acaWa0u/zxbB6UKhha28n9TtEiiwtTRVHRGbr059eVRKvSCyk2mCXocmtpHg==",
+			slate:     "sha512-C42uYSECf+bXOviQ1qRrb3iJraTfOnsvZs84WaiU2i7M0sf+Mu68IrpksryDHIINu7CoaPEn0MoY8Ahmm0mCPg==",
+			solar:     "sha512-riiuLrjNXT42ink4OJeyChsuOlZlZK+dK4lY59xrVt3uuT5W8Yls8WLcopofKJoyTmwJyCaK9fHXY3vGvR9x4w==",
+			spacelab:  "sha512-VlYW/FBl6HHyE7NyAQqT9x1cE3xdIXEYn6s8ckbTx9SGNu8P7Jve1EMa+DZty34NypAaRISbU5qzsansxNqfxg==",
+			superhero: "sha512-DA2rI7d/CG3y/Nggp1ahshJkCs8+YH/t87DZ7tamF9rh8o6AuOW24giNAUnufu6hfikSBvE9Ctk7ebnG2U8wXg==",
+			united:    "sha512-XtHhOKn3DkdjRzwiJ0Ssp8QZ5y0BSArAWh9/f8fq17/vk0pL9lc8INRz4EWEAnBVnubjDqpxQuEV6SK09hqroQ==",
+			vapor:     "sha512-Pe0IO6obj0b/5liv3Z3x82jslhmZmItYrgzgPIW+qEOJLkPjMpLl8UwArhIOFlmQfATBCIPZWHffjjYTn0XT3A==",
+			yeti:      "sha512-4lE2Ba9lTAUpXaE2cL4S9Ff/5gZqI+5OQ+gaj3ymmADard7acgJUKkZA1xU38/gX4OTzS8HCYqYH13+qyRCthQ==",
+			zephyr:    "sha512-8AsrxJHNcfBjevT8jxlnbIcZKffcLoLyOymcu4F2ClBWIxgRJ3dNdRolabqSuAa6x4a2ujzzHkjFpmJBQP/74g=="
 		} %}
 		{% set b_hash = b_hashes[b_theme] %}
 		{% do assets.add(
-			"https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/"~b_theme~"/bootstrap.min.css", {
+			"https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.0.2/"~b_theme~"/bootstrap.min.css", {
 				integrity: b_hash,
 				crossorigin: "anonymous",
+				referrerpolicy: "no-referrer",
 				priority: 130
 			}) %}
 		

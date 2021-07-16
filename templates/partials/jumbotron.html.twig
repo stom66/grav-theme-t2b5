@@ -1,46 +1,57 @@
 
 {% spaceless %}
 
-{% set j_container   = page.header.jumbotron_container|default("container") %}
-{% set j_classes     = page.header.jumbotron_classes|default("col") %}
-{% set j_style       = page.header.jumbotron_style %}
-{% set j_content     = jumbotron_content ?: page.header.jumbotron_content %}
-{% set j_min_height  = page.header.jumbotron_min_height|default("0") %}
+{% set j         = page.header.jumbotron %}
+{% set j_content = j.content ?: page.header.jumbotron.content %}
+{% set j_image   = page.header.jumbotron.image ? page.media[page.header.jumbotron.image] %}
 
-{% set j_image       = page.header.jumbotron_image ? page.media[page.header.jumbotron_image] %}
-{% set j_image_blur  = page.header.jumbotron_image_blur|default("0") %}
-{% set j_image_align = page.header.jumbotron_image_align %}
+{% set outer_class = j.bg_class|default("bg-light") ~ " " ~
+                     j.text_class|default("text-dark ") ~ " " ~
+                     j.padding|join(" ")|default("p-3 ") ~ " " ~
+                     j.margin|join(" ")|default("mv-3 ") ~ " " ~
+                     "rounded-" ~ j.border_rounding|default(0) %}
+
+{% if j_image %} 
+    {% set style_bg_image = "" %}
+    {% if j.image_blur > 0 %}
+        {% set style_bg_image = style_bg_image ~ "background-image: url('" ~ j_image.gaussianBlur(j.image_blur).url ~ "');" %}
+    {% else %}
+        {% set style_bg_image = style_bg_image ~ "background-image: url('" ~ j_image.url ~ "');" %}
+    {% endif %}
+    
+    {% if j.image_align %}
+        {% set style_bg_image = style_bg_image ~ "background-position: " ~ j.image_align|join(' ')|replace({'2':''}) ~ ";" %}
+    {% endif %}
+{% endif %}
+
+{% set inner_style = "" %}
+    {% if j.min_height > 0 %} 
+        {% set inner_style = inner_style ~ "min-height: " ~ j.min_height ~ "em; " %}
+    {% endif %}
+
+    {% set inner_style = inner_style ~ j.style %}
 
 {% endspaceless %}
 
-<div class="{{ j_container }} {{ j_classes }}">
-
-    <div class="jumbotron" 
-        {% if j_style or j_image or j_min_height > 0 %}
-            style="{% spaceless %}
-            {% if j_image %} 
-                {% if j_image_blur > 0 %}
-                    background-image: url('{{ j_image.gaussianBlur(j_image_blur).url }}');
-                {% else %}
-                    background-image: url('{{ j_image.url }}');
+{% if j.container != "none" %}
+<div class="{{ j.container|default("container") }}">
+    <div class="row">
+{% endif %}
+        <div class="{{ j.classes|default("col") }}">
+            <div style="{{ inner_style }} {{ style_bg_image }}" class="{{ outer_class }}">
+                {% if j.constrain_content == 1 and j.container != "none" and j.container != "container" %}
+                    <div class="container">
+                        <div class="col">
                 {% endif %}
+                {{ j_content|markdown }}
                 
-                {% if j_image_align %}
-                    background-position: {{ j_image_align|join(' ') }};
+                {% if j.constrain_content == 1 and j.container != "none" and j.container != "container" %}
+                        </div>
+                    </div>
                 {% endif %}
-            {% endif %}
-
-            {% if j_min_height > 0 %} 
-                min-height: {{ j_min_height }}em; 
-            {% endif %}
-
-            {% if j_style %} 
-                {{ j_style }}; 
-            {% endif %}
-        {% endspaceless %}"
-    {% endif %}>
-        
-        {{ j_content|markdown }}
+            </div>
+        </div>
+{% if j.container != "none" %}
     </div>
-
 </div>
+{% endif %}

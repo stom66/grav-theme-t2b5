@@ -1,7 +1,7 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block jumbotron %}
-    {% if page.header.jumbotron_enabled == 1 %}
+    {% if page.header.jumbotron.enabled == 1 %}
         {% include 'partials/jumbotron.html.twig' %}
     {% endif %}
 {% endblock %}

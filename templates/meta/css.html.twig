@@ -11,8 +11,8 @@
 
 	{% if theme_config.cdn_bootstrap_css %}
     	{% do assets.add(
-            'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css', {
-                integrity: "sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==",
+            'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', {
+                integrity: "sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA==",
     			crossorigin: "anonymous",
     			priority: 140
     		}) %}
@@ -20,7 +20,7 @@
 
 	{% if theme_config.cdn_fontawesome_css %}
     	{% do assets.add(
-    		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', {
+    		'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css', {
     			integrity: "sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==",
     			crossorigin: "anonymous",
     			priority: 160
@@ -29,8 +29,8 @@
 
 	{% if theme_config.cdn_hover_css %}
     	{% do assets.add(
-    		'https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css', {
-    			integrity: "sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==",
+    		'https://cdn.jsdelivr.net/npm/hover.css@2.3.2/css/hover-min.css', {
+    			integrity: "sha512-kgHKwbUlBXhqMvBwg4+1f+Q5M33UGrsETCUTjuwzSFdb6pU0/bCeJYEG0NOSB+g4KKsNAGT+qfteiHmcUxZxoA==",
     			crossorigin: "anonymous",
     			priority: 180
     		}) %}
@@ -38,7 +38,7 @@
 
 	{% if theme_config.cdn_animate_css %}
     	{% do assets.add(
-    		'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', {
+    		'https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css', {
     			integrity: "sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==",
     			crossorigin: "anonymous",
     			priority: 200

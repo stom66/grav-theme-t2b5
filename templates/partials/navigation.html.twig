@@ -4,6 +4,7 @@
 {% set navbar_class = "navbar " ~ navbar.type ~ " " ~ navbar.style ~ " " %}
 {% set navbar_class = navbar_class ~ (navbar.expand=='none'? '' : navbar.expand ~ " ") %}
 {% set navbar_class = navbar_class ~ (navbar.bgcolor=="#ffffff" ? navbar.bgstyle ~ " " : '') %}
+{% set navbar_class = navbar_class ~ page.header.navbar_classes %}
 
 {% endspaceless %}
 {% if navbar.container=="navbar" %}
@@ -12,11 +13,9 @@
         <nav class="{{ navbar_class }} {{navbar.classes}}" 
             style="background-color: {{ navbar.bgcolor!="#ffffff" ? navbar.bgcolor : '' }};" 
             role="navigation">
-        {% if navbar.container=="links" %}
-            <div class="container">
-        {% else %}
-            <div class="container-fluid">
-        {% endif %}
+{% if navbar.container=="links" %}
+    <div class="container">
+{% endif %}
                 <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
                     {% if navbar.icon %}
                         {{ media['user://images/icons/'~navbar.icon].resize(navbar.icon_size ?: 36).html()|raw }}

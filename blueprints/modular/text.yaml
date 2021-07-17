@@ -21,13 +21,40 @@ form:
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
         content:
           fields:
+            header.column:
+              type: select
+              label: Column width
+              default: col
+              size: medium
+              options:
+                col: 'Auto (col)'
+                col-1: 'col-1: 1/12'
+                col-2: 'col-2: 1/6'
+                col-3: 'col-3: One-quarter'
+                col-4: 'col-4: One-third'
+                col-5: 'col-5: 5/12'
+                col-6: 'col-6: Half'
+                col-7: 'col-7: 7/12'
+                col-8: 'col-8: Two-thirds'
+                col-9: 'col-9: Three-quarters'
+                col-10: 'col-10: 5/6'
+                col-11: 'col-11: 11/12'
+                col-12: 'col-12: Full'
+
             uploads:
               label: Page Media (first one will be displayed next to your content)
+
             header.image_align:
               type: select
               label: Image position
+              size: medium
               classes: fancy
               default: left
               options:
                 'left': 'Left'
                 'right': 'Right'
+
+            header.custom_classes:
+              type: text
+              label: Custom class
+              size: medium

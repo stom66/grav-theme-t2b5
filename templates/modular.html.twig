@@ -1,13 +1,26 @@
 {% extends 'partials/base.html.twig' %}
 
+{% set has_map = (has_map|default(0)) %}
+
 {% block content %}
     <!-- Start of modular content -->
     <div class="container">
         <div class="row">
             {% for item in page.collection %}
+                {% if item.template() == "modular/map" %}
+                    {% set has_map = 1 %}
+                {% endif %}
                 {{ item.content|raw }}
             {% endfor %}
         </div>
     </div>
     <!-- // End modular content  -->
+
+    {% if has_map > 0 %}
+        {% if theme_var('map.api_key') and theme_var('map.type') == 'google' %}
+            {%  include 'partials/map-google-js.html.twig' %}
+        {% elseif theme_var('map.type') == 'osm' %}
+            {%  include 'partials/map-osm-js.html.twig' %}
+        {% endif %}
+    {% endif %}
 {% endblock %}

@@ -1,7 +1,11 @@
+{% spaceless %}
+
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
 {% set navbar = theme_var('navbar') %}
 {% set footer = theme_var('footer') %}
+
+{% endspaceless %}
 <!DOCTYPE html>
 <html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}" {% if footer.sticky %} class="h-100"{% endif %}>
     <head>
@@ -48,12 +52,6 @@
     {% block footer %}
         {% include 'partials/footer.html.twig' %}
     {% endblock %}
-
-    {% if theme_var('map.api_key') and theme_var('map.type') == 'google' %}
-        {%  include 'partials/map-google-js.html.twig' %}
-    {% elseif theme_var('map.type') == 'osm' %}
-        {%  include 'partials/map-osm-js.html.twig' %}
-    {% endif %}
 
     {% block bottom %}
         {{ assets.js('bottom')|raw }}

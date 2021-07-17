@@ -6,3 +6,17 @@ form:
       import@:
         type: blueprints/jumbotron
         context: theme://
+
+      fields:
+        options:
+          fields:
+            navbar:
+              type: section
+              title: Navbar
+              underline: true
+              fields:
+                header.navbar_classes:
+                  type : text
+                  size : medium
+                  label: Custom navbar classes
+                  info : Any custom classes you wish applied to the navbar element

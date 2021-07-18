@@ -12,12 +12,13 @@
                      "rounded-" ~ j.border_rounding|default(0) %}
 
 {% if j_image %} 
-    {% set style_bg_image = "" %}
+    {% set style_bg_image = "background-image: url('" %}
     {% if j.image_blur > 0 %}
-        {% set style_bg_image = style_bg_image ~ "background-image: url('" ~ j_image.gaussianBlur(j.image_blur).url ~ "');" %}
+        {% set style_bg_image = style_bg_image ~ j_image.gaussianBlur(j.image_blur|default(0)).url %}
     {% else %}
-        {% set style_bg_image = style_bg_image ~ "background-image: url('" ~ j_image.url ~ "');" %}
+        {% set style_bg_image = style_bg_image ~ j_image.url %}
     {% endif %}
+    {% set style_bg_image = style_bg_image ~ "'); " %}
     
     {% if j.image_align %}
         {% set style_bg_image = style_bg_image ~ "background-position: " ~ j.image_align|join(' ')|replace({'2':''}) ~ ";" %}

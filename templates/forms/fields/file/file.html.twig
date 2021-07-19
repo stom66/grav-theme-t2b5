@@ -4,7 +4,7 @@
 {% set row_margin  = form.row_margin|default("mb-3") %}
 
 <div class="row {{ row_margin }}">
-    <label class="col-form-label col-sm-{{ label_width }}">
+    <label class="form-label col-sm-{{ label_width }}">
         {% if field.help %}
             <span class="d-inline-block" data-bs-toggle="tooltip" title="{{ field.help|e }}">
                 {{ field.label|default(field.name|capitalize)|t }}
@@ -12,21 +12,14 @@
         {% else %}
             {{ field.label|default(field.name|capitalize)|t }}
         {% endif %}
-
+        
         {{ field.validate.required in ['on', 'true', 1] ? '<span class="required">*</span>' }}
     </label>
     <div class="col-sm-{{ input_width }}">
-        <select class="form-select rounded-{{ form.rounded|default(0) }}" 
-                name="{{ (scope ~ field.name)|fieldName }}"
-                {% if field.autofocus in ['on', 'true', 1] %}autofocus="autofocus"{% endif %}
-                {% if field.novalidate in ['on', 'true', 1] %}novalidate="novalidate"{% endif %}
-                {% if field.validate.required in ['on', 'true', 1] %}required="required"{% endif %}
-                >
-            {% for key, text in field.options %}
-            <option {% if key == value %}selected="selected"{% endif %} value="{{ key }}">
-                {{ text }}
-            </option>
-            {% endfor %}
-        </select>
+        <input  type  = "file" 
+                class = "form-control"
+                name  = "{{ (scope ~ field.name)|fieldName }}" 
+                value = "" 
+            />
     </div>
 </div>

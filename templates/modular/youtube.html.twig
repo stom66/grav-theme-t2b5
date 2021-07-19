@@ -1,12 +1,18 @@
-<article class="section-youtube {{ page.header.column }}">
-    {% if page.header.icon %}<span class="heading-icon"><i class="fas fa-{{ page.header.icon }}"></i></span>{% endif %}
-    {% if page.header.showtitle == 1 %}<h2 class="heading">{{ page.header.title }}</h2>{% endif %}
-    <div class="embed-responsive {{ header.responsive }} {% if page.header.showtitle == 2 %}title-placeholder{% endif %}">
-        <iframe class="youtube-iframe" width="100%"
-                src="https://www.youtube.com/embed/{{ page.header.youtube }}"
-                frameborder="0"
-                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+<div class="{{ page.header.column }}">
+    {% if page.header.icon %}
+        <span class="heading-icon"><i class="fas fa-{{ page.header.icon }}"></i></span>
+    {% endif %}
+    {% if page.header.showtitle == 1 %}
+        <h2 class="heading">{{ page.header.title }}</h2>
+    {% endif %}
+
+    <div class="ratio ratio-{{ header.ratio }}">
+        <iframe class       = "youtube-iframe" 
+                width       = "100%"
+                src         = "https://www.youtube.com/embed/{{ page.header.youtube }}"
+                frameborder = "0"
+                allow       = "accelerometer; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
         </iframe>
     </div>
-</article>
+</div>

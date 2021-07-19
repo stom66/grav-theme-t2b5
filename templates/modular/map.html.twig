@@ -10,11 +10,11 @@
         <h1>You must specify an API key in the theme config to use Google Maps</h1>
     {% else %}
     {# For debugging map issues:
-    <!-- 
-        markercolor: {{ map.markercolor }}
-        color: {{ color|join(" ") }} 
-        height: {{ icon.height }}
-    -->
+        <!-- 
+            markercolor: {{ map.markercolor }}
+            color: {{ color|join(" ") }} 
+            height: {{ icon.height }}
+        -->
     #}
         <div class          = "js-map {{ page.header.custom_classes }}" 
             {% if theme_var('map.type') == 'google' %} 

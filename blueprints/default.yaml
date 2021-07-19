@@ -1,4 +1,4 @@
-title: Single Column
+title: Default Single Column
 '@extends': default
 form:
   fields:

@@ -37,17 +37,18 @@ To configure your site to use T2B5 you will need to do the following:
 
 ### Dependencies
 
-The T2B5 theme depends on the following plugins. If you install via GPM, you should be prompted to also install these plugins. 
+The T2B5 theme depends on a number of plugins. If you install via GPM you should be prompted to also install them. 
 
-* [Error](https://github.com/getgrav/grav-theme-error) 
-* [Problems](https://github.com/getgrav/grav-plugin-problems)
-* [Sitemap](https://github.com/getgrav/grav-plugin-sitemap)
+If you were not prompted to install these automatically you can install them via the terminal with the following command:
 
-If you were not prompted to install these automatically you can install them via the terminal with the following commands:
+    bin/grav install
 
-    bin/gpm install error
-    bin/gpm install problems
-    bin/gpm install sitemap
+
+### Post-install steps
+
+Some additional steps you can take after installing the theme to get the most from it:
+
+* Add `Sitemap: https://example.com/my_sitemap.xml` to your `robots.txt` file
 
 ---
 
@@ -86,6 +87,8 @@ To enable support for ICO files in the theme configuration page add the followin
     mime: image/x-icon
     image: null
 ```
+
+---
 
 ### manifest.json and browserconfig.xml
 

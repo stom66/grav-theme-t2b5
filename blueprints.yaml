@@ -140,7 +140,7 @@ form:
         type: map
         context: themes://t2b5/blueprints/theme
 
-    fieldset10:
+    fieldset11:
       type: fieldset
       title: Analytics settings
       icon: line-chart

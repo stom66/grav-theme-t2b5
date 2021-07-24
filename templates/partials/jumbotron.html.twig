@@ -21,7 +21,7 @@
     {% set style_bg_image = style_bg_image ~ "'); " %}
     
     {% if j.image_align %}
-        {% set style_bg_image = style_bg_image ~ "background-position: " ~ j.image_align|join(' ')|replace({'2':''}) ~ ";" %}
+        {% set style_bg_image = style_bg_image ~ "background-size: cover; background-position: " ~ j.image_align|join(' ')|replace({'2':''}) ~ ";" %}
     {% endif %}
 {% endif %}
 

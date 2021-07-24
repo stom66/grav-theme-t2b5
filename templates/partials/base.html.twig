@@ -15,6 +15,10 @@
             {% include 'meta/css.html.twig' %}
 
             {% include 'meta/js.html.twig' %}
+
+            {% if theme_config.ganalytics.enabled == 1 %}
+                {% include 'meta/analytics-google.html.twig' %}
+            {% endif %}
         {% endblock head %}
 
         {% block assets deferred %}

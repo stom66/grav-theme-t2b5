@@ -40,20 +40,22 @@ form:
                         header.column:
                           type: select
                           label: Col Width
+                          default: col
                           options:
                             col: 'Auto (col)'
-                            col-1: '1/12 (col-1)'
-                            col-2: '1/6 (col-2)'
-                            col-3: 'One-quarter (col-3)'
-                            col-4: 'One-third (col-4)'
-                            col-5: '5/12 (col-5)'
-                            col-6: 'Half (col-6)'
-                            col-7: '7/12 (col-7)'
-                            col-8: 'Two-thirds (col-8)'
-                            col-9: 'Three-quarters (col-9)'
-                            col-10: '5/6 (col-10)'
-                            col-11: '11/12 (col-11)'
-                            col-12: 'Full (col-12)'
+                            col-1: 'col-1: 1/12'
+                            col-2: 'col-2: 1/6'
+                            col-3: 'col-3: One-quarter'
+                            col-4: 'col-4: One-third'
+                            col-5: 'col-5: 5/12'
+                            col-6: 'col-6: Half'
+                            col-7: 'col-7: 7/12'
+                            col-8: 'col-8: Two-thirds'
+                            col-9: 'col-9: Three-quarters'
+                            col-10: 'col-10: 5/6'
+                            col-11: 'col-11: 11/12'
+                            col-12: 'col-12: Full'
+
                         header.showtitle:
                           type: select
                           label: Show title?
@@ -62,13 +64,14 @@ form:
                           options:
                             0: "No"
                             1: "Yes"
-                            2: "Only placeholder"
-                        header.responsive:
+
+                        header.ratio:
                           type: select
                           label: Aspect ratio
+                          default: 1x1
                           options:
-                            embed-responsive-21by9: "21:9"
-                            embed-responsive-16by9: "16:9"
-                            embed-responsive-4by3: "4:3"
-                            embed-responsive-1by1: "1:1"
+                            1x1: "1:1"
+                            4x3: "4:3"
+                            16x9: "16:9"
+                            21x9: "21:9"
 

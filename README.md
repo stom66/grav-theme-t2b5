@@ -48,7 +48,7 @@ If you were not prompted to install these automatically you can install them via
 
 Some additional steps you can take after installing the theme to get the most from it:
 
-* Add `Sitemap: https://example.com/my_sitemap.xml` to your `robots.txt` file
+* Add `Sitemap: https://example.com/sitemap.xml` to your `robots.txt` file
 
 ---
 

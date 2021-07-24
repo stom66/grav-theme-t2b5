@@ -1,21 +1,21 @@
-name: T2b5
+name: T2B5
 slug: t2b5
 type: theme
 version: 0.1.0
-description: TomSquared Bootstrap Theme
+description: TomSquared Bootstrap 5 Theme
 icon: rebel
 author:
   name: stom
-  email: tomsteventon@gmail.com
-homepage: https://github.com/stom66/grav-t2b5
-demo: http://demo.yoursite.com
-keywords: grav, theme, etc
-bugs: https://github.com/stom66/grav-t2b5/issues
-readme: https://github.com/stom66/grav-t2b5/blob/main/README.md
+  email: stom@tomsquared.co.uk
+homepage: https://github.com/stom66/grav-theme-t2b5
+demo: https://grav.tomsquared.co.uk
+keywords: grav, theme, bootstrap, bootswatch, fontawesome, animate.css, hover.css
+bugs: https://github.com/stom66/grav-theme-t2b5/issues
+readme: https://github.com/stom66/grav-theme-t2b5/blob/main/README.md
 license: MIT
 
 dependencies:
-  - { name: grav, version: '>=1.6.0' }
+  - { name: grav, version: '>=1.7.0' }
 
 form:
   validation: loose
@@ -138,5 +138,17 @@ form:
       collapsed: true
       import@:
         type: map
+        context: themes://t2b5/blueprints/theme
+
+    fieldset10:
+      type: fieldset
+      title: Analytics settings
+      icon: line-chart
+      info: Enable Google Analytics
+      help: You will need a valid stream measurement ID to enable analytics.
+      collapsible: true
+      collapsed: true
+      import@:
+        type: analytics
         context: themes://t2b5/blueprints/theme
 

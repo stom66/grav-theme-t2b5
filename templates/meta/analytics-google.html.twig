@@ -1,0 +1,18 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set id           = theme_config.ganalytics.id %}
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ id }}');
+</script>
+
+{% block javascripts %}
+    {% do assets.add('https://www.googletagmanager.com/gtag/js?id='~id, {
+        crossorigin: "anonymous",
+        priority: 80,
+        async: true,
+    }) %}
+{% endblock %}

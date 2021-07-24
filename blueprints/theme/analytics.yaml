@@ -1,0 +1,16 @@
+form:
+  fields:
+    ganalytics.enabled:
+      type: toggle
+      label: Use Google Analytics
+      highlight: 1
+      default: 0
+      options:
+        0: Disabled
+        1: Enabled
+      
+    ganalytics.id:
+      type: text
+      label: Measurement ID
+      info: This is the site measurement ID, in the format G-XXXXXXXXXX
+      size: medium

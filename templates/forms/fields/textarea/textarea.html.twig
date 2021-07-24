@@ -18,8 +18,6 @@
     <div class="col-sm-{{ input_width }}">
         <textarea rows  = "5" 
                   class = "form-control rounded-{{ form.rounded|default(0) }}" 
-                  name  = "{{ (scope ~ field.name)|fieldName }}">
-            {{ value|join("\n") }}
-        </textarea>
+                  name  = "{{ (scope ~ field.name)|fieldName }}">{{ value|join("\n") }}</textarea>
     </div>
 </div>

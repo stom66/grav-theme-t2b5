@@ -140,3 +140,15 @@ form:
         type: map
         context: themes://t2b5/blueprints/theme
 
+    fieldset10:
+      type: fieldset
+      title: Analytics settings
+      icon: line-chart
+      info: Enable Google Analytics
+      help: You will need a valid stream measurement ID to enable analytics.
+      collapsible: true
+      collapsed: true
+      import@:
+        type: analytics
+        context: themes://t2b5/blueprints/theme
+

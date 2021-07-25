@@ -6,26 +6,25 @@
 
 		{% if theme_config.cdn_jquery_js %}
 			{% do assets.add('https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js', {
-				integrity: "sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==",
+				integrity  : "sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==",
 				crossorigin: "anonymous",
-				priority: 100
+				priority   : 100
 			}) %}
 		{% endif %}
 
 		{% if theme_config.cdn_bootstrap_js %}
 			{% do assets.add('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', {
-				integrity: "sha512-72WD92hLs7T5FAXn3vkNZflWG6pglUDDpm87TeQmfSg8KnrymL2G30R7as4FmTwhgu9H7eSzDCX3mjitSecKnw==",
+				integrity  : "sha512-72WD92hLs7T5FAXn3vkNZflWG6pglUDDpm87TeQmfSg8KnrymL2G30R7as4FmTwhgu9H7eSzDCX3mjitSecKnw==",
 				crossorigin: "anonymous",
-				priority: 90
+				priority   : 90
 			}) %}
 		{% endif %}
 
 		{% if ga.enabled %}
 			{% do assets.add(
 				"https://www.google-analytics.com/analytics.js", {
+					async   : "true"
 					priority: 80,
-					crossorigin: "anonymous",
-					referrerpolicy: "no-referrer",
 				}) %}
 		{% endif %}
 
@@ -36,12 +35,11 @@
 	{% endspaceless %}
 
 	{% if g_enabled %}
-		<!-- Global site tag (gtag.js) - Google Analytics - {{ ga.id }} -->
+		<!-- Google Analytics - {{ ga.id }} -->
 			<script>
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-				gtag('config', '{{ ga.id }}');
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', '{{ ga.id }}', 'auto');
+				ga('send', 'pageview');
 			</script>
 	{% endif %}
 

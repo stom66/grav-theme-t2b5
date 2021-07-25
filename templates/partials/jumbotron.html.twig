@@ -5,11 +5,18 @@
 {% set j_content = j.content ?: page.header.jumbotron.content %}
 {% set j_image   = page.header.jumbotron.image ? page.media[page.header.jumbotron.image] %}
 
-{% set outer_class = j.bg_class|default("bg-light") ~ " " ~
+{% set inner_class = j.bg_class|default("bg-light") ~ " " ~
                      j.text_class|default("text-dark ") ~ " " ~
                      j.padding|join(" ")|default("p-3 ") ~ " " ~
                      j.margin|join(" ")|default("mv-3 ") ~ " " ~
                      "rounded-" ~ j.border_rounding|default(0) %}
+
+{% set inner_style = "" %}
+    {% if j.min_height > 0 %} 
+        {% set inner_style = inner_style ~ "min-height: " ~ j.min_height ~ "em; " %}
+    {% endif %}
+
+    {% set inner_style = inner_style ~ j.style %}
 
 {% if j_image %} 
     {% set style_bg_image = "background-image: url('" %}
@@ -25,13 +32,6 @@
     {% endif %}
 {% endif %}
 
-{% set inner_style = "" %}
-    {% if j.min_height > 0 %} 
-        {% set inner_style = inner_style ~ "min-height: " ~ j.min_height ~ "em; " %}
-    {% endif %}
-
-    {% set inner_style = inner_style ~ j.style %}
-
 {% endspaceless %}
 
 {% if j.container != "none" %}
@@ -39,7 +39,7 @@
     <div class="row">
 {% endif %}
         <div class="{{ j.classes|default("col") }}">
-            <div style="{{ inner_style }} {{ style_bg_image }}" class="{{ outer_class }}">
+            <div style="{{ inner_style }} {{ style_bg_image }}" class="{{ inner_class }}">
                 {% if j.constrain_content == 1 and j.container != "none" and j.container != "container" %}
                     <div class="container">
                         <div class="col">

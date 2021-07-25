@@ -5,6 +5,7 @@
 {% set navbar_class = navbar_class ~ (navbar.expand=='none'? '' : navbar.expand ~ " ") %}
 {% set navbar_class = navbar_class ~ (navbar.bgcolor=="#ffffff" ? navbar.bgstyle ~ " " : '') %}
 {% set navbar_class = navbar_class ~ page.header.navbar_classes %}
+{% set navbar_icon  = page.header.navbar_icon ?: navbar.icon %}
 
 {% endspaceless %}
 {% if navbar.container=="navbar" %}
@@ -17,8 +18,8 @@
     <div class="container">
 {% endif %}
                 <a class="navbar-brand" href="{{ base_url == '' ? '/' : base_url }}">
-                    {% if navbar.icon %}
-                        {{ media['user://images/icons/'~navbar.icon].resize(navbar.icon_size ?: 36).html()|raw }}
+                    {% if navbar_icon %}
+                        {{ media['user://images/icons/'~navbar_icon].resize(navbar.icon_size ?: 36).html()|raw }}
                     {% endif %}
 
                     {% if navbar.show_title_in_navbar %}

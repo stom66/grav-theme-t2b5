@@ -22,7 +22,7 @@ The recommended way to use the theme is by starting with the [grav-skeleton-t2b5
 
 To add the theme to an existing site first clone the repository into your `/user/themes` folder:
 
-	git clone https://github.com/stom66/grav-t2b5 /path/to/grav/user/themes/t2b5
+	git clone https://github.com/stom66/grav-theme-t2b5 /path/to/grav/user/themes/t2b5
 
 To configure your site to use T2B5 you will need to do the following:
 

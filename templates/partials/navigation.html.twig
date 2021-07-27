@@ -26,17 +26,17 @@
                         {{ site.title|e('html') }}
                     {% endif %}
                 </a>
-                <button type      = "button" 
-                    class         = "navbar-toggler" 
-                    data-toggle   = "collapse" 
-                    data-target   = ".navbar-collapse" 
-                    aria-controls = "navbarSupportedContent" 
-                    aria-expanded = "false" 
-                    aria-label    = "Toggle navigation">
-                    <span class   = "navbar-toggler-icon"></span>
+                <button type       = "button" 
+                    class          = "navbar-toggler"                     
+                    data-bs-toggle = "collapse" 
+                    data-bs-target = "#top-navbar" 
+                    aria-controls  = "top-navbar" 
+                    aria-expanded  = "false" 
+                    aria-label     = "Toggle navigation">
+                    <span class    = "navbar-toggler-icon"></span>
                 </button>
 
-                <div class="navbar-collapse collapse justify-content-end">
+                <div class="navbar-collapse collapse justify-content-end" id="top-navbar">
                     <ul class="navbar-nav">
                 {% for page in pages.children.visible %}
 

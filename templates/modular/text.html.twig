@@ -1,6 +1,6 @@
 {% set image = page.media.images|first %}
 
-<div class="{{ header.column|default('col') }} {{ header.custom_classes }}">
+<div class="{{ header.column|default('col') }} {{ header.custom_classes|join(" ") }}">
     {% if image %}
         {{ image.cropResize(400, 400).html('', '', 'd-block rounded float-md-' ~ page.header.image_align)|raw }}
     {% endif %}

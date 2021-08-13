@@ -2,7 +2,7 @@
 {% spaceless %}
 
 {% set j         = page.header.jumbotron %}
-{% set j_content = j.content ?: page.header.jumbotron.content %}
+{% set j_content = j.content ?: page.header.jumbotron.content ?: page.content %}
 {% set j_image   = page.header.jumbotron.image ? page.media[page.header.jumbotron.image] %}
 
 {% set inner_class = j.bg_class|default("bg-light") ~ " " ~

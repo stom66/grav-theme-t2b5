@@ -5,6 +5,11 @@
 {% set navbar = theme_var('navbar') %}
 {% set footer = theme_var('footer') %}
 
+{% set body_classes = page.header.body_classes %}
+{% if footer.sticky %}
+    {% set body_classes = body_classes ~ "d-flex flex-column h-100" %}
+{% endif %} 
+
 {% endspaceless %}
 <!DOCTYPE html>
 <html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}" {% if footer.sticky %} class="h-100"{% endif %}>
@@ -25,23 +30,13 @@
 
     <!-- Neck -->
 
-    <body class="
-        {% block body_classes %}
-            {{ page.header.body_classes }}
-            {% if footer.sticky %} 
-                d-flex flex-column h-100
-            {% endif %} 
-        {% endblock %}" 
-        {% if navbar.body_top_padding > 0 %}
+    <body class="{{ body_classes }}" {% if navbar.body_top_padding > 0 %}
             style="padding-top: {{ navbar.body_top_padding }}em !important"
-        {% endif %}
-    >
+        {% endif %}>
 
     {% block header_navigation %}
         {% include 'partials/navigation.html.twig' %}
     {% endblock %}
-
-    {% block jumbotron %}{% endblock %}
 
     {% block body %}
         <section id="body">
@@ -54,7 +49,7 @@
     {% endblock %}
 
     {% block bottom %}
-        {{ assets.js('bottom')|raw }}
+        {% include 'partials/bottom.html.twig' %}
     {% endblock %}
 
     </body>

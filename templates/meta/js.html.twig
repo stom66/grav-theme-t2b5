@@ -20,6 +20,14 @@
 			}) %}
 		{% endif %}
 
+		{% if theme_config.cdn_glightbox_js %}
+			{% do assets.add('https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js', {
+				integrity  : "sha512-3Utz4EP/+ewNwWYDuxkKvKVywlSUmW5+1+nheZ9meCFrirHVVqvYyUfrY5os5blrQoLunCfvbRJySMz/pk93vA==",
+				crossorigin: "anonymous",
+				priority   : 80
+			}) %}
+		{% endif %}
+
 		{% if ga.enabled %}
 			{% do assets.add(
 				"https://www.google-analytics.com/analytics.js", {
@@ -33,14 +41,5 @@
 		}) %}
 
 	{% endspaceless %}
-
-	{% if g_enabled %}
-		<!-- Google Analytics - {{ ga.id }} -->
-			<script>
-				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-				ga('create', '{{ ga.id }}', 'auto');
-				ga('send', 'pageview');
-			</script>
-	{% endif %}
 
 {% endblock %}

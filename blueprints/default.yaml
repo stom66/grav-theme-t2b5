@@ -3,10 +3,6 @@ title: Default Single Column
 form:
   fields:
     tabs:
-      import@:
-        type: blueprints/jumbotron
-        context: theme://
-
       fields:
         options:
           fields:

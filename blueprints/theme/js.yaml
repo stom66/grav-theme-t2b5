@@ -18,3 +18,12 @@ form:
       options:
         0: Disabled
         1: Enabled
+
+    cdn_glightbox_js:
+      type: toggle
+      label: Include GLightbox JS from CDN
+      highlight: 1
+      default: 1
+      options:
+        0: Disabled
+        1: Enabled

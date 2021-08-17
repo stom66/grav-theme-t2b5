@@ -1,8 +1,38 @@
+{% spaceless %}
+
+{% set block_class = header.block.column|default('col')|join(" ") ~
+       " rounded-" ~ header.block.rounding|default("default") ~
+               " " ~ header.block.bg_class ~
+               " " ~ header.block.padding|join(" ") ~
+               " " ~ header.block.margin|join(" ") ~
+               " " ~ header.text_color ~
+               " " ~ header.text_size ~
+               " " ~ header.text_style ~
+               " " ~ header.block.custom_classes 
+               %}
+
 {% set image = page.media.images|first %}
 
-<div class="{{ header.column|default('col') }} {{ header.custom_classes }}">
-    {% if image %}
-        {{ image.cropResize(400, 400).html('', '', 'd-block rounded float-md-' ~ page.header.image_align)|raw }}
+{% set image_classes = header.image.size|default("img-fluid") ~
+         " rounded-" ~ header.image.rounding|default("0") ~
+                 " " ~ header.image.align|default("float-none")|join(" ") ~
+                 " " ~ header.image.custom_classes
+                %}
+
+{% endspaceless %}
+
+<div class="{{ block_class }}">
+
+    {% if image %}  
+        {% if header.image.lightbox_enabled == 1 %}
+            <a href="{{ image.url }}" class="glightbox">
+        {% endif %}    
+        
+        {{ image.html('', '', image_classes)|raw }}
+        
+        {% if header.image.lightbox_enabled == 1 %}
+            </a>
+        {% endif %}    
     {% endif %}
 
     {{ page.content|raw }}

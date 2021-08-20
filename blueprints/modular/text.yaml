@@ -31,9 +31,36 @@ form:
                 column1:
                   type: column
                   import@:
-                    type: blueprints/modular/block_styles
+                    type: blueprints/common/container_styles
                     context: theme://
-
+                column2:
+                  type: column
+                  import@:
+                    type: blueprints/common/text_styles
+                    context: theme://
+            row2:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  import@:
+                    type: blueprints/common/row_styles
+                    context: theme://
+                column2:
+                  type: column
+                  fields:
+                    blank:
+                      type: section
+                      title: 
+                      underline: true
+            row3:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  import@:
+                    type: blueprints/common/block_styles
+                    context: theme://
                 column2:
                   type: column
                   fields:
@@ -112,21 +139,5 @@ form:
                             1: Enabled
                           validate: bool
                           info: Enable/disable the lightbox
-
-            row2:
-              type: columns
-              fields:
-                column1:
-                  type: column
-                  import@:
-                    type: blueprints/modular/text_styles
-                    context: theme://
-                column2:
-                  type: column
-                  fields:
-                    section:
-                      type: section
-                      title: 
-                      fields:
                         
                         

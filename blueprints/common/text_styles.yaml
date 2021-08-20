@@ -6,7 +6,7 @@ form:
       underline: true
       fields:
 
-        header.text_color:
+        header.text.color:
           type   : select
           label  : Text color
           size   : medium
@@ -27,7 +27,7 @@ form:
             text-black-50 : Black-50
             text-white-50 : White-50
 
-        header.text_size:
+        header.text.size:
           type   : select
           label  : Text size
           size   : medium
@@ -41,7 +41,7 @@ form:
             fs-5   : Size 5
             fs-6   : Size 6
 
-        header.text_style:
+        header.text.style:
           type   : select
           label  : Text style
           size   : medium
@@ -58,3 +58,13 @@ form:
             fw-lighter: Lighter weight text
             fst-italic: Italic text
             fst-normal: Normal
+        
+        header.text.alignment:
+          type   : select
+          label  : Text alignment
+          size   : medium
+          default: default
+          options:
+            text-start : text-start
+            text-center: text-center
+            text-end   : text-end

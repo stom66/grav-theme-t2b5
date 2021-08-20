@@ -30,7 +30,7 @@ form:
 
             uploads:
               label: Background image (first one will be displayed next to your content)
-
+           
         styles:
           type: tab
           title: Styles
@@ -41,246 +41,119 @@ form:
               fields:
                 column1:
                   type: column
+                  import@:
+                    type: blueprints/common/container_styles
+                    context: theme://
+                column2:
+                  type: column
+                  import@:
+                    type: blueprints/common/row_styles
+                    context: theme://
+            row2:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  import@:
+                    type: blueprints/common/block_styles
+                    context: theme://
+                column2:
+                  type: column
+                  import@:
+                    type: blueprints/common/text_styles
+                    context: theme://
+
+            row3:
+              type: columns
+              fields:
+                column1:
+                  type: column
                   fields:
+                    section:
+                      type: section
+                      title: Jumbotron settings
+                      underline: true
+                      fields:
 
-                    header.jumbotron.container:
-                      type   : select
-                      label  : Container
-                      help   : You can change the jumbotrons overall width, to fill the whole screen or clamp to the columns
-                      size   : large
-                      default: none
-                      options:
-                        none           : None (default)
-                        container      : Container
-                        container-fluid: Container-fluid
-                        container-fluid px-0: Container-fluid (no-padding)
+                        header.jumbotron.constrain_content:
+                          type     : toggle
+                          label    : Constrain content
+                          highlight: 1
+                          default  : 0
+                          options  : 
+                            0: Disabled
+                            1: Enabled
+                          validate: bool
+                          help: Limit the width of the content when it's in a container-fluid
 
-                    header.jumbotron.constrain_content:
-                      type     : toggle
-                      label    : Constrain content
-                      highlight: 1
-                      default  : 0
-                      options  : 
-                        0: Disabled
-                        1: Enabled
-                      validate: bool
-                      help: Limit the width of the content when it's in a container-fluid
+                        header.jumbotron.style:
+                          type : text
+                          label: Custom style
+                          help : "Add custom css rules here. Do not add 'style=' or quotes, these are added automatically. Example:   margin-top: -10em;"
+                          
+                        column:
+                          type: columns
+                          fields:
+                            column1:
+                              type: column
+                              fields:
+                                header.jumbotron.min_height:
+                                  type    : text
+                                  label   : Minimum height (em)
+                                  help    : Set the minimum height for the Jumbotron, best when using background images
+                                  size    : medium
+                                  default : 0
+                                  validate: 
+                                    type: number
+                                    min: 0
 
-                    header.jumbotron.classes:
-                      type: text
-                      label: Custom classes
-                      help: Add custom CSS classes here, such as Bootstrap classes
-
-                    header.jumbotron.style:
-                      type : text
-                      label: Custom style
-                      help : "Add custom css rules here. Do not add 'style=' or quotes, these are added automatically. Example:   margin-top: -10em;"
-
-                    header.jumbotron.text_class:
-                      type   : select
-                      label  : Text color
-                      size   : large
-                      default: text-light
-                      options:
-                        text-dark       : Dark
-                        text-light      : Light
-                        text-primary    : Primary
-                        text-secondary  : Secondary
-                        text-success    : Success
-                        text-danger     : Danger
-                        text-warning    : Warning
-                        text-info       : Info
-                        text-white      : White
-
-                    header.jumbotron.border_rounding:
-                      type    : range
-                      label   : Border rounding strength
-                      default : 0
-                      size    : x-large
-                      validate: 
-                        min: 0
-                        max: 3
+                            column2:
+                              type: column
+                              fields:                        
+                                header.jumbotron.min_height_units:
+                                  type   : select
+                                  size   : medium
+                                  options: 
+                                    em: em
+                                    px: px
+                                    vh: vh
 
                 column2:
                   type: column
                   fields:
-                    header.jumbotron.padding:
-                      type    : select
-                      label   : Padding
-                      size    : large
-                      default : p-3
-                      multiple: true
-                      validate: 
-                        type: array
-                      options:
-                        p-0: All 0
-                        p-1: All 1
-                        p-2: All 2
-                        p-3: All 3
-                        p-4: All 4
-                        p-5: All 5
-                        px-0: Horizontal 0
-                        px-1: Horizontal 1
-                        px-2: Horizontal 2
-                        px-3: Horizontal 3
-                        px-4: Horizontal 4
-                        px-5: Horizontal 5
-                        py-0: Vertical 0
-                        py-1: Vertical 1
-                        py-2: Vertical 2
-                        py-3: Vertical 3
-                        py-4: Vertical 4
-                        py-5: Vertical 5
-                        pt-0: Top 0
-                        pt-1: Top 1
-                        pt-2: Top 2
-                        pt-3: Top 3
-                        pt-4: Top 4
-                        pt-5: Top 5
-                        pl-0: Left 0
-                        pl-1: Left 1
-                        pl-2: Left 2
-                        pl-3: Left 3
-                        pl-4: Left 4
-                        pl-5: Left 5
-                        pb-0: Bottom 0
-                        pb-1: Bottom 1
-                        pb-2: Bottom 2
-                        pb-3: Bottom 3
-                        pb-4: Bottom 4
-                        pb-5: Bottom 5
-                        pr-0: Right 0
-                        pr-1: Right 1
-                        pr-2: Right 2
-                        pr-3: Right 3
-                        pr-4: Right 4
-                        pr-5: Right 5
-
-                    header.jumbotron.margin:
-                      type    : select
-                      label   : Margins
-                      size    : large
-                      default : my-3
-                      multiple: true
-                      validate: 
-                        type: array
-                      options:
-                        m-0: All 0
-                        m-1: All 1
-                        m-2: All 2
-                        m-3: All 3
-                        m-4: All 4
-                        m-5: All 5
-                        mx-auto: Horizontal auto
-                        mx-0: Horizontal 0
-                        mx-1: Horizontal 1
-                        mx-2: Horizontal 2
-                        mx-3: Horizontal 3
-                        mx-4: Horizontal 4
-                        mx-5: Horizontal 5
-                        my-auto: Vertical auto
-                        my-0: Vertical 0
-                        my-1: Vertical 1
-                        my-2: Vertical 2
-                        my-3: Vertical 3
-                        my-4: Vertical 4
-                        my-5: Vertical 5
-                        mt-0: Top 0
-                        mt-1: Top 1
-                        mt-2: Top 2
-                        mt-3: Top 3
-                        mt-4: Top 4
-                        mt-5: Top 5
-                        ml-0: Left 0
-                        ml-1: Left 1
-                        ml-2: Left 2
-                        ml-3: Left 3
-                        ml-4: Left 4
-                        ml-5: Left 5
-                        mb-0: Bottom 0
-                        mb-1: Bottom 1
-                        mb-2: Bottom 2
-                        mb-3: Bottom 3
-                        mb-4: Bottom 4
-                        mb-5: Bottom 5
-                        mr-0: Right 0
-                        mr-1: Right 1
-                        mr-2: Right 2
-                        mr-3: Right 3
-                        mr-4: Right 4
-                        mr-5: Right 5
-                      
-                    columns:
-                      type: columns
+                    section:
+                      type: section
+                      title: Jumbotron image
+                      underline: true
                       fields:
-                        column1:
-                          type: column
-                          fields:
-                            header.jumbotron.min_height:
-                              type    : text
-                              label   : Minimum height (em)
-                              help    : Set the minimum height for the Jumbotron, best when using background images
-                              size    : medium
-                              default : 0
-                              validate: 
-                                type: number
-                                min: 0
 
-                        column2:
-                          type: column
-                          fields:                        
-                            header.jumbotron.min_height_units:
-                              type   : select
-                              size   : medium
-                              options: 
-                                em: em
-                                px: px
-                                vh: vh
+                        header.jumbotron.image:
+                          type          : pagemediaselect
+                          label         : Background image
+                          preview_images: true
 
-                    header.jumbotron.bg_class:
-                      type   : select
-                      label  : Background color
-                      size   : large
-                      default: bg-light
-                      options:
-                        bg-light      : Light
-                        bg-dark       : Dark
-                        bg-primary    : Primary
-                        bg-secondary  : Secondary
-                        bg-success    : Success
-                        bg-danger     : Danger
-                        bg-warning    : Warning
-                        bg-info       : Info
-                        bg-white      : White
-                        bg-transparent: Transparent
-
-                    header.jumbotron.image:
-                      type          : pagemediaselect
-                      label         : Background image
-                      preview_images: true
-
-                    header.jumbotron.image_align:
-                      type    : select
-                      label   : Background image alignment
-                      size    : large
-                      default : center2 center
-                      multiple: true
-                      validate: 
-                        type: array
-                      options: 
-                        center2: "Horizontal: Center"
-                        left   : "Horizontal: Left"
-                        right  : "Horizontal: Right"
-                        center : "Vertical: Center"
-                        bottom : "Vertical: Bottom"
-                        top    : "Vertical: Top"
+                        header.jumbotron.image_align:
+                          type    : select
+                          label   : Background image alignment
+                          size    : large
+                          default : center2 center
+                          multiple: true
+                          validate: 
+                            type: array
+                          options: 
+                            center2: "Horizontal: Center"
+                            left   : "Horizontal: Left"
+                            right  : "Horizontal: Right"
+                            center : "Vertical: Center"
+                            bottom : "Vertical: Bottom"
+                            top    : "Vertical: Top"
 
 
-                    header.jumbotron.image_blur:
-                      type    : range
-                      label   : Background blur strength
-                      default : 0
-                      size    : large
-                      validate: 
-                        min: 0
-                        max: 6
+                        header.jumbotron.image_blur:
+                          type    : range
+                          label   : Background blur strength
+                          default : 0
+                          size    : large
+                          validate: 
+                            min: 0
+                            max: 6

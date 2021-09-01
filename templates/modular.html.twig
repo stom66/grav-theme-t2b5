@@ -19,7 +19,7 @@
         {% endif %}
 
         {% if item.first or item.header.container.forcenew == "1" or item.header.row.forcenew == "1"%}
-            <div class="row {{ item.header.container.custom_class }}">
+            <div class="row {{ item.header.row.custom_class }}">
         {% endif %}
 
         {% if item.template() == "modular/map" %}

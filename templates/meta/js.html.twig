@@ -21,8 +21,8 @@
 		{% endif %}
 
 		{% if theme_config.cdn_glightbox_js %}
-			{% do assets.add('https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js', {
-				integrity  : "sha512-JLIsmP1IUyzl+wGzoVNANAxmEsHsNAsKIO54EubaMuK58HI9NNUkGspG1iTdm3oFKBAXBIaqPxzN+nO8q2GicA==",
+			{% do assets.add('https://cdn.jsdelivr.net/npm/glightbox@3.1.0/dist/js/glightbox.min.js', {
+				integrity  : "sha512-DmZ8zx6VrSj+Nvwjg2ONA2LlRCsFyTZh9/rZH75alu+KoSTdjjVSX6z2a9kKiUlwSf6JIxzFjpw2YCyrGWk4nw==",
 				crossorigin: "anonymous",
 				priority   : 80
 			}) %}
@@ -30,7 +30,7 @@
 
 		{% if ga.enabled %}
 			{% do assets.add(
-				"https://www.google-analytics.com/analytics.js", {
+				"https://www.googletagmanager.com/gtag/js?id=" ~ ga.id, {
 					async   : "true",
 					priority: 80
 				}) %}

@@ -1,5 +1,4 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
-{% set ga    = theme_config.ganalytics %}
 
 {% block javascripts %}
 	{% spaceless %}
@@ -28,9 +27,8 @@
 			}) %}
 		{% endif %}
 
-		{% if ga.enabled %}
-			{% do assets.add(
-				"https://www.googletagmanager.com/gtag/js?id=" ~ ga.id, {
+		{% if theme_config.ganalytics.enabled %}
+			{% do assets.addJs("https://www.googletagmanager.com/gtag/js?id=" ~ theme_config.ganalytics.id, {
 					async   : "true",
 					priority: 80
 				}) %}
@@ -41,5 +39,4 @@
 		}) %}
 
 	{% endspaceless %}
-
 {% endblock %}

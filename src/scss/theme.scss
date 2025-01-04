@@ -10,17 +10,17 @@
 
 
 // Custom mixins
-@import "custom/mixins";
+@use "custom/mixins";
 
 // Theme variables
-@import "custom/variables";
+@use "custom/variables";
 
 // Typography settings
-@import "custom/typography";
+@use "custom/typography";
 
 // Bootstrap framework customisation
 // If you're customising the theme then you will want to uncomment the following includes
-//@import "vendor/bootstrap";
+//@use "vendor/bootstrap";
 
 // Additional styles
-@import "custom/styles";
+@use "custom/styles";

@@ -1,11 +1,13 @@
+@use "mixins";
+
 // T2B5 ~ typography.scss 
 // 
 // Make changes to your tyopgraphics settings here. This will affect both CDN and 
 // local implementations of the Bootstrap framework.
 
 // Imports fonts from Google Fonts
-@include google-font("Roboto Condensed");
-@include google-font("Montserrat");
+@include mixins.google-font("Roboto Condensed");
+@include mixins.google-font("Montserrat");
 
 //Set the fonts to vars
 $custom-font-1: 'Roboto Condensed', sans-serif;

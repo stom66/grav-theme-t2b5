@@ -1,9 +1,15 @@
 form:
   fields:
+    section_description:
+      type: display
+      size: large
+      content: "This section allows you to configure the favicons for your website. You should upload an ICO, PNG, *and* SVG version of your favicon to `user/images/icons` for this to function correctly. The "
+      markdown: true
+
     favicon.ico:
       type: filepicker
       size: medium
-      folder: 'user://images/icons'
+      folder: "user://images/icons"
       label: Select an ICO favicon
       preview_images: true
       accept:
@@ -12,7 +18,7 @@ form:
     favicon.png:
       type: filepicker
       size: medium
-      folder: 'user://images/icons'
+      folder: "user://images/icons"
       label: Select a PNG favicon
       preview_images: true
       accept:
@@ -21,7 +27,7 @@ form:
     favicon.svg:
       type: filepicker
       size: medium
-      folder: 'user://images/icons'
+      folder: "user://images/icons"
       label: Select a SVG favicon
       preview_images: true
       accept:
@@ -30,7 +36,7 @@ form:
     favicon.mstile_sq:
       type: filepicker
       size: medium
-      folder: 'user://images/icons'
+      folder: "user://images/icons"
       label: Select a square Microsoft tile icon (558x558)
       preview_images: true
       accept:
@@ -39,7 +45,7 @@ form:
     favicon.mstile_re:
       type: filepicker
       size: medium
-      folder: 'user://images/icons'
+      folder: "user://images/icons"
       label: Select a rectangular Microsoft tile icon (558x270)
       preview_images: true
       accept:

@@ -1,4 +1,4 @@
 // Blank app.js file, is automatically included
-$(function() {
-    console.log("jQuery is loaded!");
-});
+window.onload = function() {
+    console.log("window.onLoad()")
+};

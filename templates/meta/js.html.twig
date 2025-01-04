@@ -1,5 +1,4 @@
 {% set theme_config = attribute(config.themes, config.system.pages.theme) %}
-{% set ga    = theme_config.ganalytics %}
 
 {% block javascripts %}
 	{% spaceless %}
@@ -20,9 +19,16 @@
 			}) %}
 		{% endif %}
 
-		{% if ga.enabled %}
-			{% do assets.add(
-				"https://www.google-analytics.com/analytics.js", {
+		{% if theme_config.cdn_glightbox_js %}
+			{% do assets.add('https://cdn.jsdelivr.net/npm/glightbox@3.1.0/dist/js/glightbox.min.js', {
+				integrity  : "sha512-DmZ8zx6VrSj+Nvwjg2ONA2LlRCsFyTZh9/rZH75alu+KoSTdjjVSX6z2a9kKiUlwSf6JIxzFjpw2YCyrGWk4nw==",
+				crossorigin: "anonymous",
+				priority   : 80
+			}) %}
+		{% endif %}
+
+		{% if theme_config.ganalytics.enabled %}
+			{% do assets.addJs("https://www.googletagmanager.com/gtag/js?id=" ~ theme_config.ganalytics.id, {
 					async   : "true",
 					priority: 80
 				}) %}
@@ -33,14 +39,4 @@
 		}) %}
 
 	{% endspaceless %}
-
-	{% if g_enabled %}
-		<!-- Google Analytics - {{ ga.id }} -->
-			<script>
-				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-				ga('create', '{{ ga.id }}', 'auto');
-				ga('send', 'pageview');
-			</script>
-	{% endif %}
-
 {% endblock %}

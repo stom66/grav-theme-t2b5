@@ -23,7 +23,7 @@
     		'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css', {
     			integrity: "sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==",
     			crossorigin: "anonymous",
-    			priority: 160
+    			priority: 120
     		}) %}
     {% endif %}
 
@@ -32,7 +32,7 @@
     		'https://cdn.jsdelivr.net/npm/hover.css@2.3.2/css/hover-min.css', {
     			integrity: "sha512-kgHKwbUlBXhqMvBwg4+1f+Q5M33UGrsETCUTjuwzSFdb6pU0/bCeJYEG0NOSB+g4KKsNAGT+qfteiHmcUxZxoA==",
     			crossorigin: "anonymous",
-    			priority: 180
+    			priority: 100
     		}) %}
     {% endif %}
 
@@ -41,7 +41,16 @@
     		'https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css', {
     			integrity: "sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==",
     			crossorigin: "anonymous",
-    			priority: 200
+    			priority: 80
+    		}) %}
+    {% endif %}
+
+	{% if theme_config.cdn_glightbox_css %}
+    	{% do assets.add(
+    		'https://cdn.jsdelivr.net/npm/glightbox@3.1.0/dist/css/glightbox.min.css', {
+    			integrity: "sha512-hqfPkFX2vOFJG+MdyKw3ixa66C3rxE2iKwKynl+DXQJc6xj5I421OgpYZvoA9WIRHD0HeDd46IkO+gRfv2KUCw==",
+    			crossorigin: "anonymous",
+    			priority: 60
     		}) %}
     {% endif %}
 

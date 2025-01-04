@@ -4,16 +4,36 @@
 
 {% block content %}
     <!-- Start of modular content -->
-    <div class="container">
-        <div class="row">
-            {% for item in page.collection %}
-                {% if item.template() == "modular/map" %}
-                    {% set has_map = 1 %}
-                {% endif %}
-                {{ item.content|raw }}
-            {% endfor %}
+
+
+    {% for item in page.collection %}
+        {% if not item.first and (item.header.row.forcenew == "1" or item.header.container.forcenew == "1") %}
+            </div>
+        {% endif %}
+        {% if not item.first and item.header.container.forcenew == "1" %}
         </div>
-    </div>
+        {% endif %}
+
+        {% if item.first or item.header.container.forcenew == "1" %}
+            <div class="{{ item.header.container.class|default("container") }} {{ item.header.container.custom_class }}">
+        {% endif %}
+
+        {% if item.first or item.header.container.forcenew == "1" or item.header.row.forcenew == "1"%}
+            <div class="row {{ item.header.row.custom_class }}">
+        {% endif %}
+
+        {% if item.template() == "modular/map" %}
+            {% set has_map = 1 %}
+        {% endif %}
+
+
+            {{ item.content|raw }}
+
+        {% if item.last %}
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
     <!-- // End modular content  -->
 
     {% if has_map > 0 %}

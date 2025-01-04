@@ -3,16 +3,12 @@ title: Default Single Column
 form:
   fields:
     tabs:
-      import@:
-        type: blueprints/jumbotron
-        context: theme://
-
       fields:
         options:
           fields:
             navbar:
               type: section
-              title: Navbar
+              title: Class over-rides
               underline: true
               fields:
                 header.navbar_classes:
@@ -20,3 +16,9 @@ form:
                   size : medium
                   label: Custom navbar classes
                   info : Any custom classes you wish applied to the navbar element
+
+                header.body_classes:
+                  type : text
+                  size : medium
+                  label: Custom body classes
+                  info : Any custom classes you wish applied to the main body element

@@ -1,48 +1,57 @@
 form:
-  fields:
-    section_local:
-      type: section
-      title: "Local assets"
-      underline: true
-      fields:
-        use_minified_js:
-          type: toggle
-          label: Use minified version of app.js
-          highlight: 1
-          default: 1
-          options:
-            0: Disabled
-            1: Enabled
+    fields:
+        section_local:
+            type: section
+            title: "Local assets"
+            underline: true
+            fields:
+                use_minified_js:
+                    type: toggle
+                    label: Use minified version of app.js
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
 
-    section_cdn:
-      type: section
-      title: "CDN"
-      underline: true
-      fields:
-        cdn_jquery_js:
-          type: toggle
-          label: Include jQuery from CDN
-          highlight: 1
-          default: 0
-          options:
-            0: Disabled
-            1: Enabled
+        section_cdn:
+            type: section
+            title: "CDN"
+            underline: true
+            fields:
+                cdn_jquery_js:
+                    type: toggle
+                    label: Include jQuery from CDN
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
 
-        cdn_popper_js:
-          type: toggle
-          label: Include Popper JS from CDN
-          highlight: 1
-          default: 1
-          options:
-            0: Disabled
-            1: Enabled
+                cdn_popper_js:
+                    type: toggle
+                    label: Include Popper JS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
 
-        cdn_bootstrap_js:
-          type: toggle
-          label: Include Bootstrap JS from CDN
-          highlight: 1
-          default: 1
-          help: Bootstrap also requires Popper.js
-          options:
-            0: Disabled
-            1: Enabled
+                cdn_bootstrap_js:
+                    type: toggle
+                    label: Include Bootstrap JS from CDN
+                    highlight: 1
+                    default: 1
+                    help: Bootstrap also requires Popper.js
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_glightbox_js:
+                    type: toggle
+                    label: Include GLightbox JS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled

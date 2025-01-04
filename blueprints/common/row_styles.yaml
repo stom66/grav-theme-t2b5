@@ -1,0 +1,22 @@
+form:
+  fields:
+    section:
+      type: section
+      title: Row style
+      underline: true
+      fields:
+
+        header.row.forcenew:
+          type     : toggle
+          label    : Force new row
+          highlight: 1
+          default  : 0
+          options  : 
+            0: Disabled
+            1: Enabled
+          validate: bool
+
+        header.row.custom_class:
+          type: text
+          label: Row custom classes
+          size: medium

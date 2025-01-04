@@ -1,89 +1,98 @@
 form:
-  fields:
-    section_local:
-      type: section
-      title: "Local assets"
-      underline: true
-      fields:
-        use_minified_css:
-          type: toggle
-          label: Use minified version of theme.css
-          highlight: 1
-          default: 1
-          options:
-            0: Disabled
-            1: Enabled
+    fields:
+        section_local:
+            type: section
+            title: "Local assets"
+            underline: true
+            fields:
+                use_minified_css:
+                    type: toggle
+                    label: Use minified version of theme.css
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
 
-    section_cdn:
-      type: section
-      title: "CDN"
-      underline: true
-      fields:
-        cdn_bootstrap_css:
-          type: toggle
-          label: Include Bootstrap CSS from CDN
-          highlight: 1
-          default: 1
-          options:
-            0: Disabled
-            1: Enabled
+        section_cdn:
+            type: section
+            title: "CDN"
+            underline: true
+            fields:
+                cdn_bootstrap_css:
+                    type: toggle
+                    label: Include Bootstrap CSS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
 
-        cdn_bootswatch_css:
-          type: select
-          label: Include Bootswatch theme from CDN
-          size: medium
-          default: 0
-          options:
-            0: Disabled
-            cerulean: Cerulean
-            cosmo: Cosmo
-            cyborg: Cyborg
-            darkly: Darkly
-            flatly: Flatly
-            journal: Journal
-            litera: Litera
-            lumen: Lumen
-            lux: Lux
-            materia: Materia
-            minty: Minty
-            morph: Morph
-            pulse: Pulse
-            quartz: Quartz
-            sandstone: Sandstone
-            simplex: Simplex
-            sketchy: Sketchy
-            slate: Slate
-            solar: Solar
-            spacelab: Spacelab
-            superhero: Superhero
-            united: United
-            vapor: Vapor
-            yeti: Yeti
-            zephyr: Zephyr
+                cdn_bootswatch_css:
+                    type: select
+                    label: Include Bootswatch theme from CDN
+                    size: medium
+                    default: 0
+                    options:
+                        0: Disabled
+                        cerulean: Cerulean
+                        cosmo: Cosmo
+                        cyborg: Cyborg
+                        darkly: Darkly
+                        flatly: Flatly
+                        journal: Journal
+                        litera: Litera
+                        lumen: Lumen
+                        lux: Lux
+                        materia: Materia
+                        minty: Minty
+                        morph: Morph
+                        pulse: Pulse
+                        quartz: Quartz
+                        sandstone: Sandstone
+                        simplex: Simplex
+                        sketchy: Sketchy
+                        slate: Slate
+                        solar: Solar
+                        spacelab: Spacelab
+                        superhero: Superhero
+                        united: United
+                        vapor: Vapor
+                        yeti: Yeti
+                        zephyr: Zephyr
 
-        cdn_fontawesome_css:
-          type: toggle
-          label: Include FontAwesome CSS from CDN
-          highlight: 1
-          default: 1
-          options:
-            0: Disabled
-            1: Enabled
+                cdn_fontawesome_css:
+                    type: toggle
+                    label: Include FontAwesome CSS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
 
-        cdn_hover_css:
-          type: toggle
-          label: Include Hover.css from CDN
-          highlight: 1
-          default: 0
-          options:
-            0: Disabled
-            1: Enabled
+                cdn_hover_css:
+                    type: toggle
+                    label: Include Hover.css from CDN
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
 
-        cdn_animate_css:
-          type: toggle
-          label: Include Animate.css from CDN
-          highlight: 1
-          default: 0
-          options:
-            0: Disabled
-            1: Enabled
+                cdn_animate_css:
+                    type: toggle
+                    label: Include Animate.css from CDN
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_glightbox_css:
+                    type: toggle
+                    label: Include GLightbox CSS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled

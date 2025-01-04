@@ -19,113 +19,125 @@ form:
                 header.template:
                   default: modular/text
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-        content:
+           
+        styles:
+          type: tab
+          title: Styles
+          ordering@: -2
           fields:
-            header.column:
-              type: select
-              label: Column width
-              default: col
-              size: medium
-              options:
-                col: 'Auto (col)'
-                col-1: 'col-1: 1/12'
-                col-2: 'col-2: 1/6'
-                col-3: 'col-3: One-quarter'
-                col-4: 'col-4: One-third'
-                col-5: 'col-5: 5/12'
-                col-6: 'col-6: Half'
-                col-7: 'col-7: 7/12'
-                col-8: 'col-8: Two-thirds'
-                col-9: 'col-9: Three-quarters'
-                col-10: 'col-10: 5/6'
-                col-11: 'col-11: 11/12'
-                col-12: 'col-12: Full'
+            row1:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  import@:
+                    type: blueprints/common/container_styles
+                    context: theme://
+                column2:
+                  type: column
+                  import@:
+                    type: blueprints/common/text_styles
+                    context: theme://
+            row2:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  import@:
+                    type: blueprints/common/row_styles
+                    context: theme://
+                column2:
+                  type: column
+                  fields:
+                    blank:
+                      type: section
+                      title: 
+                      underline: true
+            row3:
+              type: columns
+              fields:
+                column1:
+                  type: column
+                  import@:
+                    type: blueprints/common/block_styles
+                    context: theme://
+                column2:
+                  type: column
+                  fields:
+                    section:
+                      type: section
+                      title: Image style
+                      underline: true
+                      fields:
 
-            uploads:
-              label: Page Media (first one will be displayed next to your content)
+                        uploads:
+                          label: Page Media (first one will be displayed next to your content)
 
-            header.image_align:
-              type: select
-              label: Image position
-              size: medium
-              classes: fancy
-              default: left
-              options:
-                'left': 'Left'
-                'right': 'Right'
+                        header.image.align:
+                          type    : select
+                          label   : Image position
+                          size    : medium
+                          classes : fancy
+                          default : float-none
+                          multiple: true
+                          validate: 
+                            type: array
+                          options:
+                            float-start    : float-start
+                            float-end      : float-end
+                            float-none     : float-none
+                            float-sm-start : float-sm-start
+                            float-sm-end   : float-sm-end
+                            float-sm-none  : float-sm-none
+                            float-md-start : float-md-start
+                            float-md-end   : float-md-end
+                            float-md-none  : float-md-none
+                            float-lg-start : float-lg-start
+                            float-lg-end   : float-lg-end
+                            float-lg-none  : float-lg-none
+                            float-xl-start : float-xl-start
+                            float-xl-end   : float-xl-end
+                            float-xl-none  : float-xl-none
+                            float-xxl-start: float-xxl-start
+                            float-xxl-end  : float-xxl-end
+                            float-xxl-none : float-xxl-none
+                        
+                        header.image.size:
+                          label  : Image size
+                          type   : select
+                          size   : medium
+                          info   : You can further specify sizes for different breakpoints by choosing additional classes. Be sure to choose only one class for each size.
+                          default: img-fluid
+                          options: 
+                            img-fluid: img-fluid
+                            w-25: w-25
+                            w-50: w-50
+                            w-75: w-75
 
-            header.custom_classes:
-              type: text
-              label: Custom class
-              size: medium
-                
-            header.columns_breakpoints:
-              name: columns_breakpoints
-              label: Column breakpoints (optional)
-              type: select
-              size: medium
-              info: You can further specify sizes for different breakpoints by choosing additional classes. Be sure to choose only one class for each size.
-              multiple: true
-              validate: 
-                type: array
-              options: 
-                col-sm-1: col-sm-1
-                col-sm-2: col-sm-2
-                col-sm-3: col-sm-3
-                col-sm-4: col-sm-4
-                col-sm-5: col-sm-5
-                col-sm-6: col-sm-6
-                col-sm-7: col-sm-7
-                col-sm-8: col-sm-8
-                col-sm-9: col-sm-9
-                col-sm-10: col-sm-10
-                col-sm-11: col-sm-11
-                col-sm-12: col-sm-12
-                col-md-1: col-md-1
-                col-md-2: col-md-2
-                col-md-3: col-md-3
-                col-md-4: col-md-4
-                col-md-5: col-md-5
-                col-md-6: col-md-6
-                col-md-7: col-md-7
-                col-md-8: col-md-8
-                col-md-9: col-md-9
-                col-md-10: col-md-10
-                col-md-11: col-md-11
-                col-md-12: col-md-12
-                col-lg-1: col-lg-1
-                col-lg-2: col-lg-2
-                col-lg-3: col-lg-3
-                col-lg-4: col-lg-4
-                col-lg-5: col-lg-5
-                col-lg-6: col-lg-6
-                col-lg-7: col-lg-7
-                col-lg-8: col-lg-8
-                col-lg-9: col-lg-9
-                col-lg-10: col-lg-10
-                col-lg-11: col-lg-11
-                col-lg-12: col-lg-12
-                col-xl-1: col-xl-1
-                col-xl-2: col-xl-2
-                col-xl-3: col-xl-3
-                col-xl-4: col-xl-4
-                col-xl-5: col-xl-5
-                col-xl-6: col-xl-6
-                col-xl-7: col-xl-7
-                col-xl-8: col-xl-8
-                col-xl-9: col-xl-9
-                col-xl-10: col-xl-10
-                col-xl-11: col-xl-11
-                col-xl-12: col-xl-12
-                col-xxl-1: col-xxl-1
-                col-xxl-2: col-xxl-2
-                col-xxl-3: col-xxl-3
-                col-xxl-4: col-xxl-4
-                col-xxl-5: col-xxl-5
-                col-xxl-6: col-xxl-6
-                col-xxl-7: col-xxl-7
-                col-xxl-8: col-xxl-8
-                col-xxl-9: col-xxl-9
-                col-xxl-10: col-xxl-10
-                col-xxl-11: col-xxl-11
-                col-xxl-12: col-xxl-12
+                        header.image.rounding:
+                          type      : range
+                          label     : Image rounding strength
+                          default   : 0
+                          size      : x-large
+                          toggleable: true
+                          validate: 
+                            min: 0
+                            max: 3
+
+                        header.image.custom_classes:
+                          type: text
+                          label: Image custom classes
+                          size: medium
+
+                        header.image.lightbox_enabled:
+                          type     : toggle
+                          label    : Lightbox
+                          highlight: 1
+                          default  : 0
+                          options  : 
+                            0: Disabled
+                            1: Enabled
+                          validate: bool
+                          info: Enable/disable the lightbox
+                        
+                        

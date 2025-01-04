@@ -1,65 +1,65 @@
 {% spaceless %}
 
-{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+	{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
-{% block stylesheets %}
-	{% if theme_config.use_minified_css == 1 %}
-    	{% do assets.add('theme://dist/theme.min.css', 110) %}
-	{% else %}
-    	{% do assets.add('theme://dist/theme.css', 110) %}
-	{% endif %}
+	{% block stylesheets %}
+		{% if theme_config.use_minified_css == 1 %}
+			{% do assets.add('theme://dist/theme.min.css', 110) %}
+		{% else %}
+			{% do assets.add('theme://dist/theme.css', 110) %}
+		{% endif %}
 
-	{% if theme_config.cdn_bootstrap_css %}
-    	{% do assets.add(
-            'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', {
-                integrity: "sha512-usVBAd66/NpVNfBge19gws2j6JZinnca12rAe2l+d+QkLU9fiG02O1X8Q6hepIpr/EYKZvKx/I9WsnujJuOmBA==",
+		{% if theme_config.cdn_bootstrap_css %}
+			{% do assets.add(
+            'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', {
+                integrity: "sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==",
     			crossorigin: "anonymous",
     			priority: 140
     		}) %}
-    {% endif %}
+		{% endif %}
 
-	{% if theme_config.cdn_fontawesome_css %}
-    	{% do assets.add(
-    		'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css', {
-    			integrity: "sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==",
+		{% if theme_config.cdn_fontawesome_css %}
+			{% do assets.add(
+    		'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/fontawesome.min.css', {
+    			integrity: "sha512-v8QQ0YQ3H4K6Ic3PJkym91KoeNT5S3PnDKvqnwqFD1oiqIl653crGZplPdU5KKtHjO0QKcQ2aUlQZYjHczkmGw==",
     			crossorigin: "anonymous",
     			priority: 120
     		}) %}
-    {% endif %}
+		{% endif %}
 
-	{% if theme_config.cdn_hover_css %}
-    	{% do assets.add(
-    		'https://cdn.jsdelivr.net/npm/hover.css@2.3.2/css/hover-min.css', {
-    			integrity: "sha512-kgHKwbUlBXhqMvBwg4+1f+Q5M33UGrsETCUTjuwzSFdb6pU0/bCeJYEG0NOSB+g4KKsNAGT+qfteiHmcUxZxoA==",
+		{% if theme_config.cdn_hover_css %}
+			{% do assets.add(
+    		'https://cdn.jsdelivr.net/npm/hover.css@2.3.2/css/hover.min.css', {
+    			integrity: "sha512-GYVfUMk+0/kRM4vHJA1phR0/fd9onA0WVD2RFOwsDEFnXB68dFEgltbTlB7BrLwfoFTA5frR5fhj80X9Wl6ubg==",
     			crossorigin: "anonymous",
     			priority: 100
     		}) %}
-    {% endif %}
+		{% endif %}
 
-	{% if theme_config.cdn_animate_css %}
-    	{% do assets.add(
+		{% if theme_config.cdn_animate_css %}
+			{% do assets.add(
     		'https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css', {
     			integrity: "sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==",
     			crossorigin: "anonymous",
     			priority: 80
     		}) %}
-    {% endif %}
+		{% endif %}
 
-	{% if theme_config.cdn_glightbox_css %}
-    	{% do assets.add(
-    		'https://cdn.jsdelivr.net/npm/glightbox@3.1.0/dist/css/glightbox.min.css', {
-    			integrity: "sha512-hqfPkFX2vOFJG+MdyKw3ixa66C3rxE2iKwKynl+DXQJc6xj5I421OgpYZvoA9WIRHD0HeDd46IkO+gRfv2KUCw==",
+		{% if theme_config.cdn_glightbox_css %}
+			{% do assets.add(
+    		'https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/css/glightbox.min.css', {
+    			integrity: "sha512-T+KoG3fbDoSnlgEXFQqwcTC9AdkFIxhBlmoaFqYaIjq2ShhNwNao9AKaLUPMfwiBPL0ScxAtc+UYbHAgvd+sjQ==",
     			crossorigin: "anonymous",
     			priority: 60
     		}) %}
-    {% endif %}
+		{% endif %}
 
 
-	{% if theme_config.cdn_bootswatch_css and theme_config.cdn_bootswatch_css != "0" %}
-        <!-- Loading Bootswatch: {{ theme_config.cdn_bootswatch_css }} -->
-		{% include 'meta/bootswatch.html.twig' %}
-	{% endif %}
+		{% if theme_config.cdn_bootswatch_css and theme_config.cdn_bootswatch_css != "0" %}
+			<!-- Loading Bootswatch: {{ theme_config.cdn_bootswatch_css }} -->
+			{% include 'meta/bootswatch.html.twig' %}
+		{% endif %}
 
-{% endblock %}
+	{% endblock %}
 
 {% endspaceless %}

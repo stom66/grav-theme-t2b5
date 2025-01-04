@@ -6,11 +6,11 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
 # Dependency directories
 node_modules/
 
 # Optional npm cache directory
 .npm
+
+## Affinity lock files
+*.*~lock~

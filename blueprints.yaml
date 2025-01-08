@@ -1,12 +1,12 @@
 name: T2B5
 slug: t2b5
 type: theme
-version: 0.1.0
+version: 0.2.1
 description: TomSquared Bootstrap 5 Theme
 icon: rebel
 author:
-  name: stom
-  email: stom@tomsquared.co.uk
+    name: stom
+    email: stom@tomsquared.co.uk
 homepage: https://github.com/stom66/grav-theme-t2b5
 demo: https://grav.tomsquared.co.uk
 keywords: grav, theme, bootstrap, bootswatch, fontawesome, animate.css, hover.css
@@ -15,140 +15,158 @@ readme: https://github.com/stom66/grav-theme-t2b5/blob/main/README.md
 license: MIT
 
 dependencies:
-  - { name: grav, version: '>=1.7.0' }
+    - { name: grav, version: ">=1.7.0" }
 
 form:
-  validation: loose
+    validation: loose
 
-  fields:
+    fields:
+        fieldset1:
+            type: fieldset
+            title: CDN, CSS & JS settings
+            icon: cog
+            help: may contain bugs. erk.
+            collapsible: true
+            collapsed: true
+            import@:
+                type: cdn
+                context: themes://t2b5/blueprints/theme
+        #fieldset1:
+        #    type: fieldset
+        #    title: CSS settings
+        #    icon: cog
+        #    help: may contain bugs. erk.
+        #    collapsible: true
+        #    collapsed: true
+        #    import@:
+        #        type: css
+        #        context: themes://t2b5/blueprints/theme
+        #
+        #fieldset2:
+        #    type: fieldset
+        #    title: JavaScript settings
+        #    icon: cog
+        #    help: may contain bugs. erk.
+        #    collapsible: true
+        #    collapsed: true
+        #    import@:
+        #        type: js
+        #        context: themes://t2b5/blueprints/theme
 
+        fieldset4:
+            type: fieldset
+            title: Favicon settings
+            icon: star-o
+            info: Favicons should be placed in user/images/favicons
+            help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+            collapsible: true
+            collapsed: true
+            import@:
+                type: favicon
+                context: themes://t2b5/blueprints/theme
 
-    fieldset1:
-      type: fieldset
-      title: CSS settings
-      icon: cog
-      help: may contain bugs. erk.
-      collapsible: true
-      collapsed: true
-      import@:
-        type: css
-        context: themes://t2b5/blueprints/theme
-        
-    fieldset2:
-      type: fieldset
-      title: JavaScript settings
-      icon: cog
-      help: may contain bugs. erk.
-      collapsible: true
-      collapsed: true
-      import@:
-        type: js
-        context: themes://t2b5/blueprints/theme
+        fieldset3:
+            type: fieldset
+            title: NavBar settings
+            icon: navicon
+            info: Contains settings for the stlye and behaviour of the top navbar element
+            help: may contain bugs. erk.
+            collapsible: true
+            collapsed: true
+            import@:
+                type: navbar
+                context: themes://t2b5/blueprints/theme
 
-    fieldset4:
-      type: fieldset
-      title: Favicon settings
-      icon: star-o
-      info: Favicons should be placed in user/images/favicons
-      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
-      collapsible: true
-      collapsed: true
-      import@:
-        type: favicon
-        context: themes://t2b5/blueprints/theme
+        fieldset10:
+            type: fieldset
+            title: Footer settings
+            icon: list
+            info: Choose styles and settings for the footer
+            collapsible: true
+            collapsed: true
+            import@:
+                type: footer
+                context: themes://t2b5/blueprints/theme
 
-    fieldset3:
-      type: fieldset
-      title: NavBar settings
-      icon: navicon
-      info: Contains settings for the stlye and behaviour of the top navbar element
-      help: may contain bugs. erk.
-      collapsible: true
-      collapsed: true
-      import@:
-        type: navbar
-        context: themes://t2b5/blueprints/theme
+        fieldset5:
+            type: fieldset
+            title: Meta data options
+            icon: cogs
+            info: Contains various webapp settings
+            help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+            collapsible: true
+            collapsed: true
+            import@:
+                type: metadata
+                context: themes://t2b5/blueprints/theme
 
-    fieldset10:
-      type: fieldset
-      title: Footer settings
-      icon: list
-      info: Choose styles and settings for the footer
-      collapsible: true
-      collapsed: true
-      import@:
-        type: footer
-        context: themes://t2b5/blueprints/theme
+        fieldset6:
+            type: fieldset
+            title: Chrome/webkit settings
+            icon: cogs
+            info: Contains various webapp settings
+            help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+            collapsible: true
+            collapsed: true
+            import@:
+                type: chrome
+                context: themes://t2b5/blueprints/theme
 
-    fieldset5:
-      type: fieldset
-      title: Meta data options
-      icon: cogs
-      info: Contains various webapp settings
-      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
-      collapsible: true
-      collapsed: true
-      import@:
-        type: metadata
-        context: themes://t2b5/blueprints/theme
+        fieldset7:
+            type: fieldset
+            title: Microsoft/Ie/Edge settings
+            icon: cogs
+            info: Contains various webapp settings
+            help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+            collapsible: true
+            collapsed: true
+            import@:
+                type: msie
+                context: themes://t2b5/blueprints/theme
 
-    fieldset6:
-      type: fieldset
-      title: Chrome/webkit settings
-      icon: cogs
-      info: Contains various webapp settings
-      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
-      collapsible: true
-      collapsed: true
-      import@:
-        type: chrome
-        context: themes://t2b5/blueprints/theme
+        fieldset8:
+            type: fieldset
+            title: Apple/iOS settings
+            icon: cogs
+            info: Contains various webapp settings
+            help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
+            collapsible: true
+            collapsed: true
+            import@:
+                type: appleios
+                context: themes://t2b5/blueprints/theme
 
-    fieldset7:
-      type: fieldset
-      title: Microsoft/Ie/Edge settings
-      icon: cogs
-      info: Contains various webapp settings
-      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
-      collapsible: true
-      collapsed: true
-      import@:
-        type: msie
-        context: themes://t2b5/blueprints/theme
+        fieldset9:
+            type: fieldset
+            title: Map settings
+            icon: map
+            info: Choose options for Google Maps or OpenStreetMap
+            help: You will need a valid API key to use either of these maps.
+            collapsible: true
+            collapsed: true
+            import@:
+                type: map
+                context: themes://t2b5/blueprints/theme
 
-    fieldset8:
-      type: fieldset
-      title: Apple/iOS settings
-      icon: cogs
-      info: Contains various webapp settings
-      help: ICO icons must be provided in ico format and should contain sizes 16, 32, and 48
-      collapsible: true
-      collapsed: true
-      import@:
-        type: appleios
-        context: themes://t2b5/blueprints/theme
+        fieldset12:
+            type: fieldset
+            title: Cookie Banner settings
+            icon: line-chart
+            info: Configure the Cookie Banner
+            collapsible: true
+            collapsed: true
+            import@:
+                type: cookiebanner
+                context: themes://t2b5/blueprints/theme
 
-    fieldset9:
-      type: fieldset
-      title: Map settings
-      icon: map
-      info: Choose options for Google Maps or OpenStreetMap
-      help: You will need a valid API key to use either of these maps.
-      collapsible: true
-      collapsed: true
-      import@:
-        type: map
-        context: themes://t2b5/blueprints/theme
-
-    fieldset11:
-      type: fieldset
-      title: Analytics settings
-      icon: line-chart
-      info: Enable Google Analytics
-      help: You will need a valid stream measurement ID to enable analytics.
-      collapsible: true
-      collapsed: true
-      import@:
-        type: analytics
-        context: themes://t2b5/blueprints/theme
-
+        #fieldset11:
+        #    type: fieldset
+        #    title: Analytics settings
+        #    icon: line-chart
+        #    info: Enable Google Analytics
+        #    help: You will need a valid stream measurement ID to enable analytics.
+        #    collapsible: true
+        #    collapsed: true
+        #    import@:
+        #        type: analytics
+        #        context: themes://t2b5/blueprints/theme

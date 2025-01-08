@@ -28,6 +28,15 @@ form:
                         0: Disabled
                         1: Enabled
 
+                cdn_bootstrap_icons_css:
+                    type: toggle
+                    label: Include Bootstrap Icons CSS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
+
                 cdn_bootswatch_css:
                     type: select
                     label: Include Bootswatch theme from CDN

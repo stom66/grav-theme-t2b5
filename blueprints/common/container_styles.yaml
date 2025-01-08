@@ -1,37 +1,36 @@
 form:
-  fields:
-    section:
-      type: section
-      title: Container styles
-      underline: true
-      fields:
+    fields:
+        section:
+            type: section
+            title: Container styles
+            underline: true
+            fields:
+                header.container.forcenew:
+                    type: toggle
+                    label: Force new container
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
+                    validate: bool
 
-        header.container.forcenew:
-          type     : toggle
-          label    : Force new container
-          highlight: 1
-          default  : 0
-          options  : 
-            0: Disabled
-            1: Enabled
-          validate: bool
+                header.container.class:
+                    type: select
+                    label: Container style
+                    size: medium
+                    default: container
+                    options:
+                        container: container
+                        container-sm: container-sm
+                        container-md: container-md
+                        container-lg: container-lg
+                        container-xl: container-xl
+                        container-xxl: container-xxl
+                        container-fluid: container-fluid
+                        container-fluid px-0: container-fluid (no-padding)
 
-        header.container.class:
-          type   : select
-          label  : Container style
-          size   : medium
-          default: container
-          options:
-            container      : container
-            container-sm   : container-sm
-            container-md   : container-md
-            container-lg   : container-lg
-            container-xl   : container-xl
-            container-xxl  : container-xxl
-            container-fluid: container-fluid
-            container-fluid px-0: container-fluid (no-padding)
-
-        header.container.custom_class:
-          type: text
-          label: Container custom classes
-          size: medium
+                header.container.custom_class:
+                    type: text
+                    label: Custom classes
+                    size: medium

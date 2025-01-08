@@ -1,19 +1,24 @@
 {% spaceless %}
 
-{% set block_class = header.block.column|default('col')|join(" ") ~
-       " rounded-" ~ header.block.rounding|default("default") ~
-               " " ~ header.block.bg_class ~
-               " " ~ header.block.padding|join(" ") ~
-               " " ~ header.block.margin|join(" ") ~
-               " " ~ header.text_color ~
-               " " ~ header.text_size ~
-               " " ~ header.text_style ~
-               " " ~ header.block.custom_classes 
-               %}
+	{% set class_array = [
+		block.column|default("col")|join(" "),
+		block.custom_classes,
+		block.bg_class|default("bg-light")|join(" "),
+		block.padding|default("p-3")|join(" "),
+		block.margin|default("my-3")|join(" "),
+		"rounded-" ~ block.rounding|default(0)|join(" "),
 
-{% set image = page.media.images|first %}
+		text.color|default("text-dark")|join(" "),
+		text.size|join(" "),
+		text.style|join(" "),
+		text.alignment|join(" ")
+	] %}
+	{% set block_class = class_array|join(" ") %}
 
-{% set image_classes = header.image.size|default("img-fluid") ~
+
+	{% set image = page.media.images|first %}
+
+	{% set image_classes = header.image.size|default("img-fluid") ~
          " rounded-" ~ header.image.rounding|default("0") ~
                  " " ~ header.image.align|default("float-none")|join(" ") ~
                  " " ~ header.image.custom_classes
@@ -23,17 +28,19 @@
 
 <div class="{{ block_class }}">
 
-    {% if image %}  
-        {% if header.image.lightbox_enabled == 1 %}
-            <a href="{{ image.url }}" class="glightbox">
-        {% endif %}    
-        
-        {{ image.html('', '', image_classes)|raw }}
-        
-        {% if header.image.lightbox_enabled == 1 %}
-            </a>
-        {% endif %}    
-    {% endif %}
+	{% if image %}
+		{% if header.image.lightbox_enabled == 1 %}
+			<a href="{{ image.url }}" class="glightbox">
+			{% endif %}
 
-    {{ page.content|raw }}
+			{{ image.html('', '', image_classes)|raw }}
+
+			{% if header.image.lightbox_enabled == 1 %}
+			</a>
+		{% endif %}
+	{% endif %}
+
+	{% block contents %}
+		{{ page.content|raw }}
+	{% endblock %}
 </div>

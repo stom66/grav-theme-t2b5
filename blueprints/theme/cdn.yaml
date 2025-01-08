@@ -1,0 +1,155 @@
+form:
+    fields:
+        section_local:
+            type: section
+            title: "Local assets"
+            underline: true
+            fields:
+                use_minified_css:
+                    type: toggle
+                    label: Use minified version of theme.css
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                use_minified_js:
+                    type: toggle
+                    label: Use minified version of app.js
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+        section_cdn:
+            type: section
+            title: "Bootstrap"
+            underline: true
+            fields:
+                cdn_bootstrap_css:
+                    type: toggle
+                    label: Bootstrap CSS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_bootstrap_js:
+                    type: toggle
+                    label: Bootstrap JS from CDN
+                    highlight: 1
+                    default: 1
+                    help: Bootstrap also requires Popper.js
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_bootswatch_css:
+                    type: select
+                    label: Bootswatch theme CSS from CDN
+                    size: medium
+                    default: 0
+                    options:
+                        0: Disabled
+                        cerulean: Cerulean
+                        cosmo: Cosmo
+                        cyborg: Cyborg
+                        darkly: Darkly
+                        flatly: Flatly
+                        journal: Journal
+                        litera: Litera
+                        lumen: Lumen
+                        lux: Lux
+                        materia: Materia
+                        minty: Minty
+                        morph: Morph
+                        pulse: Pulse
+                        quartz: Quartz
+                        sandstone: Sandstone
+                        simplex: Simplex
+                        sketchy: Sketchy
+                        slate: Slate
+                        solar: Solar
+                        spacelab: Spacelab
+                        superhero: Superhero
+                        united: United
+                        vapor: Vapor
+                        yeti: Yeti
+                        zephyr: Zephyr
+
+        section_icons:
+            type: section
+            title: "Icons"
+            underline: true
+            fields:
+                cdn_bootstrap_icons_css:
+                    type: toggle
+                    label: Bootstrap Icons CSS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_fontawesome_css_js:
+                    type: toggle
+                    label: FontAwesome CSS & JS from CDN
+                    highlight: 1
+                    default: 1
+                    help: Bootstrap also requires Popper.js
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+        section_other:
+            type: section
+            title: "Other"
+            underline: true
+            fields:
+                cdn_animate_css:
+                    type: toggle
+                    label: Animate.css from CDN
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_glightbox_css_js:
+                    type: toggle
+                    label: GLightbox JS & CSS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_hover_css:
+                    type: toggle
+                    label: Hover.css from CDN
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_jquery_js:
+                    type: toggle
+                    label: jQuery JS from CDN
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_popper_js:
+                    type: toggle
+                    label: Popper JS from CDN
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled

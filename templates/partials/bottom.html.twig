@@ -1,19 +1,8 @@
-{% if theme_config.ganalytics.enabled %}
-<!-- Google Analytics - {{ theme_config.ganalytics.id }} -->
-    
-    <script type="text/javascript">
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', '{{ theme_config.ganalytics.id }}');
-    </script>
-{% endif %}
-
-{% if theme_config.cdn_glightbox_js %}
-    <!-- GLightbox -->
-    <script type="text/javascript">
-        const lightbox = GLightbox({});
-    </script>
+{% if theme_config.cdn_glightbox_css_js %}
+	<!-- GLightbox -->
+	<script type="text/javascript">
+		const lightbox = GLightbox({});
+	</script>
 {% endif %}
 
 {{ assets.js('bottom')|raw }}

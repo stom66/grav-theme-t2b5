@@ -28,7 +28,16 @@
 			}) %}
 		{% endif %}
 
-		{% if theme_config.cdn_glightbox_js %}
+
+		{% if theme_config.cdn_fontawesome_css_js %}
+			{% do assets.add('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/js/all.min.js', {
+				integrity  : "sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==",
+				crossorigin: "anonymous",
+				priority   : 85
+			}) %}
+		{% endif %}
+
+		{% if theme_config.cdn_glightbox_css_js %}
 			{% do assets.add('https://cdn.jsdelivr.net/npm/glightbox@3.3.0/dist/js/glightbox.min.js', {
 				integrity  : "sha512-RBWI5Qf647bcVhqbEnRoL4KuUT+Liz+oG5jtF+HP05Oa5088M9G0GxG0uoHR9cyq35VbjahcI+Hd1xwY8E1/Kg==",
 				crossorigin: "anonymous",
@@ -36,13 +45,15 @@
 			}) %}
 		{% endif %}
 
-		{% if ga.enabled %}
-			{% do assets.add(
-				"https://www.googletagmanager.com/gtag/js?id={{ ga.id }}", {
-					async   : "true",
-					priority: 60
-				}) %}
-		{% endif %}
+		{# Replaced with Google Analytics plugin
+			{% if ga.enabled %}
+				{% do assets.add(
+					"https://www.googletagmanager.com/gtag/js?id={{ ga.id }}", {
+						async   : "true",
+						priority: 60
+					}) %}
+			{% endif %}
+			#}
 
 
 		{% if theme_config.use_minified_js == 1 %}
@@ -56,17 +67,18 @@
 		{% endif %}
 
 	{% endspaceless %}
-	{% if g_enabled %}
-
-		<!-- Google Analytics - {{ ga.id }} -->
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-			dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
-			gtag('config', '{{ ga.id }}');
-		</script>
-
-	{% endif %}
+	{# Replaced with Google Analytics plugin
+					{% if g_enabled %}
+				
+						<!-- Google Analytics - {{ ga.id }} -->
+						<script>
+							window.dataLayer = window.dataLayer || [];
+							function gtag() {
+							dataLayer.push(arguments);
+							}
+							gtag('js', new Date());
+							gtag('config', '{{ ga.id }}');
+						</script>
+					{% endif %}
+					#}
 {% endblock %}

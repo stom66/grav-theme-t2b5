@@ -1,0 +1,10 @@
+{% extends 'modular/text.html.twig' %}
+
+{% block contents %}
+	{% for column in content|split('<hr />') %}
+		<div class="col">
+			{{ column|raw }}
+		</div>
+
+	{% endfor %}
+{% endblock %}

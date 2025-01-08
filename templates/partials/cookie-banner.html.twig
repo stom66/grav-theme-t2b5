@@ -1,0 +1,27 @@
+{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+{% set cb           = theme_config.cookiebanner %}
+
+
+{% if config.plugins['ganalytics'].enabled %}
+	{% if cb.enabled == 1 %}
+
+		<!-- Cookie Banner is enabled -->
+		{% do assets.addJs('theme://src/js/cookiebanner.js', 120) %}
+
+		<div id="cookie-banner" class="position-fixed bottom-0 start-0 end-0 bg-light p-3 border-top d-none" style="z-index: 1000;">
+			<div class="d-flex justify-content-between align-items-center">
+				<span>{{ cb.banner_text }}</span>
+				<div>
+					<a id="btn-disable-tracking" href="javascript:gaOptout()" class="btn btn-secondary btn">{{ cb.deny_text }}</a>
+					<button id="btn-accept-tracking" class="btn btn-primary btn">{{ cb.accept_text }}</button>
+				</div>
+			</div>
+		</div>
+
+		{% if config.plugins['ganalytics'].dnt %}
+			<!-- DoNotTrack support is enabled -->
+
+			{% do assets.addInlineJs('document.addEventListener("DOMContentLoaded", () => {HideCookieBannerIfDNTIsActive()});', {'priority': 99, 'group':'bottom'}) %}
+		{% endif %}
+	{% endif %}
+{% endif %}

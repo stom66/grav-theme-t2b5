@@ -1,12 +1,18 @@
-
 {% set footer = theme_var('footer') %}
 
 <div class="footer {{ footer.container }} {{ footer.bgstyle }} {{ footer.classes }} {% if footer.sticky %} mt-auto{% endif %}">
-    <div class="row">
-        <div class="col">
-            {{ footer.content|markdown }}
-        </div>
-    </div>
+	<div class="row">
+		<div class="col">
+			{{ footer.content|markdown }}
+		</div>
+	</div>
+
+	{% if footer.page %}
+		<div class="row">
+			{% set target_page = pages.find(footer.page) %}
+			{% if target_page %}
+				{{ target_page.content|raw }}
+			{% endif %}
+		</div>
+	{% endif %}
 </div>
-
-

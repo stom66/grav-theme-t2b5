@@ -1,56 +1,55 @@
 {% spaceless %}
 
-{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
+	{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 
-{% set navbar = theme_var('navbar') %}
-{% set footer = theme_var('footer') %}
+	{% set navbar = theme_var('navbar') %}
+	{% set footer = theme_var('footer') %}
 
-{% set body_classes = page.header.body_classes %}
-{% if footer.sticky %}
-    {% set body_classes = body_classes ~ "d-flex flex-column h-100" %}
-{% endif %} 
+	{% set body_classes = page.header.body_classes %}
+	{% if footer.sticky %}
+		{% set body_classes = body_classes ~ "d-flex flex-column h-100" %}
+	{% endif %}
 
 {% endspaceless %}
 <!DOCTYPE html>
-<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}" {% if footer.sticky %} class="h-100"{% endif %}>
-    <head>
-        {% block head %}
-            {% include 'meta/metadata.html.twig' %}
+<html lang="{{ (grav.language.getActive ?: grav.config.site.default_lang)|e }}" {% if footer.sticky %} class="h-100" {% endif %}>
+	<head>
+		{% block head %}
+			{% include 'meta/metadata.html.twig' %}
 
-            {% include 'meta/css.html.twig' %}
+			{% include 'meta/css.html.twig' %}
 
-            {% include 'meta/js.html.twig' %}
-        {% endblock head %}
+			{% include 'meta/js.html.twig' %}
+		{% endblock head %}
 
-        {% block assets deferred %}
-            {{ assets.css()|raw }}
-            {{ assets.js()|raw }}
-        {% endblock %}
-    </head>
+		{% block assets deferred %}
+			{{ assets.css()|raw }}
+			{{ assets.js()|raw }}
+		{% endblock %}
+	</head>
 
-    <!-- Neck -->
+	<!-- Neck -->
 
-    <body class="{{ body_classes }}" {% if navbar.body_top_padding > 0 %}
-            style="padding-top: {{ navbar.body_top_padding }}em !important"
-        {% endif %}>
+	<body class="{{ body_classes }}" {% if navbar.body_top_padding > 0 %} style="padding-top: {{ navbar.body_top_padding }}em !important" {% endif %}>
 
-    {% block header_navigation %}
-        {% include 'partials/navigation.html.twig' %}
-    {% endblock %}
+		{% block header_navigation %}
+			{% include 'partials/navigation.html.twig' %}
+		{% endblock %}
 
-    {% block body %}
-        <section id="body">
-            {% block content %}{% endblock %}
-        </section>
-    {% endblock %}
+		{% block body %}
+			<section id="body">
+				{% block content %}{% endblock %}
+			</section>
+		{% endblock %}
 
-    {% block footer %}
-        {% include 'partials/footer.html.twig' %}
-    {% endblock %}
+		{% block footer %}
+			{% include 'partials/footer.html.twig' %}
+		{% endblock %}
 
-    {% block bottom %}
-        {% include 'partials/bottom.html.twig' %}
-    {% endblock %}
+		{% include 'partials/cookie-banner.html.twig' %}
 
-    </body>
+		{% block bottom %}
+			{% include 'partials/bottom.html.twig' %}
+		{% endblock %}
+	</body>
 </html>

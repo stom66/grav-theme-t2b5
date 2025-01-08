@@ -1,226 +1,226 @@
 form:
-  fields:
-    section:
-      type: section
-      title: Block style
-      underline: true
-      fields:
-        header.block.column:
-          type    : select
-          label   : Block width
-          default : col
-          size    : medium
-          multiple: true
-          validate: 
-            type: array
-          options:
-            col       : 'Auto (col)'
-            col-1     : 'col-1: 1/12'
-            col-2     : 'col-2: 1/6'
-            col-3     : 'col-3: One-quarter'
-            col-4     : 'col-4: One-third'
-            col-5     : 'col-5: 5/12'
-            col-6     : 'col-6: Half'
-            col-7     : 'col-7: 7/12'
-            col-8     : 'col-8: Two-thirds'
-            col-9     : 'col-9: Three-quarters'
-            col-10    : 'col-10: 5/6'
-            col-11    : 'col-11: 11/12'
-            col-12    : 'col-12: Full'
-            col-sm-1  : col-sm-1
-            col-sm-2  : col-sm-2
-            col-sm-3  : col-sm-3
-            col-sm-4  : col-sm-4
-            col-sm-5  : col-sm-5
-            col-sm-6  : col-sm-6
-            col-sm-7  : col-sm-7
-            col-sm-8  : col-sm-8
-            col-sm-9  : col-sm-9
-            col-sm-10 : col-sm-10
-            col-sm-11 : col-sm-11
-            col-sm-12 : col-sm-12
-            col-md-1  : col-md-1
-            col-md-2  : col-md-2
-            col-md-3  : col-md-3
-            col-md-4  : col-md-4
-            col-md-5  : col-md-5
-            col-md-6  : col-md-6
-            col-md-7  : col-md-7
-            col-md-8  : col-md-8
-            col-md-9  : col-md-9
-            col-md-10 : col-md-10
-            col-md-11 : col-md-11
-            col-md-12 : col-md-12
-            col-lg-1  : col-lg-1
-            col-lg-2  : col-lg-2
-            col-lg-3  : col-lg-3
-            col-lg-4  : col-lg-4
-            col-lg-5  : col-lg-5
-            col-lg-6  : col-lg-6
-            col-lg-7  : col-lg-7
-            col-lg-8  : col-lg-8
-            col-lg-9  : col-lg-9
-            col-lg-10 : col-lg-10
-            col-lg-11 : col-lg-11
-            col-lg-12 : col-lg-12
-            col-xl-1  : col-xl-1
-            col-xl-2  : col-xl-2
-            col-xl-3  : col-xl-3
-            col-xl-4  : col-xl-4
-            col-xl-5  : col-xl-5
-            col-xl-6  : col-xl-6
-            col-xl-7  : col-xl-7
-            col-xl-8  : col-xl-8
-            col-xl-9  : col-xl-9
-            col-xl-10 : col-xl-10
-            col-xl-11 : col-xl-11
-            col-xl-12 : col-xl-12
-            col-xxl-1 : col-xxl-1
-            col-xxl-2 : col-xxl-2
-            col-xxl-3 : col-xxl-3
-            col-xxl-4 : col-xxl-4
-            col-xxl-5 : col-xxl-5
-            col-xxl-6 : col-xxl-6
-            col-xxl-7 : col-xxl-7
-            col-xxl-8 : col-xxl-8
-            col-xxl-9 : col-xxl-9
-            col-xxl-10: col-xxl-10
-            col-xxl-11: col-xxl-11
-            col-xxl-12: col-xxl-12
+    fields:
+        section:
+            type: section
+            title: Block style
+            underline: true
+            fields:
+                header.block.column:
+                    type: select
+                    label: Width
+                    default: col
+                    size: medium
+                    multiple: true
+                    validate:
+                        type: array
+                    options:
+                        col: "Auto (col)"
+                        col-1: "col-1: 1/12"
+                        col-2: "col-2: 1/6"
+                        col-3: "col-3: One-quarter"
+                        col-4: "col-4: One-third"
+                        col-5: "col-5: 5/12"
+                        col-6: "col-6: Half"
+                        col-7: "col-7: 7/12"
+                        col-8: "col-8: Two-thirds"
+                        col-9: "col-9: Three-quarters"
+                        col-10: "col-10: 5/6"
+                        col-11: "col-11: 11/12"
+                        col-12: "col-12: Full"
+                        col-sm-1: col-sm-1
+                        col-sm-2: col-sm-2
+                        col-sm-3: col-sm-3
+                        col-sm-4: col-sm-4
+                        col-sm-5: col-sm-5
+                        col-sm-6: col-sm-6
+                        col-sm-7: col-sm-7
+                        col-sm-8: col-sm-8
+                        col-sm-9: col-sm-9
+                        col-sm-10: col-sm-10
+                        col-sm-11: col-sm-11
+                        col-sm-12: col-sm-12
+                        col-md-1: col-md-1
+                        col-md-2: col-md-2
+                        col-md-3: col-md-3
+                        col-md-4: col-md-4
+                        col-md-5: col-md-5
+                        col-md-6: col-md-6
+                        col-md-7: col-md-7
+                        col-md-8: col-md-8
+                        col-md-9: col-md-9
+                        col-md-10: col-md-10
+                        col-md-11: col-md-11
+                        col-md-12: col-md-12
+                        col-lg-1: col-lg-1
+                        col-lg-2: col-lg-2
+                        col-lg-3: col-lg-3
+                        col-lg-4: col-lg-4
+                        col-lg-5: col-lg-5
+                        col-lg-6: col-lg-6
+                        col-lg-7: col-lg-7
+                        col-lg-8: col-lg-8
+                        col-lg-9: col-lg-9
+                        col-lg-10: col-lg-10
+                        col-lg-11: col-lg-11
+                        col-lg-12: col-lg-12
+                        col-xl-1: col-xl-1
+                        col-xl-2: col-xl-2
+                        col-xl-3: col-xl-3
+                        col-xl-4: col-xl-4
+                        col-xl-5: col-xl-5
+                        col-xl-6: col-xl-6
+                        col-xl-7: col-xl-7
+                        col-xl-8: col-xl-8
+                        col-xl-9: col-xl-9
+                        col-xl-10: col-xl-10
+                        col-xl-11: col-xl-11
+                        col-xl-12: col-xl-12
+                        col-xxl-1: col-xxl-1
+                        col-xxl-2: col-xxl-2
+                        col-xxl-3: col-xxl-3
+                        col-xxl-4: col-xxl-4
+                        col-xxl-5: col-xxl-5
+                        col-xxl-6: col-xxl-6
+                        col-xxl-7: col-xxl-7
+                        col-xxl-8: col-xxl-8
+                        col-xxl-9: col-xxl-9
+                        col-xxl-10: col-xxl-10
+                        col-xxl-11: col-xxl-11
+                        col-xxl-12: col-xxl-12
 
-        header.block.padding:
-          type    : select
-          label   : Block padding
-          size    : medium
-          multiple: true
-          validate: 
-            type: array
-          options:
-            p-0: All 0
-            p-1: All 1
-            p-2: All 2
-            p-3: All 3
-            p-4: All 4
-            p-5: All 5
-            px-0: Horizontal 0
-            px-1: Horizontal 1
-            px-2: Horizontal 2
-            px-3: Horizontal 3
-            px-4: Horizontal 4
-            px-5: Horizontal 5
-            py-0: Vertical 0
-            py-1: Vertical 1
-            py-2: Vertical 2
-            py-3: Vertical 3
-            py-4: Vertical 4
-            py-5: Vertical 5
-            pt-0: Top 0
-            pt-1: Top 1
-            pt-2: Top 2
-            pt-3: Top 3
-            pt-4: Top 4
-            pt-5: Top 5
-            pl-0: Left 0
-            pl-1: Left 1
-            pl-2: Left 2
-            pl-3: Left 3
-            pl-4: Left 4
-            pl-5: Left 5
-            pb-0: Bottom 0
-            pb-1: Bottom 1
-            pb-2: Bottom 2
-            pb-3: Bottom 3
-            pb-4: Bottom 4
-            pb-5: Bottom 5
-            pr-0: Right 0
-            pr-1: Right 1
-            pr-2: Right 2
-            pr-3: Right 3
-            pr-4: Right 4
-            pr-5: Right 5
+                header.block.padding:
+                    type: select
+                    label: Padding
+                    size: medium
+                    multiple: true
+                    validate:
+                        type: array
+                    options:
+                        p-0: All 0
+                        p-1: All 1
+                        p-2: All 2
+                        p-3: All 3
+                        p-4: All 4
+                        p-5: All 5
+                        px-0: Horizontal 0
+                        px-1: Horizontal 1
+                        px-2: Horizontal 2
+                        px-3: Horizontal 3
+                        px-4: Horizontal 4
+                        px-5: Horizontal 5
+                        py-0: Vertical 0
+                        py-1: Vertical 1
+                        py-2: Vertical 2
+                        py-3: Vertical 3
+                        py-4: Vertical 4
+                        py-5: Vertical 5
+                        pt-0: Top 0
+                        pt-1: Top 1
+                        pt-2: Top 2
+                        pt-3: Top 3
+                        pt-4: Top 4
+                        pt-5: Top 5
+                        pl-0: Left 0
+                        pl-1: Left 1
+                        pl-2: Left 2
+                        pl-3: Left 3
+                        pl-4: Left 4
+                        pl-5: Left 5
+                        pb-0: Bottom 0
+                        pb-1: Bottom 1
+                        pb-2: Bottom 2
+                        pb-3: Bottom 3
+                        pb-4: Bottom 4
+                        pb-5: Bottom 5
+                        pr-0: Right 0
+                        pr-1: Right 1
+                        pr-2: Right 2
+                        pr-3: Right 3
+                        pr-4: Right 4
+                        pr-5: Right 5
 
-        header.block.margin:
-          type    : select
-          label   : Block margins
-          size    : medium
-          multiple: true
-          validate: 
-            type: array
-          options:
-            m-0: All 0
-            m-1: All 1
-            m-2: All 2
-            m-3: All 3
-            m-4: All 4
-            m-5: All 5
-            mx-auto: Horizontal auto
-            mx-0: Horizontal 0
-            mx-1: Horizontal 1
-            mx-2: Horizontal 2
-            mx-3: Horizontal 3
-            mx-4: Horizontal 4
-            mx-5: Horizontal 5
-            my-auto: Vertical auto
-            my-0: Vertical 0
-            my-1: Vertical 1
-            my-2: Vertical 2
-            my-3: Vertical 3
-            my-4: Vertical 4
-            my-5: Vertical 5
-            mt-0: Top 0
-            mt-1: Top 1
-            mt-2: Top 2
-            mt-3: Top 3
-            mt-4: Top 4
-            mt-5: Top 5
-            ml-0: Left 0
-            ml-1: Left 1
-            ml-2: Left 2
-            ml-3: Left 3
-            ml-4: Left 4
-            ml-5: Left 5
-            mb-0: Bottom 0
-            mb-1: Bottom 1
-            mb-2: Bottom 2
-            mb-3: Bottom 3
-            mb-4: Bottom 4
-            mb-5: Bottom 5
-            mr-0: Right 0
-            mr-1: Right 1
-            mr-2: Right 2
-            mr-3: Right 3
-            mr-4: Right 4
-            mr-5: Right 5
+                header.block.margin:
+                    type: select
+                    label: Margins
+                    size: medium
+                    multiple: true
+                    validate:
+                        type: array
+                    options:
+                        m-0: All 0
+                        m-1: All 1
+                        m-2: All 2
+                        m-3: All 3
+                        m-4: All 4
+                        m-5: All 5
+                        mx-auto: Horizontal auto
+                        mx-0: Horizontal 0
+                        mx-1: Horizontal 1
+                        mx-2: Horizontal 2
+                        mx-3: Horizontal 3
+                        mx-4: Horizontal 4
+                        mx-5: Horizontal 5
+                        my-auto: Vertical auto
+                        my-0: Vertical 0
+                        my-1: Vertical 1
+                        my-2: Vertical 2
+                        my-3: Vertical 3
+                        my-4: Vertical 4
+                        my-5: Vertical 5
+                        mt-0: Top 0
+                        mt-1: Top 1
+                        mt-2: Top 2
+                        mt-3: Top 3
+                        mt-4: Top 4
+                        mt-5: Top 5
+                        ml-0: Left 0
+                        ml-1: Left 1
+                        ml-2: Left 2
+                        ml-3: Left 3
+                        ml-4: Left 4
+                        ml-5: Left 5
+                        mb-0: Bottom 0
+                        mb-1: Bottom 1
+                        mb-2: Bottom 2
+                        mb-3: Bottom 3
+                        mb-4: Bottom 4
+                        mb-5: Bottom 5
+                        mr-0: Right 0
+                        mr-1: Right 1
+                        mr-2: Right 2
+                        mr-3: Right 3
+                        mr-4: Right 4
+                        mr-5: Right 5
 
-        header.block.rounding:
-          type      : range
-          label     : Border rounding
-          default   : 0
-          size      : x-large
-          toggleable: true
-          validate: 
-            min: 0
-            max: 3
+                header.block.rounding:
+                    type: range
+                    label: Border rounding
+                    default: 0
+                    size: x-large
+                    toggleable: true
+                    validate:
+                        min: 0
+                        max: 3
 
-        header.block.custom_classes:
-          type: text
-          label: Custom classes
-          size: medium
+                header.block.custom_classes:
+                    type: text
+                    label: Custom classes
+                    size: medium
 
-        header.block.bg_class:
-          type   : select
-          label  : Background style
-          size   : medium
-          default: default
-          options:
-            default       : Default
-            bg-dark       : Dark
-            bg-light      : Light
-            bg-primary    : Primary
-            bg-secondary  : Secondary
-            bg-success    : Success
-            bg-danger     : Danger
-            bg-warning    : Warning
-            bg-info       : Info
-            bg-white      : White
-            bg-transparent: Transparent
+                header.block.bg_class:
+                    type: select
+                    label: Background style
+                    size: medium
+                    default: default
+                    options:
+                        default: Default
+                        bg-dark: Dark
+                        bg-light: Light
+                        bg-primary: Primary
+                        bg-secondary: Secondary
+                        bg-success: Success
+                        bg-danger: Danger
+                        bg-warning: Warning
+                        bg-info: Info
+                        bg-white: White
+                        bg-transparent: Transparent

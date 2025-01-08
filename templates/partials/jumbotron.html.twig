@@ -1,54 +1,56 @@
-
 {% spaceless %}
 
-{% set b         = page.header.block %}
-{% set t         = page.header.text %}
-{% set j         = page.header.jumbotron %}
-{% set j_image   = page.header.jumbotron.image ? page.media[page.header.jumbotron.image] %}
+	{% set block         = page.header.block %}
+	{% set text         = page.header.text %}
+	{% set jumbotron = page.header.jumbotron %}
+	{% set j_image   = page.header.jumbotron.image ? page.media[page.header.jumbotron.image] %}
 
-{% set inner_class = b.column|default("col")|join(" ") ~ " " ~
-                     b.bg_class|default("bg-light") ~ " " ~
-                     b.padding|join(" ")|default("p-3 ") ~ " " ~
-                     b.margin|join(" ")|default("my-3 ") ~ " " ~
-        "rounded-" ~ b.rounding|default(0) ~ " " ~
-                     b.custom_classes ~ " " ~
-                     t.color|default("text-dark ") ~ " " ~
-                     t.size ~ " " ~
-                     t.style ~ " " ~
-                     t.alignment
-                     %}
+	{% set class_array = [
+		block.column|default("col")|join(" "),
+		block.bg_class|default("bg-light")|join(" "),
+		block.padding|default("p-3")|join(" "),
+		block.margin|default("my-3")|join(" "),
+		"rounded-" ~ block.rounding|default(0)|join(" "),
+		block.custom_classes,
+		text.color|default("text-dark")|join(" "),
+		text.size|join(" "),
+		text.style|join(" "),
+		text.alignment|join(" ")
+	] %}
+	{% set inner_class = class_array|join(" ") %}
 
-{% set custom_style = "" %}
-{% if j.min_height > 0 %} 
-    {% set custom_style = custom_style ~ "min-height: " ~ j.min_height ~ j.min_height_units|default("em") ~ ";" %}
-{% endif %}
 
-{% set custom_style = custom_style ~ j.style %}
+	{% set custom_style = "" %}
+	{% if jumbotron.min_height > 0 %}
+		{% set custom_style = custom_style ~ "min-height: " ~ jumbotron.min_height ~ jumbotron.min_height_units|default("em") ~ ";" %}
+	{% endif %}
 
-{% if j_image %} 
-    {% if j.image_blur > 0 %}
-        {% set style_bg_image = "background-image: url('" ~ j_image.gaussianBlur(j.image_blur|default(0)).url ~ "'); " %}
-    {% else %}
-        {% set style_bg_image = "background-image: url('" ~ j_image.url ~ "'); " %}
-    {% endif %}
-    
-    {% if j.image_align %}
-        {% set style_bg_image = style_bg_image ~ "background-size: cover; background-position: " ~ j.image_align|join(' ')|replace({'2':''}) ~ ";" %}
-    {% endif %}
-{% endif %}
+	{% set custom_style = custom_style ~ jumbotron.style %}
+
+	{% if j_image %}
+		{% if jumbotron.image_blur > 0 %}
+			{% set style_bg_image = "background-image: url('" ~ j_image.gaussianBlur(jumbotron.image_blur|default(0)).url ~ "'); " %}
+		{% else %}
+			{% set style_bg_image = "background-image: url('" ~ j_image.url ~ "'); " %}
+		{% endif %}
+
+		{% if jumbotron.image_align %}
+			{% set style_bg_image = style_bg_image ~ "background-size: cover; background-position: " ~ jumbotron.image_align|join(' ')|replace({'2':''}) ~ ";" %}
+		{% endif %}
+	{% endif %}
 
 {% endspaceless %}
 
 <div style="{{ custom_style }} {{ style_bg_image }}" class="{{ inner_class }}">
-    {% if j.constrain_content == 1 %}
-        <div class="container">
-            <div class="col">
-    {% endif %}
-    
-    {{ page.content|markdown }}
-    
-    {% if j.constrain_content == 1 %}
-            </div>
-        </div>
-    {% endif %}
+	{% if jumbotron.constrain_content == 1 %}
+		<div class="container">
+			<div class="col">
+			{% endif %}
+
+			{{ page.content|markdown }}
+
+			{% if jumbotron.constrain_content == 1 %}
+			</div>
+		</div>
+	{% endif %}
 </div>

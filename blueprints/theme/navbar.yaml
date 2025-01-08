@@ -1,122 +1,156 @@
 form:
-  fields:
-    navbar.type:
-      type: select
-      label: Type
-      size: medium
-      default: navbar
-      options:
-        navbar: Default
-        fixed-top: Fixed top
-        fixed-bottom: Fixed bottom
-        sticky-top: Sticky top
+    fields:
+        navbar.type:
+            type: select
+            label: Type
+            size: medium
+            default: navbar
+            options:
+                navbar: Default
+                fixed-top: Fixed top
+                fixed-bottom: Fixed bottom
+                sticky-top: Sticky top
 
-    navbar.style:
-      type: select
-      label: Style
-      size: medium
-      default: navbar-light
-      options:
-        navbar-dark: Dark (light text)
-        navbar-light: Light (dark text)
+        navbar.style:
+            type: select
+            label: Style
+            size: medium
+            default: navbar-dark
+            options:
+                none: Default
+                navbar-dark: Dark (light text)
+                navbar-light: Light (dark text)
 
-    navbar.container:
-      type: select
-      label: Container
-      size: medium
-      default: links
-      options:
-        none: No container
-        links: Navbar contents
-        navbar: Navbar
+        navbar.container:
+            type: select
+            label: Container
+            size: medium
+            default: links
+            options:
+                none: No container
+                links: Navbar contents
+                navbar: Navbar
 
-    navbar.bgstyle:
-      type: select
-      label: Background style
-      size: medium
-      default: bg-light
-      options:
-        bg-dark: Dark
-        bg-light: Light
-        bg-primary: Primary
-        bg-secondary: Secondary
-        bg-success: Success
-        bg-danger: Danger
-        bg-warning: Warning
-        bg-info: Info
-        bg-white: White
-        bg-transparent: Transparent
+        navbar.bgstyle:
+            type: select
+            label: Background style
+            size: medium
+            default: bg-dark
+            options:
+                none: Default
+                bg-dark: Dark
+                bg-light: Light
+                bg-primary: Primary
+                bg-secondary: Secondary
+                bg-success: Success
+                bg-danger: Danger
+                bg-warning: Warning
+                bg-info: Info
+                bg-white: White
+                bg-transparent: Transparent
 
-    navbar.bgcolor:
-      type: colorpicker
-      label: Background color
-      size: small
-      default: "#ffffff"
-      help: Overrides the NavBar BG Style. Set to blank or #ffffff to disable.
+        navbar.bgcolor:
+            type: colorpicker
+            label: Background color
+            size: small
+            toggleable: true
+            default: "#ffffff"
+            help: Overrides the NavBar BG Style
 
-    navbar.dropdown:
-      type: toggle
-      label: Dropdown in navbar
-      highlight: 1
-      default: 1
-      options:
-        1: Enabled
-        0: Disabled
+        navbar.dropdown:
+            type: toggle
+            label: Dropdown in navbar
+            highlight: 1
+            default: 1
+            options:
+                1: Enabled
+                0: Disabled
 
-    navbar.expand:
-      type: select
-      label: Expand breakpoint
-      size: small
-      default: navbar-expand-md
-      options:
-        none: None
-        navbar-expand-sm: Small
-        navbar-expand-md: Medium
-        navbar-expand-lg: Large
-        navbar-expand-xl: Extra Large
+        navbar.expand:
+            type: select
+            label: Expand breakpoint
+            size: small
+            default: navbar-expand-md
+            options:
+                none: None
+                navbar-expand-sm: Small
+                navbar-expand-md: Medium
+                navbar-expand-lg: Large
+                navbar-expand-xl: Extra Large
 
-    navbar.show_title_in_navbar:
-      type: toggle
-      label: Show site title in navbar
-      highlight: 1
-      default: 1
-      options:
-        1: Enabled
-        0: Disabled
+        navbar.show_title_in_navbar:
+            type: toggle
+            label: Show site title in navbar
+            highlight: 1
+            default: 1
+            options:
+                1: Enabled
+                0: Disabled
 
-    navbar.classes:
-      type: text
-      size: medium
-      label: Custom navbar classes
-      info: Any custom classes you wish applied to the navbar element
+        navbar.classes:
+            type: text
+            size: medium
+            label: Custom navbar classes
+            info: Any custom classes you wish applied to the navbar element
 
-    navbar.body_top_padding:
-      type: text
-      label: Body padding (em)
-      default: 0
-      validate:
-        type: number
-        min: 0
-      info: Any additional padding you wish to add to the top of the page, for example when using the fixed-top navbar style.
+        navbar.body_top_padding:
+            type: text
+            label: Body padding (em)
+            default: 0
+            validate:
+                type: number
+                min: 0
+            info: Any additional padding you wish to add to the top of the page, for example when using the fixed-top navbar style.
 
-    section_brand:
-      type: section
-      title: "Brand Icon"
-      fields:
-        navbar.icon:
-          type: filepicker
-          size: medium
-          folder: "user://images/icons"
-          label: Brand icon
-          preview_images: true
-          on_demand: true
-          accept:
-            - .png
-            - .jpg
-        navbar.icon_size:
-          type: range
-          label: Brand size
-          default: 32
-          validate:
-            min: 24
-            max: 256
+        section_brand:
+            type: section
+            title: "Brand Icon"
+            fields:
+                navbar.icon:
+                    type: filepicker
+                    size: medium
+                    folder: "user://images/icons"
+                    label: Brand icon
+                    preview_images: true
+                    on_demand: true
+                    accept:
+                        - .png
+                        - .jpg
+                navbar.icon_size:
+                    type: range
+                    label: Brand size
+                    default: 32
+                    validate:
+                        min: 24
+                        max: 256
+
+        section_colorSwitcher:
+            type: section
+            title: "Color switcher"
+            fields:
+                navbar.colorSwitch_enabled:
+                    type: toggle
+                    label: Show color switch in navbar
+                    highlight: 1
+                    default: 1
+                    options:
+                        1: Enabled
+                        0: Disabled
+
+                navbar.colorSwitch_icon_auto:
+                    type: iconpicker
+                    label: Auto theme icon
+                    highlight: 1
+                    default: fa-cog
+
+                navbar.colorSwitch_icon_light:
+                    type: iconpicker
+                    label: Light theme icon
+                    highlight: 1
+                    default: fa-cog
+
+                navbar.colorSwitch_icon_dark:
+                    type: iconpicker
+                    label: Dark theme icon
+                    highlight: 1
+                    default: fa-cog

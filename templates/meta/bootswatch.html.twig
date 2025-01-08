@@ -2,43 +2,44 @@
 
 	{% set theme_config = attribute(config.themes, config.system.pages.theme) %}
 	{% set b_theme      = theme_config.cdn_bootswatch_css %}
-	
+
 	{% if b_theme != "0" %}
 		{% set b_hashes = {
-			cerulean:  "sha512-yTmD3eVCm6omGDRFz3vcOdjVhZoX6F3kFgyIGno1c4JQ3PWeSRhB5MaKR6TVb9B4TnHRlrYMy+pFMRJiPJ0bLA==",
-			cosmo:     "sha512-61f8/6Z0HBl96abjaKeob5XiSSCD4W8ZoElkIF8uvaekvpNCLa9u6TDLE5/Y7FWQCIHXWEfD3TYE9TzUbaBaNw==",
-			cyborg:    "sha512-X2u8dAWrVfvanPTlHwLh0fXttDDhkdV79q7cOibXR7hm9R3pRMFi53OwpGMdcbUiRk97isaXCRqFbm5LX1MiYw==",
-			darkly:    "sha512-KREAPYEoSKKkg2oqvahwsfZkMDfFe1i5G4cL/1y0xdAauwjoO5nNe6jdY2pEiNdh0Dqs39Pnilq7Zbl3e0FjGw==",
-			flatly:    "sha512-9MmHg28DhjKwWGDpuNCHK45mO9w7V20sx75eaJoyVvjw1q/YpAxfRaxEsQHbdzw6aQqcmqWe5UGTjgtpb7b7og==",
-			journal:   "sha512-GIB6jt9a1oXNpoZYC73CSn677XqWQn4c6/N2HU4L8j2420e27//Fdtiu337AUG3wm4r0cpRlpDMTWR+SzlORKA==",
-			litera:    "sha512-WC/IImFzoPRFTlJQpUSqaM1QOKsIWIfrmhkkXRXoDeB9hlArdsUAWOURes+oFcDRPUUZhuc2QdyfaZEGXjd6kg==",
-			lumen:     "sha512-uDVC5x/r8/AlBeeG0y/y8wwG6ZIhBzxMZGhx2uZWgRF6e17UWl6WWb6T2Lpp8lrlOeOX2LZfjXNQb7ng6MnwhA==",
-			lux:       "sha512-JQH/PgL2GI/QRtL8+26f9MUeF1nvl/wI7vBiHSvZdD6PRLu3/wOlVDOF0k/QLfV5kU8rmuDeFoJ2gPIT0qlDmQ==",
-			materia:   "sha512-lgjGHUJ8gespcWe81wqbY/6Kb8wyOes25otQkhbMllia1Shnc5E+RX+0JvucTKR9cA0F3q4LliKeeudfkhLJJg==",
-			minty:     "sha512-6j8uDbJ77NKFw5b7wK0md8qwdIL6a2iQK5QgZggbOBEPsiE+/SmTrOWRN6NI1OltrYNx6lMTW3fbCCz8TKCr5Q==",
-			morph:     "sha512-ZOEMfJac7enkyGovc+OFcqGo5A35ydWAA5kLlcQtjJWFRnTDX4OW2U80pmD5Eg5kvvV+X+agCqh7cYQgidfOPQ==",
-			pulse:     "sha512-NUuPVisIEFJ7qk9WguPDQK8j1sN+7J24qGcI/qoYfvav5nOow7uaQK3S/PNLYm7sm37jDVoNdVA8H+ZdEdECjA==",
-			quartz:    "sha512-RNvqvueJqHVPhG3gZcKphDvkOB8nRtU69XT6FzIxY97CktyooT+NyL2sg5JZhkolog46XfKfDhyIeyhE/TrL8A==",
-			sandstone: "sha512-vKQkYBxgn7QPg9pJJML1NT6HKNySAU3cmLX2t32/PYRfm/H2wzdNMAltzBemHcg8fdD1ZfnqFl8YHgylPyPYYg==",
-			simplex:   "sha512-hDfCzDhww/JE+45O/cXfPGG7bBJ/0k6ui8wfwn/iGU7tIuXoReRskkvEvy8waAnM2nO5ezNiDNEmITviUxM9SQ==",
-			sketchy:   "sha512-2GcSNOCUZR36TLjO0B1GyFqk//acaWa0u/zxbB6UKhha28n9TtEiiwtTRVHRGbr059eVRKvSCyk2mCXocmtpHg==",
-			slate:     "sha512-C42uYSECf+bXOviQ1qRrb3iJraTfOnsvZs84WaiU2i7M0sf+Mu68IrpksryDHIINu7CoaPEn0MoY8Ahmm0mCPg==",
-			solar:     "sha512-riiuLrjNXT42ink4OJeyChsuOlZlZK+dK4lY59xrVt3uuT5W8Yls8WLcopofKJoyTmwJyCaK9fHXY3vGvR9x4w==",
-			spacelab:  "sha512-VlYW/FBl6HHyE7NyAQqT9x1cE3xdIXEYn6s8ckbTx9SGNu8P7Jve1EMa+DZty34NypAaRISbU5qzsansxNqfxg==",
-			superhero: "sha512-DA2rI7d/CG3y/Nggp1ahshJkCs8+YH/t87DZ7tamF9rh8o6AuOW24giNAUnufu6hfikSBvE9Ctk7ebnG2U8wXg==",
-			united:    "sha512-XtHhOKn3DkdjRzwiJ0Ssp8QZ5y0BSArAWh9/f8fq17/vk0pL9lc8INRz4EWEAnBVnubjDqpxQuEV6SK09hqroQ==",
-			vapor:     "sha512-Pe0IO6obj0b/5liv3Z3x82jslhmZmItYrgzgPIW+qEOJLkPjMpLl8UwArhIOFlmQfATBCIPZWHffjjYTn0XT3A==",
-			yeti:      "sha512-4lE2Ba9lTAUpXaE2cL4S9Ff/5gZqI+5OQ+gaj3ymmADard7acgJUKkZA1xU38/gX4OTzS8HCYqYH13+qyRCthQ==",
-			zephyr:    "sha512-8AsrxJHNcfBjevT8jxlnbIcZKffcLoLyOymcu4F2ClBWIxgRJ3dNdRolabqSuAa6x4a2ujzzHkjFpmJBQP/74g=="
+			cerulean: "sha512-vaImhtQoaCXvevCM/UK+8ND/df0kiQWLtR65wgq0AWShEXLpWHMve0oGgU0q1gq1MbbyEuAhMMlqNmZd7s7wTQ==",
+			cosmo: "sha512-PU+mnI7iaSDt/G/adHVcQOX2I+K3bQ27kwHJQ1rPq5iqQvHuHSdJOUU/TmPcUsyUGrfAxK+Z4rnx/SL+qCmBNQ==",
+			cyborg: "sha512-M+Wrv9LTvQe81gFD2ZE3xxPTN5V2n1iLCXsldIxXvfs6tP+6VihBCwCMBkkjkQUZVmEHBsowb9Vqsq1et1teEg==",
+			darkly: "sha512-HDszXqSUU0om4Yj5dZOUNmtwXGWDa5ppESlX98yzbBS+z+3HQ8a/7kcdI1dv+jKq+1V5b01eYurE7+yFjw6Rdg==",
+			flatly: "sha512-qoT4KwnRpAQ9uczPsw7GunsNmhRnYwSlE2KRCUPRQHSkDuLulCtDXuC2P/P6oqr3M5hoGagUG9pgHDPkD2zCDA==",
+			journal: "sha512-i0XjXal2VCWv2R9nyqgvp/pPZGTG563h0djHqDDgu/8S9EIsLNpv+9WoqQFu3ngwDyD5I5WvwauQM1gyNXxsRw==",
+			litera: "sha512-TUtnNUXMMWp2IALAR9t2z1vuorOUQL4dPWG3J9ANInEj6xu/rz5fzni/faoEGzuqeY1Z1yGD6COYAW72oiDVYA==",
+			lumen: "sha512-N6Wwrw2+w72hDf55YI/j+y3JUXpO7qTuo+kilvcpFJqEabBFA3nurVZineUcg4+op0dJLrzQXcNNif9Gf/ECPA==",
+			lux: "sha512-RI2S7J+KOTIVVh6JxrBRNIxJjIioHORVNow+SSz2OMKsDLG5y/YT6iXEK+R0LlKBo/Uwr1O063yT198V6AZh4w==",
+			materia: "sha512-2S9Do+uTmZmmJpdmAcOKdUrK/YslcvAuRfIF2ws8+BW9AvZXMRZM+o8Wq+PZrfISD6ZlIaeCWWZAdeprXIoYuQ==",
+			minty: "sha512-+/uDiVv4ZLhHnXToJFPwYK08kkG2et1rSuiitOl+0hdzmx2N6HQaMqm/7ORzr8dhco+cyGZCRxkXU7EMMYOLfQ==",
+			morph: "sha512-Nd3lZDftpGFIyfIz/Snlz7SzhEycjmHkNn3s2dmhrVyY55uJnTE+UiK75+CeXltD5GmU7c9n/JMDWaEwGQjowQ==",
+			pulse: "sha512-obkkQCe89/FCOU2KW0b5uQy371PYlf2myYmsVb9EaDeI2t+ZtSec+uSA8HdHFiiNfcLWA8p+nRM3WSHrQKpwuA==",
+			quartz: "sha512-K+FEHZnRHFnQ6iahLNQUCHNpKDHkrYxHZmzFjOJteRPjBhjLmOgJgGJsIYBDOS1wYxcSVvAcfg3ZFpm6tnbhOA==",
+			sandstone: "sha512-0/qBfS6zg4ZK/qvnGwbCpVGDFnfcVnTWhmHgiQNDCcgRLrCBfG4LWAYir/jw/jANoGjEsvQ9ajc9V0j7hxFxag==",
+			simplex: "sha512-I5ESCAJpdBMo33TBRme9r2K8h7exjtz0lvvBt0BGmjHJxlq+5YNkP2JQZmZrCilMpnM+bJF4Y/53KRmFEMqbpQ==",
+			sketchy: "sha512-y4F259NzBXkxhixXEuh574bj6TdXVeS6RX+2x9wezULTmAOSgWCm25a+6d0IQxAnbg+D4xIEJoll8piTADM5Gg==",
+			slate: "sha512-3EVe7TjxthzbTGfmRFr7zIvHjDWW7viFDgKOoTJ7S5IIrrKVN5rbPVjj0F7nT6rTyAkURnzwoujxlALvHoO9jw==",
+			solar: "sha512-0BjJSwKzc+sx3vM/B9nEU98M/hCLM2bcIWrzGe9fqJZFVicDjxu2vrHd0/7ildD+23p5JsQNo8IEL+sOb+A1iw==",
+			spacelab: "sha512-NWw8XgTx2tYA5oEZwBrmyH8bg37mh4bIjeV4OLWwqI3ipQ0ITyiWTFdG295uz2lMy+QO9DszNZwta4m4mJpnmw==",
+			superhero: "sha512-yeFVFyLRIY48erNjFZ1uXiERPXN8izq4mBNe4iSgVYT0bq/ZiSsWwTlaSObBDeqR/+7MBw1g23iSpI9ru/qtGQ==",
+			united: "sha512-bDf5pNGht0HBv1tNSyB06LQ4D+5IV4xpCmAFKORMIQi57c8mq96hg2Wa03//JNjHEjEai1qV+ZOUcwuy70j02A==",
+			vapor: "sha512-9LoG2EQdcmuEQpzkslqa3whcL8LM+7GGPsW2MK1gRlmiML0G7M5ZPj2aZaW2DyixslBfZoy4kANfP/MYWDCSiw==",
+			yeti: "sha512-Iwexq+Vk4qT5CCO6UdOTzOxJUB0eQxAWAfm6ytWws6MMcD6illgOw7QFjWoqqd3bQJS/EZPUR9nOACG7i5WMPQ==",
+			zephyr: "sha512-CWXb9sx63+REyEBV/cte+dE1hSsYpJifb57KkqAXjsN3gZQt6phZt7e5RhgZrUbaNfCdtdpcqDZtuTEB+D3q2Q==",
 		} %}
+
 		{% set b_hash = b_hashes[b_theme] %}
 		{% do assets.add(
-			"https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.0.2/"~b_theme~"/bootstrap.min.css", {
+			"https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/"~b_theme~"/bootstrap.min.css", {
 				integrity: b_hash,
 				crossorigin: "anonymous",
 				referrerpolicy: "no-referrer",
-				priority: 130
+				priority: 135
 			}) %}
-		
+
 	{% endif %}
 {% endspaceless %}

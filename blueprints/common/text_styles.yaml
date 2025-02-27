@@ -1,70 +1,79 @@
 form:
-  fields:
-    section:
-      type: section
-      title: Text style
-      underline: true
-      fields:
+    fields:
+        section:
+            type: section
+            title: Text style
+            underline: true
+            fields:
+                header.text.color:
+                    type: select
+                    label: Text color
+                    size: medium
+                    default: default
+                    options:
+                        default: Default
+                        text-light: Text Light
+                        text-light-emphasis: Text Light Emphasis
+                        text-dark: Text Dark
+                        text-dark-emphasis: Text Dark Emphasis
+                        text-black: Text Black
+                        text-white: Text White
+                        text-black-50: Text Black 50
+                        text-white-50: Text White 50
+                        text-primary: Text Primary
+                        text-primary-emphasis: Text Primary Emphasis
+                        text-secondary: Text Secondary
+                        text-secondary-emphasis: Text Secondary Emphasis
+                        text-success: Text Success
+                        text-success-emphasis: Text Success Emphasis
+                        text-danger: Text Danger
+                        text-danger-emphasis: Text Danger Emphasis
+                        text-warning: Text Warning
+                        text-warning-emphasis: Text Warning Emphasis
+                        text-info: Text Info
+                        text-info-emphasis: Text Info Emphasis
+                        text-body: Text Body
+                        text-body-emphasis: Text Body Emphasis
+                        text-body-secondary: Text Body Secondary
+                        text-body-tertiary: Text Body Tertiary
 
-        header.text.color:
-          type   : select
-          label  : Text color
-          size   : medium
-          default: default
-          options:
-            default       : Default
-            text-dark     : Dark
-            text-light    : Light
-            text-primary  : Primary
-            text-secondary: Secondary
-            text-success  : Success
-            text-danger   : Danger
-            text-warning  : Warning
-            text-info     : Info
-            text-body     : Body
-            text-muted    : Muted
-            text-white    : White
-            text-black-50 : Black-50
-            text-white-50 : White-50
+                header.text.size:
+                    type: select
+                    label: Text size
+                    size: medium
+                    default: default
+                    options:
+                        default: Default
+                        fs-1: Size 1 (largest)
+                        fs-2: Size 2
+                        fs-3: Size 3
+                        fs-4: Size 4
+                        fs-5: Size 5
+                        fs-6: Size 6
 
-        header.text.size:
-          type   : select
-          label  : Text size
-          size   : medium
-          default: default
-          options:
-            default: Default
-            fs-1   : Size 1 (largest)
-            fs-2   : Size 2
-            fs-3   : Size 3
-            fs-4   : Size 4
-            fs-5   : Size 5
-            fs-6   : Size 6
+                header.text.style:
+                    type: select
+                    label: Text style
+                    size: medium
+                    default: default
+                    multiple: true
+                    validate: array
+                    options:
+                        default: Default
+                        fw-bold: Bold text
+                        fw-bolder: Bolder weight text
+                        fw-normal: Normal weight text
+                        fw-light: Light weight text
+                        fw-lighter: Lighter weight text
+                        fst-italic: Italic text
+                        fst-normal: Normal
 
-        header.text.style:
-          type   : select
-          label  : Text style
-          size   : medium
-          default: default
-          multiple: true
-          validate:
-            array
-          options:
-            default   : Default
-            fw-bold   : Bold text
-            fw-bolder : Bolder weight text
-            fw-normal : Normal weight text
-            fw-light  : Light weight text
-            fw-lighter: Lighter weight text
-            fst-italic: Italic text
-            fst-normal: Normal
-        
-        header.text.alignment:
-          type   : select
-          label  : Text alignment
-          size   : medium
-          default: default
-          options:
-            text-start : text-start
-            text-center: text-center
-            text-end   : text-end
+                header.text.alignment:
+                    type: select
+                    label: Text alignment
+                    size: medium
+                    default: default
+                    options:
+                        text-start: text-start
+                        text-center: text-center
+                        text-end: text-end

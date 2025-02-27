@@ -38,14 +38,26 @@ form:
             default: bg-dark
             options:
                 none: Default
-                bg-dark: Dark
-                bg-light: Light
+                bg-body: Body
+                bg-body-secondary: Body Secondary
+                bg-body-tertiary: Body Tertiary
                 bg-primary: Primary
+                bg-primary-subtle: Primary Subtle
                 bg-secondary: Secondary
+                bg-secondary-subtle: Secondary Subtle
                 bg-success: Success
+                bg-success-subtle: Success Subtle
                 bg-danger: Danger
+                bg-danger-subtle: Danger Subtle
                 bg-warning: Warning
+                bg-warning-subtle: Warning Subtle
                 bg-info: Info
+                bg-info-subtle: Info Subtle
+                bg-light: Light
+                bg-light-subtle: Light Subtle
+                bg-dark: Dark
+                bg-dark-subtle: Dark Subtle
+                bg-black: Black
                 bg-white: White
                 bg-transparent: Transparent
 
@@ -138,19 +150,22 @@ form:
                         0: Disabled
 
                 navbar.colorSwitch_icon_auto:
-                    type: iconpicker
-                    label: Auto theme icon
+                    type: text
+                    label: Icon for "Auto" theme
+                    help: Supports either FontAwesome or Bootstrap Icons, as long as the resources are included via the CDN settings
                     highlight: 1
-                    default: fa-cog
+                    default: fa-solid fa-circle-half-stroke
 
                 navbar.colorSwitch_icon_light:
-                    type: iconpicker
-                    label: Light theme icon
+                    type: text
+                    label: Icon for "Light" theme
+                    help: Supports either FontAwesome or Bootstrap Icons, as long as the resources are included via the CDN settings
                     highlight: 1
-                    default: fa-cog
+                    default: fa-solid fa-sun
 
                 navbar.colorSwitch_icon_dark:
-                    type: iconpicker
-                    label: Dark theme icon
+                    type: text
+                    label: Icon for "Dark" theme
+                    help: Supports either FontAwesome or Bootstrap Icons, as long as the resources are included via the CDN settings
                     highlight: 1
-                    default: fa-cog
+                    default: fa-solid fa-star-and-crescent

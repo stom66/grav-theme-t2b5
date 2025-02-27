@@ -7,7 +7,7 @@ form:
             fields:
                 header.block.column:
                     type: select
-                    label: Width
+                    label: Block width
                     default: col
                     size: medium
                     multiple: true
@@ -90,7 +90,7 @@ form:
 
                 header.block.padding:
                     type: select
-                    label: Padding
+                    label: Block padding
                     size: medium
                     multiple: true
                     validate:
@@ -141,7 +141,7 @@ form:
 
                 header.block.margin:
                     type: select
-                    label: Margins
+                    label: Block margins
                     size: medium
                     multiple: true
                     validate:
@@ -200,7 +200,7 @@ form:
                     toggleable: true
                     validate:
                         min: 0
-                        max: 3
+                        max: 5
 
                 header.block.custom_classes:
                     type: text
@@ -214,13 +214,25 @@ form:
                     default: default
                     options:
                         default: Default
-                        bg-dark: Dark
-                        bg-light: Light
+                        bg-body: Body
+                        bg-body-secondary: Body Secondary
+                        bg-body-tertiary: Body Tertiary
                         bg-primary: Primary
+                        bg-primary-subtle: Primary Subtle
                         bg-secondary: Secondary
+                        bg-secondary-subtle: Secondary Subtle
                         bg-success: Success
+                        bg-success-subtle: Success Subtle
                         bg-danger: Danger
+                        bg-danger-subtle: Danger Subtle
                         bg-warning: Warning
+                        bg-warning-subtle: Warning Subtle
                         bg-info: Info
+                        bg-info-subtle: Info Subtle
+                        bg-light: Light
+                        bg-light-subtle: Light Subtle
+                        bg-dark: Dark
+                        bg-dark-subtle: Dark Subtle
+                        bg-black: Black
                         bg-white: White
                         bg-transparent: Transparent

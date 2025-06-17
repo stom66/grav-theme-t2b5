@@ -1,8 +1,9 @@
-{% extends "modular/text.html.twig" %}
-
+{% extends "partials/text.html.twig" %}
 
 {% block contents %}
 	{{ content|raw }}
+
+	<!-- FORM MODULAR -->
 
 	{% include "forms/form.html.twig" %}
 {% endblock %}

@@ -15,12 +15,12 @@
 // Theme variables
 @use "custom/variables";
 
-// Typography settings
-@use "custom/typography";
-
 // Bootstrap framework customisation
 // If you're customising the theme then you will want to uncomment the following includes
-//@use "vendor/bootstrap";
+@use "vendor/bootstrap";
+
+// Typography settings
+@use "custom/typography";
 
 // Additional styles
 @use "custom/styles";

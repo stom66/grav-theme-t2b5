@@ -1,159 +1,180 @@
 title: Jumbotron
-'@extends': default
+"@extends": default
 
 form:
-  fields:
-    tabs:
-      active: 1
-      fields:
-        advanced:
-          fields:
-            columns:
-              fields:
-                column1:
-                  fields:
-                    name:
-                      default: modular/jumbotron
-                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-            overrides:
-              fields:
-                header.template:
-                  default: modular/jumbotron
-                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'         
-          
+    fields:
+        tabs:
+            active: 1
+            fields:
+                advanced:
+                    fields:
+                        columns:
+                            fields:
+                                column1:
+                                    fields:
+                                        name:
+                                            default: modular/jumbotron
+                                            "@data-options": '\Grav\Common\Page\Pages::modularTypes'
+                        overrides:
+                            fields:
+                                header.template:
+                                    default: modular/jumbotron
+                                    "@data-options": '\Grav\Common\Page\Pages::modularTypes'
 
-        content:
-          type: tab
-          title: Content
-          active: true
-          fields:
+                content:
+                    type: tab
+                    title: Content
+                    active: true
+                    fields:
+                        uploads:
+                            label: Background image (first one will be displayed next to your content)
 
-            uploads:
-              label: Background image (first one will be displayed next to your content)
-           
-        styles:
-          type: tab
-          title: Styles
-          ordering@: -2
-          fields:
-            row1:
-              type: columns
-              fields:
-                column1:
-                  type: column
-                  import@:
-                    type: blueprints/common/container_styles
-                    context: theme://
-                column2:
-                  type: column
-                  import@:
-                    type: blueprints/common/row_styles
-                    context: theme://
-            row2:
-              type: columns
-              fields:
-                column1:
-                  type: column
-                  import@:
-                    type: blueprints/common/block_styles
-                    context: theme://
-                column2:
-                  type: column
-                  import@:
-                    type: blueprints/common/text_styles
-                    context: theme://
+                styles:
+                    type: tab
+                    title: Styles
+                    ordering@: -2
+                    fields:
+                        row1:
+                            type: columns
+                            fields:
+                                column1:
+                                    type: column
+                                    import@:
+                                        type: blueprints/common/container_styles
+                                        context: theme://
+                                column2:
+                                    type: column
+                                    import@:
+                                        type: blueprints/common/row_styles
+                                        context: theme://
+                        row2:
+                            type: columns
+                            fields:
+                                column1:
+                                    type: column
+                                    import@:
+                                        type: blueprints/common/block_styles
+                                        context: theme://
+                                column2:
+                                    type: column
+                                    import@:
+                                        type: blueprints/common/text_styles
+                                        context: theme://
 
-            row3:
-              type: columns
-              fields:
-                column1:
-                  type: column
-                  fields:
-                    section:
-                      type: section
-                      title: Jumbotron settings
-                      underline: true
-                      fields:
+                        row3:
+                            type: columns
+                            fields:
+                                column1:
+                                    type: column
+                                    fields:
+                                        section:
+                                            type: section
+                                            title: Jumbotron settings
+                                            underline: true
+                                            fields:
+                                                header.jumbotron.constrain_content:
+                                                    type: toggle
+                                                    label: Constrain content
+                                                    highlight: 1
+                                                    default: 0
+                                                    options:
+                                                        0: Disabled
+                                                        1: Enabled
+                                                    validate: bool
+                                                    help: Limit the width of the content when it's in a container-fluid
 
-                        header.jumbotron.constrain_content:
-                          type     : toggle
-                          label    : Constrain content
-                          highlight: 1
-                          default  : 0
-                          options  : 
-                            0: Disabled
-                            1: Enabled
-                          validate: bool
-                          help: Limit the width of the content when it's in a container-fluid
+                                                header.jumbotron.style:
+                                                    type: text
+                                                    label: Custom style
+                                                    help: "Add custom css rules here. Do not add 'style=' or quotes, these are added automatically. Example:   margin-top: -10em;"
 
-                        header.jumbotron.style:
-                          type : text
-                          label: Custom style
-                          help : "Add custom css rules here. Do not add 'style=' or quotes, these are added automatically. Example:   margin-top: -10em;"
-                          
-                        column:
-                          type: columns
-                          fields:
-                            column1:
-                              type: column
-                              fields:
-                                header.jumbotron.min_height:
-                                  type    : text
-                                  label   : Minimum height (em)
-                                  help    : Set the minimum height for the Jumbotron, best when using background images
-                                  size    : medium
-                                  default : 0
-                                  validate: 
-                                    type: number
-                                    min: 0
+                                                column1:
+                                                    type: columns
+                                                    fields:
+                                                        column1:
+                                                            type: column
+                                                            fields:
+                                                                header.jumbotron.min_height:
+                                                                    type: text
+                                                                    label: Minimum height
+                                                                    help: Set the minimum height for the Jumbotron, best when using background images
+                                                                    size: medium
+                                                                    default: 0
+                                                                    validate:
+                                                                        type: number
+                                                                        min: 0
 
-                            column2:
-                              type: column
-                              fields:                        
-                                header.jumbotron.min_height_units:
-                                  type   : select
-                                  size   : medium
-                                  options: 
-                                    em: em
-                                    px: px
-                                    vh: vh
+                                                        column2:
+                                                            type: column
+                                                            fields:
+                                                                header.jumbotron.min_height_units:
+                                                                    type: select
+                                                                    size: medium
+                                                                    options:
+                                                                        em: em
+                                                                        px: px
+                                                                        vh: vh
+                                                column2:
+                                                    type: columns
+                                                    fields:
+                                                        column3:
+                                                            type: column
+                                                            fields:
+                                                                header.jumbotron.max_height:
+                                                                    type: text
+                                                                    label: Maximum height
+                                                                    help: Set the maximum height for the Jumbotron, best when using background images
+                                                                    size: medium
+                                                                    default: 0
+                                                                    validate:
+                                                                        type: number
+                                                                        min: 0
 
-                column2:
-                  type: column
-                  fields:
-                    section:
-                      type: section
-                      title: Jumbotron image
-                      underline: true
-                      fields:
+                                                        column4:
+                                                            type: column
+                                                            fields:
+                                                                header.jumbotron.max_height_units:
+                                                                    type: select
+                                                                    size: medium
+                                                                    options:
+                                                                        em: em
+                                                                        px: px
+                                                                        vh: vh
 
-                        header.jumbotron.image:
-                          type          : pagemediaselect
-                          label         : Background image
-                          preview_images: true
+                                column2:
+                                    type: column
+                                    fields:
+                                        section:
+                                            type: section
+                                            title: Jumbotron image
+                                            underline: true
+                                            fields:
+                                                header.jumbotron.image:
+                                                    type: pagemediaselect
+                                                    label: Background image
+                                                    preview_images: true
 
-                        header.jumbotron.image_align:
-                          type    : select
-                          label   : Background image alignment
-                          size    : large
-                          default : center2 center
-                          multiple: true
-                          validate: 
-                            type: array
-                          options: 
-                            center2: "Horizontal: Center"
-                            left   : "Horizontal: Left"
-                            right  : "Horizontal: Right"
-                            center : "Vertical: Center"
-                            bottom : "Vertical: Bottom"
-                            top    : "Vertical: Top"
+                                                header.jumbotron.image_align:
+                                                    type: select
+                                                    label: Background image alignment
+                                                    size: large
+                                                    default: center2 center
+                                                    multiple: true
+                                                    validate:
+                                                        type: array
+                                                    options:
+                                                        center2: "Horizontal: Center"
+                                                        left: "Horizontal: Left"
+                                                        right: "Horizontal: Right"
+                                                        center: "Vertical: Center"
+                                                        bottom: "Vertical: Bottom"
+                                                        top: "Vertical: Top"
 
-
-                        header.jumbotron.image_blur:
-                          type    : range
-                          label   : Background blur strength
-                          default : 0
-                          size    : large
-                          validate: 
-                            min: 0
-                            max: 6
+                                                header.jumbotron.image_blur:
+                                                    type: range
+                                                    label: Background blur strength
+                                                    default: 0
+                                                    size: large
+                                                    validate:
+                                                        min: 0
+                                                        max: 6

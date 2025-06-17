@@ -1,8 +1,8 @@
 {% extends 'modular/text.html.twig' %}
 
 {% block contents %}
-	{% for column in content|split('<hr />') %}
-		<div class="col">
+	{% for column in content|raw|split('<hr>') %}
+		<div class="col-6">
 			{{ column|raw }}
 		</div>
 

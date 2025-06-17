@@ -1,0 +1,76 @@
+form:
+    fields:
+        section:
+            type: section
+            title: Image style
+            underline: true
+            fields:
+                uploads:
+                    label: Page Media (first one will be displayed next to your content)
+
+                header.image.align:
+                    type: select
+                    label: Image position
+                    size: medium
+                    classes: fancy
+                    default: float-none
+                    multiple: true
+                    validate:
+                        type: array
+                    options:
+                        float-start: float-start
+                        float-end: float-end
+                        float-none: float-none
+                        float-sm-start: float-sm-start
+                        float-sm-end: float-sm-end
+                        float-sm-none: float-sm-none
+                        float-md-start: float-md-start
+                        float-md-end: float-md-end
+                        float-md-none: float-md-none
+                        float-lg-start: float-lg-start
+                        float-lg-end: float-lg-end
+                        float-lg-none: float-lg-none
+                        float-xl-start: float-xl-start
+                        float-xl-end: float-xl-end
+                        float-xl-none: float-xl-none
+                        float-xxl-start: float-xxl-start
+                        float-xxl-end: float-xxl-end
+                        float-xxl-none: float-xxl-none
+
+                header.image.size:
+                    label: Image size
+                    type: select
+                    size: medium
+                    info: You can further specify sizes for different breakpoints by choosing additional classes. Be sure to choose only one class for each size.
+                    default: img-fluid
+                    options:
+                        img-fluid: img-fluid
+                        w-25: w-25
+                        w-50: w-50
+                        w-75: w-75
+
+                header.image.rounding:
+                    type: range
+                    label: Image rounding strength
+                    default: 0
+                    size: x-large
+                    toggleable: true
+                    validate:
+                        min: 0
+                        max: 5
+
+                header.image.custom_classes:
+                    type: text
+                    label: Image custom classes
+                    size: medium
+
+                header.image.lightbox_enabled:
+                    type: toggle
+                    label: Lightbox
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
+                    validate: bool
+                    info: Enable/disable the lightbox

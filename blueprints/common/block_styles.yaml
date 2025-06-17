@@ -236,3 +236,60 @@ form:
                         bg-black: Black
                         bg-white: White
                         bg-transparent: Transparent
+
+                header.block.inset:
+                    type: checkbox
+                    label: Inset
+                    default: 0
+                    size: medium
+
+                header.block.inset_padding:
+                    type: select
+                    label: Inset padding
+                    size: medium
+                    multiple: true
+                    validate:
+                        type: array
+                    options:
+                        p-0: All 0
+                        p-1: All 1
+                        p-2: All 2
+                        p-3: All 3
+                        p-4: All 4
+                        p-5: All 5
+                        px-0: Horizontal 0
+                        px-1: Horizontal 1
+                        px-2: Horizontal 2
+                        px-3: Horizontal 3
+                        px-4: Horizontal 4
+                        px-5: Horizontal 5
+                        py-0: Vertical 0
+                        py-1: Vertical 1
+                        py-2: Vertical 2
+                        py-3: Vertical 3
+                        py-4: Vertical 4
+                        py-5: Vertical 5
+                        pt-0: Top 0
+                        pt-1: Top 1
+                        pt-2: Top 2
+                        pt-3: Top 3
+                        pt-4: Top 4
+                        pt-5: Top 5
+                        pl-0: Left 0
+                        pl-1: Left 1
+                        pl-2: Left 2
+                        pl-3: Left 3
+                        pl-4: Left 4
+                        pl-5: Left 5
+                        pb-0: Bottom 0
+                        pb-1: Bottom 1
+                        pb-2: Bottom 2
+                        pb-3: Bottom 3
+                        pb-4: Bottom 4
+                        pb-5: Bottom 5
+                        pr-0: Right 0
+                        pr-1: Right 1
+                        pr-2: Right 2
+                        pr-3: Right 3
+                        pr-4: Right 4
+                        pr-5: Right 5

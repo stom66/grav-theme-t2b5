@@ -1,24 +1,24 @@
 title: Default Single Column
-'@extends': default
+"@extends": default
 form:
-  fields:
-    tabs:
-      fields:
-        options:
-          fields:
-            navbar:
-              type: section
-              title: Class over-rides
-              underline: true
-              fields:
-                header.navbar_classes:
-                  type : text
-                  size : medium
-                  label: Custom navbar classes
-                  info : Any custom classes you wish applied to the navbar element
+    fields:
+        tabs:
+            fields:
+                options:
+                    fields:
+                        navbar:
+                            type: section
+                            title: Class over-rides
+                            underline: true
+                            fields:
+                                header.navbar_classes:
+                                    type: text
+                                    size: medium
+                                    label: Custom navbar classes
+                                    info: Any custom classes you wish applied to the navbar element
 
-                header.body_classes:
-                  type : text
-                  size : medium
-                  label: Custom body classes
-                  info : Any custom classes you wish applied to the main body element
+                                header.body_classes:
+                                    type: text
+                                    size: medium
+                                    label: Custom body classes
+                                    info: Any custom classes you wish applied to the main body element

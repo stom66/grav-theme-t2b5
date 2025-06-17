@@ -1,0 +1,82 @@
+{% spaceless %}
+
+	{% set header     = page.header %}
+	{% set block_data = header.block %}
+	{% set text_data  = header.text %}
+
+
+	{% set text_classes = [
+		text_data.color|default("text-dark")|join(" "),
+		text_data.size|default("")|join(" "),
+		text_data.alignment|default("")|join(" "),
+		text_data.style|default("")|join(" ")
+	] %}
+
+	{% if block_data.inset == 1 %}
+		{% set block_classes = [
+			"col",
+			block_data.bg_class|default("bg-light")|join(" "),
+			block_data.padding|default(" ")|join(" "),
+			"rounded-" ~ block_data.rounding|default(0)|join(" "),
+			block_data.custom_classes,
+		] %}
+		{% set inset_classes = [
+			block_data.column|default("col")|join(" "),
+			block_data.margin|default(" ")|join(" "),
+			block_data.inset_padding|default(" ")|join(" "),
+		] %}
+	{% else %}
+		{% set block_classes = [
+			block_data.column|default("col")|join(" "),
+			block_data.margin|default(" ")|join(" "),
+			block_data.bg_class|default("bg-light")|join(" "),
+			block_data.padding|default(" ")|join(" "),
+			"rounded-" ~ block_data.rounding|default(0)|join(" "),
+			block_data.custom_classes,
+		] %}
+	{% endif %}
+
+	{% set block_class = text_classes | merge(block_classes) %}
+
+	{% set image = page.media.images|first %}
+
+	{% set align_classes = (header.image.align is iterable)
+		? header.image.align|join(' ')
+		: header.image.align|default('float-none') %}
+
+	{% set image_classes = header.image.size|default("img-fluid") ~
+		" rounded-" ~ header.image.rounding|default("0") ~
+		" " ~ align_classes ~
+		" " ~ header.image.custom_classes %}
+
+{% endspaceless %}
+
+
+{% if header.block.inset == 1 %}
+	<div class="{{ inset_classes|join(' ') }}">
+{% endif %}
+
+<div class="{{ block_class|join(' ') }}">
+	{% if image %}
+		{% if header.image.lightbox_enabled == 1 %}
+			<a href="{{ image.url }}" class="glightbox">
+			{% endif %}
+
+			{{ image.html('', '', image_classes)|raw }}
+
+			{% if header.image.lightbox_enabled == 1 %}
+			</a>
+		{% endif %}
+	{% endif %}
+
+	<!-- Start: Block: Contents -->
+	{% block contents %}
+		{{ page.content|raw }}
+	{% endblock %}
+	<!-- End: Block: Contents -->
+</div>
+
+{% if header.block.inset == 1 %}
+	</div>
+{% endif %}
+

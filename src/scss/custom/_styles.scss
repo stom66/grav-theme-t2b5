@@ -8,3 +8,85 @@ html {
 }
 
 body {}
+
+nav {
+	//margin-top: 8em !important;
+}
+
+
+.top-banner p {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.navbar-brand img {
+	border: --bs-info-text-emphasis;
+	border-width: 3px;
+	border-style: dotted;
+	border-radius: 100%;
+	margin-right:1em;
+}
+
+/* Navbar link animations */
+
+.nav-link {
+	display: inline-block;
+	position: relative;
+	color: #eee;
+  }
+
+  .nav-link::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 1px;
+	bottom: 0;
+	left: 0;
+	background: radial-gradient(circle, rgba(255,255,255,1) 95%, rgba(255,255,255,0) 100%);
+	transform-origin: bottom center;
+	transition: transform 0.25s ease-out;
+  }
+  
+  .nav-link:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom center;
+  }
+
+
+  // Backgrounds
+
+  .bg-leaves {
+    background-image: url("/user/images/patterns/leaves.png");
+    background-repeat: repeat;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .bg-yso {
+	background-image: url("/user/images/patterns/y-so-serious-white.png");
+	background-repeat: repeat;
+  }
+
+
+  // Custom margins, used with the circle-picture at the top of the page
+
+  .mt--5 {
+	margin-top: -5em;
+  }
+
+  .top-50p {
+	margin-top: -75%;
+  }
+
+  .circle-picture {
+	min-height: 20vh;
+	max-height: 35vh;
+  }
+
+
+  

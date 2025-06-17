@@ -1,17 +1,17 @@
 {% spaceless %}
 
-	{% set block         = page.header.block %}
-	{% set text         = page.header.text %}
-	{% set jumbotron = page.header.jumbotron %}
-	{% set j_image   = page.header.jumbotron.image ? page.media[page.header.jumbotron.image] %}
+	{% set block_data = page.header.block %}
+	{% set text       = page.header.text %}
+	{% set jumbotron  = page.header.jumbotron %}
+	{% set j_image    = page.header.jumbotron.image ? page.media[page.header.jumbotron.image] %}
 
 	{% set class_array = [
-		block.column|default("col")|join(" "),
-		block.bg_class|default("bg-light")|join(" "),
-		block.padding|default("p-3")|join(" "),
-		block.margin|default("my-3")|join(" "),
-		"rounded-" ~ block.rounding|default(0)|join(" "),
-		block.custom_classes,
+		block_data.column|default("col")|join(" "),
+		block_data.bg_class|default("bg-light")|join(" "),
+		block_data.padding|default("p-3")|join(" "),
+		block_data.margin|default("my-3")|join(" "),
+		"rounded-" ~ block_data.rounding|default(0)|join(" "),
+		block_data.custom_classes,
 		text.color|default("text-dark")|join(" "),
 		text.size|join(" "),
 		text.style|join(" "),
@@ -21,8 +21,16 @@
 
 
 	{% set custom_style = "" %}
-	{% if jumbotron.min_height > 0 %}
-		{% set custom_style = custom_style ~ "min-height: " ~ jumbotron.min_height ~ jumbotron.min_height_units|default("em") ~ ";" %}
+
+	{% if jumbotron.min_height > 0 and jumbotron.max_height > 0 %}
+		{% set custom_style = custom_style ~ "height: clamp(" ~ jumbotron.min_height ~ jumbotron.min_height_units|default('em') ~ ", " ~ jumbotron.pref_height|default(jumbotron.min_height) ~ jumbotron.pref_height_units|default(jumbotron.min_height_units|default('em')) ~ ", " ~ jumbotron.max_height ~ jumbotron.max_height_units|default('em') ~ ");" %}
+	{% else %}
+		{% if jumbotron.min_height > 0 %}
+			{% set custom_style = custom_style ~ "min-height: " ~ jumbotron.min_height ~ jumbotron.min_height_units|default('em') ~ ";" %}
+		{% endif %}
+		{% if jumbotron.max_height > 0 %}
+			{% set custom_style = custom_style ~ "max-height: " ~ jumbotron.max_height ~ jumbotron.max_height_units|default('em') ~ ";" %}
+		{% endif %}
 	{% endif %}
 
 	{% set custom_style = custom_style ~ jumbotron.style %}

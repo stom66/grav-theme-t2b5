@@ -1,0 +1,40 @@
+{% spaceless %}
+  {% set header     = page.header %}
+  {% set block_data = header.block %}
+  {% set image      = page.media.images|first %}
+  {% set image_url  = image ? image.url : '' %}
+  {% set align      = header.image.align|default('') %}
+  {% set image_classes = 'card-img-top ' ~ header.image.custom_classes|default('') %}
+
+  {# Optional: button link and text from header fields #}
+  {% set button_url = header.button.url|default('#') %}
+  {% set button_text = header.button.text|default('Go somewhere') %}
+
+  {# Default column wrapping - customize as needed #}
+  {% set column_class = block_data.column|join(" ")|default('col-md-4') %}
+{% endspaceless %}
+
+<div class="{{ column_class }}">
+	<div class="card" style="width: 100%;">
+		{% if image %}
+			<img 
+				src   = "{{ image_url }}" 
+				alt   = "{{ image.meta.alt|default('Card image') }}" 
+				class = "{{ image_classes }}"
+				/>
+		{% endif %}
+		<div class="card-body">
+			<h5 class="card-title">{{ page.title }}</h5>
+			<p class="card-text">{{ page.content|raw }}</p>
+
+			{% if button_url %}
+				<a 
+					href  = "{{ button_url }}" 
+					class = "btn btn-outline-primary ms-auto"
+					>
+					{{ button_text }} <i class="fa-solid fa-chevron-right"></i>
+				</a>
+			{% endif %}
+		</div>
+	</div>
+</div>

@@ -6,11 +6,25 @@
 //	 3) bootstrap  - bootstrap
 //	 4) bootswatch - _bootswatch
 
+
+// Over-ride the bootswatch theme
+$primary: #6a1b9a;
+$secondary: #4DA167;
+$success: #e36414;
+$info: #1b8ba8;
+$warning: #b5cea6;
+$danger: #5f0f40;
+$light: #f8f9fa;
+$dark: #343a40;
+
+
+
+
 // Bootswatch Variables
-@import "../../../node_modules/bootswatch/dist/flatly/variables.scss";
+@import "../../../node_modules/bootswatch/dist/minty/variables.scss";
 
 // Bootstrap Core
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
 // Bootswatch Theme
-@import "../../../node_modules/bootswatch/dist/flatly/bootswatch.scss";
+@import "../../../node_modules/bootswatch/dist/minty/bootswatch.scss";

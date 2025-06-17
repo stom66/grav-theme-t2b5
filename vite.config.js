@@ -6,7 +6,28 @@ import cssnano from 'cssnano';
 import fs from 'fs';
 
 export default defineConfig({
+	css: {
+		preprocessorOptions: {
+			scss: {
+				quietDeps: true,
+				silenceDeprecations: [
+					"mixed-decls",
+					"import",
+					"color-functions",
+					"global-builtin",
+				],
+				verbose: false,
+				api: 'modern',
+			}
+		}
+	},
 	build: {
+        watch: { // adding this ratehr than using the (unsupported) --watch flag
+            chokidar: {
+                usePolling: true,
+                interval: 1000,
+            }
+        },
 		rollupOptions: {
 			input: {
 				app: path.resolve(__dirname, 'src/js/app.js'), // Entry point for JS
@@ -50,4 +71,8 @@ export default defineConfig({
 			},
 		},
 	],
+	server: {
+		port: 8000,
+		host: '0.0.0.0',
+	},
 });

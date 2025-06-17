@@ -11,7 +11,7 @@
 	"homepage": "https://github.com/stom66/grav-t2b5#readme",
 	"scripts": {
 		"build": "vite build",
-		"watch": "vite build --watch"
+		"serve": "php -S 0.0.0.0:8000 system/router.php"
 	},
 	"repository": {
 		"type": "git",
@@ -27,7 +27,8 @@
 		"animate.css": "^4.1.1",
 		"bootstrap": "^5.3.3",
 		"bootswatch": "^5.3.3",
-		"hover.css": "^2.3.2"
+		"hover.css": "^2.3.2",
+		"sass-migrator": "^2.3.1"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.4.20",

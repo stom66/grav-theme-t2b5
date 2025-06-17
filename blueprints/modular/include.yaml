@@ -23,7 +23,19 @@ form:
                 content:
                     type: tab
                     title: Content
-                    ordering@: before
+                    ordering@: 1
+                    fields:
+                        header.include_page:
+                            type: pages
+                            label: Include Content From Page
+                            help: Select a page to include its content in this block.
+                            size: medium
+                            show_all: false
+                            show_root: false
+                            show_slug: true
+                            default: ""
+                            validate:
+                                required: true
 
                 styles:
                     type: tab

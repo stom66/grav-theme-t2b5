@@ -1,6 +1,8 @@
+{% extends "modular/text.html.twig" %}
 
-<div class="{{ header.column|default('col') }} {{ header.custom_classes }}">
-    {{ content|raw }}
 
-    {% include "forms/form.html.twig" %}
-</div>
+{% block contents %}
+	{{ content|raw }}
+
+	{% include "forms/form.html.twig" %}
+{% endblock %}

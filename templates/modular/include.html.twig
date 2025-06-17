@@ -1,0 +1,37 @@
+{% spaceless %}
+	{% set target_page = page.find(page.header.include_page) %}
+
+
+	{% set block_data = header.block %}
+	{% set text_data  = header.text  %}
+	{% set class_array = [
+		block_data.column|default("col")|join(" "),
+		block_data.custom_classes,
+		block_data.bg_class|default("bg-light")|join(" "),
+		block_data.padding|default("p-3")|join(" "),
+		block_data.margin|default("my-3")|join(" "),
+		"rounded-" ~ block_data.rounding|default(0)|join(" "),
+
+		text_data.color|default("text-dark")|join(" "),
+		text_data.size|default("")|join(" "),
+		text_data.alignment|default("")|join(" "),
+		text_data.style|default("")|join(" ")
+	] %}
+	{% set block_class = class_array|join(" ") %}
+
+
+{% endspaceless %}
+{% if target_page %}
+	{% set template_vars = {
+		page: target_page
+	} %}
+
+	<div class="{{ block_class }}">
+		{% include target_page.template ~ '.html.twig' ignore missing with template_vars %}
+	</div>
+{% else %}
+	<h1 class="text-warning">
+		Couldn't find
+		{{ page.header.include_page }}
+	</h1>
+{% endif %}

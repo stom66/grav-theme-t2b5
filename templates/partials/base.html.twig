@@ -6,8 +6,9 @@
 	{% set footer = theme_var('footer') %}
 
 	{% set body_classes = page.header.body_classes %}
+
 	{% if footer.sticky %}
-		{% set body_classes = body_classes ~ "d-flex flex-column h-100" %}
+		{% set body_classes = body_classes ~ " d-flex flex-column h-100" %}
 	{% endif %}
 
 {% endspaceless %}

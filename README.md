@@ -88,7 +88,7 @@ symfony server:start --no-tls --allow-http --listen-ip=0.0.0.0 --passthru=system
 Or use the default PHP server with:
 
 ```sh
-php -S 0.0.0.0:8000 system/router.php
+php -c php.ini -S 0.0.0.0:8000 system/router.php
 ```
 
 If you want to access the site from another machine on the local network you'll need to do the following in PowerShell:
@@ -98,7 +98,7 @@ If you want to access the site from another machine on the local network you'll 
 netsh interface portproxy add v4tov4 listenport=8000 listenaddress=0.0.0.0 connectport=8000 connectaddress=127.0.0.1
 
 # Allow port through windows firewall
-New-NetFirewallRule -DisplayName "Allow PHP Server Port 8000" -Direction Inbound -Protocol TCP -LocalPort 8000 -Action Allow -Profile Any
+New-NetFirewallRule -DisplayName "Allow PHP Server Port 8001" -Direction Inbound -Protocol TCP -LocalPort 8000 -Action Allow -Profile Any
 
 ```
 

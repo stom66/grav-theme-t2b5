@@ -30,10 +30,10 @@ form:
                             label: Include Content From Page
                             help: Select a page to include its content in this block.
                             size: medium
-                            show_all: false
+                            show_all: true
                             show_root: false
                             show_slug: true
-                            default: ""
+                            default: " "
                             validate:
                                 required: true
 

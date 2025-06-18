@@ -8,14 +8,20 @@
 
   {# Optional: button link and text from header fields #}
   {% set button_url = header.button.url|default('#') %}
-  {% set button_text = header.button.text|default('Go somewhere') %}
+  {% set button_text = header.button.text|default('Read more') %}
+  {% set button_style = header.button.style|default('btn-outline-primary') %}
 
   {# Default column wrapping - customize as needed #}
   {% set column_class = block_data.column|join(" ")|default('col-md-4') %}
+
+
+  {% set inset_padding = block_data.inset_padding|join(" ")|default('px-3') %}
+  {% set card_margin = block_data.margin|join(" ")|default('') %}
+  {% set card_padding = block_data.colum|join(" ")|default('') %}
 {% endspaceless %}
 
-<div class="{{ column_class }}">
-	<div class="card" style="width: 100%;">
+<div class="{{ column_class }} {{ inset_padding }}">
+	<div class="card w-100 {{ card_margin }}">
 		{% if image %}
 			<img 
 				src   = "{{ image_url }}" 
@@ -23,14 +29,14 @@
 				class = "{{ image_classes }}"
 				/>
 		{% endif %}
-		<div class="card-body">
+		<div class="card-body {{ card_padding }}">
 			<h5 class="card-title">{{ page.title }}</h5>
 			<p class="card-text">{{ page.content|raw }}</p>
 
 			{% if button_url %}
 				<a 
 					href  = "{{ button_url }}" 
-					class = "btn btn-outline-primary ms-auto"
+					class = "btn ms-auto {{ button_style }}"
 					>
 					{{ button_text }} <i class="fa-solid fa-chevron-right"></i>
 				</a>

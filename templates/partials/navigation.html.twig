@@ -22,7 +22,8 @@
 			<div class="container">
 			{% endif %}
 
-			<div class="row justify-content-between align-items-center">
+			<div class="row w-100 justify-content-between align-items-center">
+				{# Logo #}
 				<div class="col-12 col-md-auto">
 					<a class="navbar-brand d-flex align-items-center me-1" href="{{ base_url == '' ? '/' : base_url }}">
 						{% if navbar_icon %}
@@ -41,22 +42,31 @@
 					</a>
 				</div>
 
-				<div class="col-auto ms-auto">
-					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+				{# Collapse Button #}
+				<div class="col-auto ms-auto d-xl-none">
+					<button type       = "button" 
+						class          = "navbar-toggler" 
+						data-bs-toggle = "collapse" 
+						data-bs-target = "#top-navbar" 
+						aria-controls  = "top-navbar" 
+						aria-expanded  = "false" 
+						aria-label     = "Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 				</div>
 
+				{# Navbar #}
 				<div class="col-12 col-xl-auto">
 					<div class="navbar-collapse collapse justify-content-center" id="top-navbar">
 						<ul class="navbar-nav">
 							{% for page in pages.children.visible %}
+								{{ dump(page) }}
 
 								{% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
 								{% if navbar.dropdown and page.children.visible.count > 0 %}
 
-									<li class="nav-item dropdown {{ current_page }}">
-										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.menu }}</a>
+									<li class="nav-item dropdown {{ current_page }}" {% if page.active %} aria-current="true"{% endif %}>
+										<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.menu }}</a>
 										<div class="dropdown-menu">
 											{% set current_parent = page.active ? 'active' : '' %}
 											<a href="{{ page.url }}" class="dropdown-item {{ current_parent }}">{{ page.menu }}</a>

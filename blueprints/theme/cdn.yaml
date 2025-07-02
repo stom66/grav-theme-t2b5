@@ -153,3 +153,12 @@ form:
                     options:
                         0: Disabled
                         1: Enabled
+
+                cdn_masonry_js:
+                    type: toggle
+                    label: Masonry JS from CDN
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled

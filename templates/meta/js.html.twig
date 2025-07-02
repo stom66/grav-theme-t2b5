@@ -28,6 +28,14 @@
 			}) %}
 		{% endif %}
 
+		{% if theme_config.cdn_masonry_js %}
+			{% do assets.add('https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', {
+				integrity  : "sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==",
+				crossorigin: "anonymous",
+				priority   : 80
+			}) %}
+		{% endif %}
+
 
 		{% if theme_config.cdn_fontawesome_css_js %}
 			{% do assets.add('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/js/all.min.js', {

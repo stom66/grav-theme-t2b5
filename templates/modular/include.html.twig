@@ -7,12 +7,12 @@
 	{% set class_array = [
 		block_data.column|default("col")|join(" "),
 		block_data.custom_classes,
-		block_data.bg_class|default("bg-light")|join(" "),
-		block_data.padding|default("p-3")|join(" "),
-		block_data.margin|default("my-3")|join(" "),
+		block_data.bg_class|default(" ")|join(" "),
+		block_data.padding|default(" ")|join(" "),
+		block_data.margin|default(" ")|join(" "),
 		"rounded-" ~ block_data.rounding|default(0)|join(" "),
 
-		text_data.color|default("text-dark")|join(" "),
+		text_data.color|default(" ")|join(" "),
 		text_data.size|default("")|join(" "),
 		text_data.alignment|default("")|join(" "),
 		text_data.style|default("")|join(" ")
@@ -26,9 +26,10 @@
 		page: target_page
 	} %}
 
-	<div class="{{ block_class }}">
-		{% include target_page.template ~ '.html.twig' ignore missing with template_vars %}
-	</div>
+	<!-- include start -->
+	{% include target_page.template ~ '.html.twig' with {'content' : page.find(page.header.include_page)} %}
+		
+	<!-- include end -->
 {% else %}
 	<h1 class="text-warning">
 		Couldn't find

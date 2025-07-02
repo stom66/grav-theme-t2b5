@@ -6,7 +6,7 @@
 
 
 	{% set text_classes = [
-		text_data.color|default("text-dark")|join(" "),
+		text_data.color|default(" ")|join(" "),
 		text_data.size|default("")|join(" "),
 		text_data.alignment|default("")|join(" "),
 		text_data.style|default("")|join(" ")
@@ -15,7 +15,7 @@
 	{% if block_data.inset == 1 %}
 		{% set block_classes = [
 			"col",
-			block_data.bg_class|default("bg-light")|join(" "),
+			block_data.bg_class|default(" ")|join(" "),
 			block_data.padding|default(" ")|join(" "),
 			"rounded-" ~ block_data.rounding|default(0)|join(" "),
 			block_data.custom_classes,
@@ -29,7 +29,7 @@
 		{% set block_classes = [
 			block_data.column|default("col")|join(" "),
 			block_data.margin|default(" ")|join(" "),
-			block_data.bg_class|default("bg-light")|join(" "),
+			block_data.bg_class|default(" ")|join(" "),
 			block_data.padding|default(" ")|join(" "),
 			"rounded-" ~ block_data.rounding|default(0)|join(" "),
 			block_data.custom_classes,
@@ -51,32 +51,35 @@
 
 {% endspaceless %}
 
-
-{% if header.block.inset == 1 %}
-	<div class="{{ inset_classes|join(' ') }}">
-{% endif %}
-
-<div class="{{ block_class|join(' ') }}">
-	{% if image %}
-		{% if header.image.lightbox_enabled == 1 %}
-			<a href="{{ image.url }}" class="glightbox">
-			{% endif %}
-
-			{{ image.html('', '', image_classes)|raw }}
-
-			{% if header.image.lightbox_enabled == 1 %}
-			</a>
-		{% endif %}
+{% block body %}
+	{% if header.block.inset == 1 %}
+		<!-- inset start -->	
+			<div class="{{ inset_classes|join(' ') }}">
 	{% endif %}
 
-	<!-- Start: Block: Contents -->
-	{% block contents %}
-		{{ page.content|raw }}
-	{% endblock %}
-	<!-- End: Block: Contents -->
-</div>
+	<div class="{{ block_class|join(' ') }}">
+		{% if image %}
+			{% if header.image.lightbox_enabled == 1 %}
+				<a href="{{ image.url }}" class="glightbox">
+				{% endif %}
 
-{% if header.block.inset == 1 %}
+				{{ image.cropResize(1024,1024).html('', '', image_classes)|raw }}
+
+				{% if header.image.lightbox_enabled == 1 %}
+				</a>
+			{% endif %}
+		{% endif %}
+
+		<!-- Start: Block: Contents -->
+		{% block contents %}
+			{{ page.content|raw }}
+		{% endblock %}
+		<!-- End: Block: Contents -->
 	</div>
-{% endif %}
 
+	{% if header.block.inset == 1 %}
+		<!-- inset end -->
+		</div>
+	{% endif %}
+
+{% endblock %}

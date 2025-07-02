@@ -4,22 +4,8 @@ title: Text
 form:
     fields:
         tabs:
+            active: 1  # Optional; Grav counts tabs from 1
             fields:
-                advanced:
-                    fields:
-                        columns:
-                            fields:
-                                column1:
-                                    fields:
-                                        name:
-                                            default: modular/text
-                                            "@data-options": '\Grav\Common\Page\Pages::modularTypes'
-                        overrides:
-                            fields:
-                                header.template:
-                                    default: modular/text
-                                    "@data-options": '\Grav\Common\Page\Pages::modularTypes'
-
                 content:
                     type: tab
                     title: Content
@@ -28,7 +14,7 @@ form:
                 styles:
                     type: tab
                     title: Styles
-                    ordering@: -2
+                    ordering@: -1
                     fields:
                         row1:
                             type: columns
@@ -71,3 +57,21 @@ form:
                                     import@:
                                         type: blueprints/common/image_styles
                                         context: theme://
+                options:
+                    ordering@: 3
+
+                advanced:
+                    ordering@: 4
+                    fields:
+                        columns:
+                            fields:
+                                column1:
+                                    fields:
+                                        name:
+                                            default: modular/text
+                                            "@data-options": '\Grav\Common\Page\Pages::modularTypes'
+                        overrides:
+                            fields:
+                                header.template:
+                                    default: modular/text
+                                    "@data-options": '\Grav\Common\Page\Pages::modularTypes'

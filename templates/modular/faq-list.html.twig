@@ -1,0 +1,55 @@
+{% extends 'partials/text.html.twig' %}
+
+
+{% set flex = grav.get('flex_objects') %}
+{% set treatments = flex.directory('faqs') %}  
+{% set collection = treatments.getCollection().orderBy({'order': 'asc'}) %}
+
+{% set filters = page.header.filters ?? {} %}
+
+
+{% block contents %}
+{{ dump(filters) }}
+
+	{{ content|raw }}
+
+	<div class="row">
+
+	<!-- Summary list view -->
+
+		{% for t in collection %}
+			{% set show_on_fees = t.show_on_fees_page == '1' %}
+			{% set show_on_about = t.show_on_about_page == '1' %}
+
+			{% set show_item = true %}
+
+			{% if filters.show_on_fees_page is defined and filters.show_on_fees_page == '1' and not show_on_fees  %}
+				{% set show_item = false %}
+			{% endif %}
+
+			{% if filters.show_on_about_page is defined and filters.show_on_about_page == '1' and not show_on_about  %}
+				{% set show_item = false %}
+			{% endif %}
+
+			{% if show_item %}
+
+				{% set title        = t.question %}
+				{% set content      = t.answer|markdown %}
+
+				{% set col_class = 'col-12 col-lg-6' %}
+
+				{% if content|length > 256 %}
+					{% set col_class = 'col-12' %}
+				{% endif %}
+
+				{% include 'modular/card.html.twig' with {
+						title       : title,
+						summary     : content,
+						column_class: col_class,
+						card_class  : 'shadow-sm',
+						inset_padding: 'p-3'
+				} only %}
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}

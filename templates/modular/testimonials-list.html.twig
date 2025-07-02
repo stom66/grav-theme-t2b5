@@ -1,0 +1,44 @@
+{% extends 'partials/text.html.twig' %}
+
+
+{% set flex       = grav.get('flex_objects') %}
+{% set flexDir    = flex.directory('testimonials') %}  
+{% set collection = flexDir.getCollection().orderBy({'order': 'asc'}) %}
+
+{% set filters = page.header.filters ?? {} %}
+
+
+{% block contents %}
+	{{ content|raw }}
+
+	<div class="row">
+
+	<!-- Summary list view -->
+
+		{% for t in collection %}
+
+			{% set title        = t.question %}
+			{% set content      = t.content|markdown %}
+
+			{% set col_class = 'col-12 col-lg-6 col-xxl-4' %}
+
+			{% if content|length > 384 %}
+				{% set col_class = 'col-12 col-lg-8' %}
+			{% endif %}
+
+			{% set author_name = t.author %}
+			{% if not t.show_author %}
+				{% set author_name = 'Anonymous' %}
+			{% endif %}
+
+
+			{% include 'modular/card.html.twig' with {
+					title       : author_name,
+					summary     : content,
+					column_class: col_class,
+					card_class  : 'shadow-sm fst-italic h-100',
+					inset_padding: 'p-3'
+			} only %}
+		{% endfor %}
+	</div>
+{% endblock %}

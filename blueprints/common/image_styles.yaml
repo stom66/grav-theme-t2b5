@@ -36,6 +36,56 @@ form:
                         float-xxl-start: float-xxl-start
                         float-xxl-end: float-xxl-end
                         float-xxl-none: float-xxl-none
+                
+
+                header.image.resize:
+                    label: Image size
+                    type: select
+                    size: medium
+                    info: You can further specify sizes for different breakpoints by choosing additional classes. Be sure to choose only one class for each size.
+                    default: none
+                    options:
+                        img-fluid: img-fluid
+                        w-25: w-25
+                        w-50: w-50
+                        w-75: w-75
+
+                resize_ranges:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        header.button.url:
+                          type: range
+                          label: Size X
+                          default: 0
+                          size: x-large
+                          step: 16
+                          validate:
+                              min: 16
+                              max: 2048
+                    column2:
+                      type: column
+                      fields:
+                        header.button.url:
+                          type: range
+                          label: Size Y
+                          default: 0
+                          size: x-large
+                          step: 16
+                          validate:
+                              min: 16
+                              max: 2048
+
+        column2:
+          type: column
+          fields:
+            header.button.text:
+              type: text
+              label: Button text
+              help: "Text to display inside the button, excluding the chevron icon"
+              default: "Read more"
 
                 header.image.size:
                     label: Image size
@@ -58,6 +108,16 @@ form:
                     validate:
                         min: 0
                         max: 5
+
+                header.image.quality:
+                    type: range
+                    label: Image rounding strength
+                    default: 95
+                    size: x-large
+                    toggleable: true
+                    validate:
+                        min: 5
+                        max: 100
 
                 header.image.custom_classes:
                     type: text

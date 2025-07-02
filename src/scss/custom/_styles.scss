@@ -24,7 +24,7 @@ nav {
 	border-width: 3px;
 	border-style: dotted;
 	border-radius: 100%;
-	margin-right:1em;
+	margin-right: 1em;
 }
 
 /* Navbar link animations */
@@ -33,9 +33,9 @@ nav {
 	display: inline-block;
 	position: relative;
 	color: #eee;
-  }
+}
 
-  .nav-link::after {
+.nav-link::after {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -43,50 +43,156 @@ nav {
 	height: 1px;
 	bottom: 0;
 	left: 0;
-	background: radial-gradient(circle, rgba(255,255,255,1) 95%, rgba(255,255,255,0) 100%);
+	background: radial-gradient(circle, rgba(255, 255, 255, 1) 95%, rgba(255, 255, 255, 0) 100%);
 	transform-origin: bottom center;
 	transition: transform 0.25s ease-out;
-  }
-  
-  .nav-link:hover::after {
+}
+
+.nav-link:hover::after {
 	transform: scaleX(1);
 	transform-origin: bottom center;
-  }
+}
 
 
-  // Backgrounds
+/* Top banner */
 
-  .bg-leaves {
-    background-image: url("/user/images/patterns/leaves.png");
-    background-repeat: repeat;
-    max-width: 600px;
-    margin: 0 auto;
-    display: block;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 
-  .bg-yso {
+.top-banner a:active,
+a:focus {
+	text-decoration: none;
+	color: #ccc;
+}
+
+.top-banner a:hover {
+	text-decoration: underline;
+	color: #eee;
+}
+
+.top-banner a,
+.top-banner a:visited {
+	text-decoration: none;
+	color: #ddd;
+}
+
+.top-banner span {
+	/* Vertical pipe separator */
+	color: #ccc !important;
+}
+
+// Backgrounds
+
+.bg-leaves {
+	background-image: url("/user/images/patterns/leaves.png");
+	background-repeat: repeat;
+	max-width: 600px;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.bg-yso {
 	background-image: url("/user/images/patterns/y-so-serious-white.png");
 	background-repeat: repeat;
-  }
+}
 
 
-  // Custom margins, used with the circle-picture at the top of the page
+// Custom margins, used with the circle-picture at the top of the page
 
-  .mt--5 {
+.mt--5 {
 	margin-top: -5em;
-  }
+}
 
-  .top-50p {
+.top-50p {
 	margin-top: -75%;
-  }
+}
 
-  .circle-picture {
-	min-height: 20vh;
-	max-height: 35vh;
-  }
+.circle-picture {
+	overflow: hidden;
+	position: relative;
+	transition: transform 0.3s ease;
+	display: block;
+	transform-origin: center center;
+	will-change: transform;
+	backface-visibility: hidden;
+}
+
+.circle-picture:hover {
+	transform: scale(1.025);
+}
 
 
-  
+abbr[title] {
+	//background-image: linear-gradient(to right, rgb(71, 71, 71) 33%, rgba(255, 255, 255, 0) 0%);
+	//background-position: bottom;
+	//background-size: 3px 1px;
+	//background-repeat: repeat-x;
+	//text-decoration: none;
+}
+
+
+// Card image hover zoom
+.card {
+	overflow: hidden;
+	position: relative;
+}
+
+.card img {
+	transition: transform 0.3s ease;
+	display: block;
+	width: 100%;
+	height: auto;
+	transform-origin: bottom center;
+	will-change: transform;
+	backface-visibility: hidden;
+}
+
+.card:hover img {
+	transform: scale(1.04);
+}
+
+
+// Footer
+
+.footer a:active,
+a:focus {
+	text-decoration: none;
+	color: #ccc;
+}
+
+.footer a:hover {
+	text-decoration: none;
+	color: #eee;
+}
+
+.footer a,
+.footer a:visited {
+	text-decoration: none;
+	color: #ddd;
+	position: relative;
+	display: inline-block;
+}
+
+.footer span {
+	/* Vertical pipe separator */
+	color: #ccc !important;
+}
+
+.footer p a::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 1px;
+	bottom: 0;
+	left: 0;
+	background: radial-gradient(circle, rgba(255, 255, 255, 1) 95%, rgba(255, 255, 255, 0) 100%);
+	transform-origin: bottom center;
+	transition: transform 0.15s ease-out;
+}
+
+.footer p a:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom center;
+}

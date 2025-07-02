@@ -1,0 +1,10 @@
+{% if form.message %}
+    {% set inline_errors  = form.inline_errors is not null ? form.inline_errors : config.plugins.form.inline_errors(false) %}
+    {% set status_mapping = {'success':'success', 'error': 'danger', 'warning': 'warning'} %}
+    {% set icon_mapping   = {'success':'fa-circle-check',  'error': 'fa-circle-exclamation', 'warning': 'fa-triangle-exclamation'} %}
+    {% set message = inline_errors and form.messages ? "GRAV.FORM.VALIDATION_FAIL"|t : form.message %}
+    <div class="alert alert-{{ status_mapping[form.status] ?: 'success' }}" role="alert">
+		<i class="me-2 fa-solid {{ icon_mapping[form.status] ?: 'fa-circle-check' }} text-{{ status_mapping[form.status] ?: 'success' }}"></i>
+		{{ message|raw }}
+	</div>
+{% endif %}

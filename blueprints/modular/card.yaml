@@ -25,50 +25,72 @@ form:
                     title: Content
                     ordering@: before
                     fields:
-                        header.button.url:
-                            type: pages
-                            label: Button link
-                            help: "Select a page to link to when the button is clicked"
-                            size: medium
-                            show_all: false
-                            show_root: false
-                            show_slug: true
-                            default: ""
-                            validate:
-                                required: true
 
-                        header.button.text:
-                            type: text
-                            label: Button text
-                            help: "Text to display inside the button, excluding the chevron icon"
-                            default: "Read more"
+                      row_button:
+                        type: columns
+                        fields:
+                          column1:
+                            type: column
+                            fields:
 
-                        header.button.style:
-                            type: select
-                            label: Button style
-                            default: col
-                            size: medium
-                            multiple: true
-                            validate:
-                                type: array
-                            options:
-                                btn-primary: Primary
-                                btn-secondary: Secondary
-                                btn-success: Success
-                                btn-danger: Danger
-                                btn-warning: Warning
-                                btn-info: Info
-                                btn-light: Light
-                                btn-dark: Dark
-                                btn-link: Link
-                                btn-outline-primary: Primary (Outline)
-                                btn-outline-secondary: Secondary (Outline)
-                                btn-outline-success: Success (Outline)
-                                btn-outline-danger: Danger (Outline)
-                                btn-outline-warning: Warning (Outline)
-                                btn-outline-info: Info (Outline)
-                                btn-outline-light: Light (Outline)
-                                btn-outline-dark: Dark (Outline)
+                              header.button.url:
+                                  type: pages
+                                  label: Button link
+                                  help: "Select a page to link to when the button is clicked"
+                                  size: medium
+                                  show_all: false
+                                  show_root: false
+                                  show_slug: true
+                                  default: ""
+                                  toggleable: true
+                                  validate:
+                                      required: false
+
+                              header.button.text:
+                                  type: text
+                                  label: Button text
+                                  help: "Text to display inside the button, excluding the chevron icon"
+                                  default: "Read more"
+
+                              header.button.style:
+                                  type: select
+                                  label: Button style
+                                  default: col
+                                  size: medium
+                                  toggleable: true
+                                  validate:
+                                      type: array
+                                  options:
+                                      btn-primary: Primary
+                                      btn-secondary: Secondary
+                                      btn-success: Success
+                                      btn-danger: Danger
+                                      btn-warning: Warning
+                                      btn-info: Info
+                                      btn-light: Light
+                                      btn-dark: Dark
+                                      btn-link: Link
+                                      btn-outline-primary: Primary (Outline)
+                                      btn-outline-secondary: Secondary (Outline)
+                                      btn-outline-success: Success (Outline)
+                                      btn-outline-danger: Danger (Outline)
+                                      btn-outline-warning: Warning (Outline)
+                                      btn-outline-info: Info (Outline)
+                                      btn-outline-light: Light (Outline)
+                                      btn-outline-dark: Dark (Outline)
+                          column2:
+                            type: column
+                            fields:
+                              header.card.hideTitle:
+                                type: toggle
+                                label: Hide card title
+                                highlight: 1
+                                default: 0
+                                options:
+                                  1: Enabled
+                                  0: Disabled
+                                validate:
+                                  type: bool
 
                 styles:
                     type: tab

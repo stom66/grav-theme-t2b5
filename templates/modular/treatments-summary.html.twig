@@ -1,0 +1,33 @@
+{% extends 'partials/text.html.twig' %}
+
+
+{% set flex         = grav.get('flex_objects') %}
+{% set treatments   = flex.directory('treatments') %}  
+{% set collection   = treatments.getCollection() %}
+
+{% set current_slug = uri.route|split('/')|last %} 
+{% set is_root      = current_slug == 'treatments' %}
+
+{% block contents %}
+	{# Debug stuff #}
+	{{ dump("treatment-summary: path: " ~ grav.uri.path) }}
+	{{ dump("treatment-summary: current_slug: " ~ current_slug) }}
+
+    {% if is_root %}
+		<!-- Root! Showing summary -->
+		{{ content|raw }}
+	{% else %}
+	
+		<!-- Not root! Showing specific summary -->
+
+		{% set treatment_collection = collection.filterBy({'slug': current_slug}) %}
+		{% set treatment            = treatment_collection|first %}
+
+		{% set title                = treatment.title %}
+		{% set summary              = treatment.short_description %}
+
+		<!-- <h1>{{ title }}</h1> -->
+		
+		{{ summary|markdown }}
+	{% endif %}
+{% endblock %}

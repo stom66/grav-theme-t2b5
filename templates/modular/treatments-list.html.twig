@@ -1,0 +1,33 @@
+{% extends 'partials/text.html.twig' %}
+
+{% set flex = grav.get('flex_objects') %}
+{% set treatments = flex.directory('treatments') %}  
+{% set collection = treatments.getCollection() %}
+
+{% block body %}
+	<!-- Summary list view -->
+	{% for t in collection %}
+		{% set title        = t.title %}
+		{% set summary      = t.short_description %}
+
+		{% set image_file   = t.image|first %}
+		{% set image_path   = image_file.path %}
+		{% set image        = media[image_path] %}
+
+		{% set button_url   = t.url ?? '/treatments/' ~ t.slug %}
+		{% set button_text  = t.button_text ?? 'Read more' %}
+		{% set button_style = t.button_style ?? 'btn-outline-primary' %}
+
+		{% include 'modular/card.html.twig' with {
+				title       : title,
+				summary     : summary,
+				image       : image,
+				button_url  : button_url,
+				button_text : button_text,
+				button_style: button_style,
+				column_class: 'col-6 col-lg-4 col-xxl-3',
+				card_class  : 'shadow-sm',
+				inset_padding: 'px-3 pb-3'
+		} only %}
+	{% endfor %}
+{% endblock %}

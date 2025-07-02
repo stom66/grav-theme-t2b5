@@ -15,6 +15,16 @@ form:
                         1: Enabled
                     validate: bool
 
+                header.row.masonry:
+                    type: toggle
+                    label: Masonry layout
+                    highlight: 1
+                    default: 0
+                    options:
+                        0: Disabled
+                        1: Enabled
+                    validate: bool
+
                 header.row.custom_class:
                     type: text
                     label: Custom classes

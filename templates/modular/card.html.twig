@@ -1,44 +1,67 @@
 {% spaceless %}
-  {% set header     = page.header %}
-  {% set block_data = header.block %}
-  {% set image      = page.media.images|first %}
-  {% set image_url  = image ? image.url : '' %}
-  {% set align      = header.image.align|default('') %}
-  {% set image_classes = 'card-img-top ' ~ header.image.custom_classes|default('') %}
+	{% set header        = page.header %}
+	{% set block_data    = header.block %}
 
-  {# Optional: button link and text from header fields #}
-  {% set button_url = header.button.url|default('#') %}
-  {% set button_text = header.button.text|default('Read more') %}
-  {% set button_style = header.button.style|default('btn-outline-primary') %}
+	{# Fallbacks: use passed variables OR default to page/header/media #}
+	{% set title         = title         ?? page.title %}
+	{% set summary       = summary       ?? page.content|raw %}
+	{% set image         = image         ?? (page.media.images|first) %}
+	{% set image_url     = image_url     ?? (image ? image.cropZoom(512,320).quality(95).url : '') %}
+	{% set image_alt     = image_alt     ?? image.meta.alt ?? 'Card image' %}
+	{% set image_classes = ['card-img-top ',
+							header.image.custom_classes|default('')|join(" "),
+							header.image.align|default('')|join(" ")
+						] %}
 
-  {# Default column wrapping - customize as needed #}
-  {% set column_class = block_data.column|join(" ")|default('col-md-4') %}
+	{% set button_url    = button_url    ?? header.button.url ?? null %}
+	{% set button_text   = button_text   ?? header.button.text ?? 'Read more' %}
+  	{% set button_style  = button_style  ?? header.button.style ?? 'btn-outline-primary' %}
+
+	{# Default column wrapping - customize as needed #}
+	{% set column_class = column_class ?? block_data.column|join(" ")|default('col-md-4') %}
+	{% set card_class   = card_class|default('') %}
 
 
-  {% set inset_padding = block_data.inset_padding|join(" ")|default('px-3') %}
-  {% set card_margin = block_data.margin|join(" ")|default('') %}
-  {% set card_padding = block_data.colum|join(" ")|default('') %}
+	{% set card_classes = [
+		block_data.margin|default(" ")|join(" "),
+		block_data.bg_class|default(" ")|join(" "),
+		"rounded-" ~ block_data.rounding|default(2)|join(" "),
+		block_data.custom_classes,
+		header.text.alignment|default('text-left'),
+		header.text.color|default(""),
+		header.text.size|default(""),
+		card_class
+	] %}
+
+	{% set inset_padding = inset_padding ??block_data.inset_padding|join(" ")|default(' ') %}
+	{% set card_padding = (button_url is not null) ? (block_data.colum|default(['pb-5'])|join(' ')) : (block_data.colum|default([])|join(' ')) %}
+
+
+
 {% endspaceless %}
 
 <div class="{{ column_class }} {{ inset_padding }}">
-	<div class="card w-100 {{ card_margin }}">
+	<div class="card {{ card_classes|join(' ') }}">
 		{% if image %}
 			<img 
 				src   = "{{ image_url }}" 
 				alt   = "{{ image.meta.alt|default('Card image') }}" 
-				class = "{{ image_classes }}"
+				class = "{{ image_classes|join(" ") }}"
 				/>
 		{% endif %}
 		<div class="card-body {{ card_padding }}">
-			<h5 class="card-title">{{ page.title }}</h5>
-			<p class="card-text">{{ page.content|raw }}</p>
+			{% if not header.card.hideTitle %}
+				<h5 class="card-title">{{ title }}</h5> 
+			{% endif %}
+
+			<p class="card-text">{{ summary|raw }}</p>
 
 			{% if button_url %}
 				<a 
 					href  = "{{ button_url }}" 
-					class = "btn ms-auto {{ button_style }}"
+					class = "btn {{ button_style }} position-absolute bottom-0 end-0 m-3 hvr-icon-forward"
 					>
-					{{ button_text }} <i class="fa-solid fa-chevron-right"></i>
+					{{ button_text }} <i class="fa-solid fa-chevron-right hvr-icon"></i>
 				</a>
 			{% endif %}
 		</div>

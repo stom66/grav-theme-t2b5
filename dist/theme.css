@@ -11108,20 +11108,38 @@ html {
 .top-banner a:active,
 a:focus {
   text-decoration: none;
-  color: #ccc;
+  color: #ddd;
 }
 .top-banner a:hover {
-  text-decoration: underline;
-  color: #eee;
-}
-.top-banner a,
-.top-banner a:visited {
   text-decoration: none;
   color: #ddd;
 }
-.top-banner span {
-  /* Vertical pipe separator */
-  color: #ccc !important;
+.top-banner a,
+.top-banner a:visited {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+}
+/* .top-banner span {
+	// Vertical pipe separator
+color: #ccc !important;
+} */
+.top-banner a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: radial-gradient(circle, rgb(255, 255, 255) 95%, rgba(255, 255, 255, 0) 100%);
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+}
+.top-banner a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom center;
 }
 .bg-leaves {
   background-image: url("/user/images/patterns/leaves.png");

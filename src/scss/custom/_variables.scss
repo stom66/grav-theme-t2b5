@@ -2,56 +2,126 @@
 //
 // The variables below are the most commonly adjusted ones, but you can add 
 // any valid Bootstrap or Bootswatch variable here and they will take effect
+@use "mixins";
 
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
 
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
 
+// ███████╗ ██████╗ ███╗   ██╗████████╗███████╗
+// ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔════╝
+// █████╗  ██║   ██║██╔██╗ ██║   ██║   ███████╗
+// ██╔══╝  ██║   ██║██║╚██╗██║   ██║   ╚════██║
+// ██║     ╚██████╔╝██║ ╚████║   ██║   ███████║
+// ╚═╝      ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝
+//
+
+//@include mixins.google-font("Roboto Condensed");
+//@include mixins.google-font("Source Serif 4");
+//@include mixins.google-font("Epilogue");
+//@include mixins.google-font("Nanum Myeongjo");
+@include mixins.google-font("Jost");
+@include mixins.google-font("Koh Santepheap"); // rated 4/5 for headers
+@include mixins.google-font("Merriweather"); // rated 4/5 for headers
+@include mixins.google-font("Molengo");
+
+
+$font-navbar-brand : 'Koh Santepheap', sans-serif;
+$font-large-headers: 'Merriweather', sans-serif;
+$font-main-body    : 'Molengo', sans-serif;
+$font-welcome      : 'Molengo', sans-serif;
+$font-footer       : 'Jost', sans-serif;
+
+// Add those fonts to the Bootstrap vars
+$font-family-sans-serif: 'Molengo', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace : SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base      : $font-family-sans-serif !default;
+
+
+$font-size-base: 1rem; // Change to your preferred base (e.g., 1.1rem)
+
+$font-sizes: (
+	1: calc(1.375rem + 1.5vw),
+	2: 2rem,
+	3: 1.75rem,
+	4: 1.25rem,
+	5: 1rem,
+	6: 0.875rem
+);
+
+
+
+//  ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗
+// ██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝
+// ██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗
+// ██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║
+// ╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
+//  ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+//
+// Over-ride the bootswatch theme
+$primary  : #6a1b9a;
+$secondary: #4DA167;
+$success  : #e36414;
+$info     : #1b8ba8;
+$warning  : #B288C0;
+$danger   : #7c1153;
+$light    : #f8f9fa;
+$dark     : #343a40;
+
+$blue     : #0d6efd !default;
+$indigo   : #6610f2 !default;
+$purple   : #6f42c1 !default;
+$pink     : #d63384 !default;
+$red      : #dc3545 !default;
+$orange   : #fd7e14 !default;
+$yellow   : #ffc107 !default;
+$green    : #198754 !default;
+$teal     : #20c997 !default;
+$cyan     : #0dcaf0 !default;
+
+$white    : #fff !default;
+$gray-100 : #f8f9fa !default;
+$gray-200 : #e9ecef !default;
+$gray-300 : #dee2e6 !default;
+$gray-400 : #ced4da !default;
+$gray-500 : #adb5bd !default;
+$gray-600 : #6c757d !default;
+$gray-700 : #495057 !default;
+$gray-800 : #343a40 !default;
+$gray-900 : #212529 !default;
+$black    : #000 !default;
 
 $footer-bg: $gray-800;
 
 
-// Options
+//  ██████╗ ██████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗
+// ██╔═══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+// ██║   ██║██████╔╝   ██║   ██║██║   ██║██╔██╗ ██║███████╗
+// ██║   ██║██╔═══╝    ██║   ██║██║   ██║██║╚██╗██║╚════██║
+// ╚██████╔╝██║        ██║   ██║╚██████╔╝██║ ╚████║███████║
+//  ╚═════╝ ╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+//                                                         
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-caret:                                true !default;
-$enable-rounded:                              true !default;
-$enable-shadows:                              false !default;
-$enable-gradients:                            false !default;
-$enable-transitions:                          true !default;
-$enable-prefers-reduced-motion-media-query:   true !default;
-$enable-hover-media-query:                    false !default; // Deprecated, no longer affects any compiled CSS
-$enable-grid-classes:                         true !default;
-$enable-pointer-cursor-for-buttons:           true !default;
-$enable-print-styles:                         true !default;
-$enable-responsive-font-sizes:                false !default;
-$enable-validation-icons:                     true !default;
-$enable-deprecation-messages:                 true !default;
+$enable-caret: true !default;
+$enable-rounded: true !default;
+$enable-shadows: false !default;
+$enable-gradients: false !default;
+$enable-transitions: true !default;
+$enable-prefers-reduced-motion-media-query: true !default;
+$enable-hover-media-query: false !default; // Deprecated, no longer affects any compiled CSS
+$enable-grid-classes: true !default;
+$enable-pointer-cursor-for-buttons: true !default;
+$enable-print-styles: true !default;
+$enable-responsive-font-sizes: false !default;
+$enable-validation-icons: true !default;
+$enable-deprecation-messages: true !default;
 
 // Customise your responsive embed sizes here (be sure to add custom one to blueprints/youtube.yaml
 $embed-responsive-aspect-ratios: (
-  (21 9),
-  (16 9),
-  (4 3),
-  (1 1)
-) !default;
+	(21 9),
+	(16 9),
+	(4 3),
+	(1 1)) !default;
+
+
+	

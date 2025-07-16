@@ -8,19 +8,18 @@
 // the bootstrap and/or bootswatch frameworks then uncomment the lines below to import 
 // them and be sure to disable the CDN inclusions in the settings for this theme.
 
-
 // Custom mixins
-@use "custom/mixins";
+@import "custom/mixins";
 
-// Theme variables
-@use "custom/variables";
+// Custom Variables
+@import "custom/variables";
 
 // Bootstrap framework customisation
 // If you're customising the theme then you will want to uncomment the following includes
-@use "vendor/bootstrap";
+@import "vendor/bootstrap";
 
 // Typography settings
-@use "custom/typography";
+@import "custom/typography";
 
 // Additional styles
-@use "custom/styles";
+@import "custom/styles";

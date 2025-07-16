@@ -82,23 +82,23 @@ bin/grav serve
 Or, directly run symfony:
 
 ```sh
-symfony server:start --no-tls --allow-http --listen-ip=0.0.0.0:8001 --passthru=system/router.php
+symfony server:start --no-tls --allow-http --listen-ip=0.0.0.0:8002 --passthru=system/router.php
 ```
 
 Or use the default PHP server with:
 
 ```sh
-php -c php.ini -S 0.0.0.0:8001 system/router.php
+php -c php.ini -S 0.0.0.0:8002 system/router.php
 ```
 
 If you want to access the site from another machine on the local network you'll need to do the following in PowerShell:
 
 ```ps
 # Forward port to WSL
-netsh interface portproxy add v4tov4 listenport=8001 listenaddress=0.0.0.0 connectport=8001 connectaddress=127.0.0.1
+netsh interface portproxy add v4tov4 listenport=8002 listenaddress=0.0.0.0 connectport=8002 connectaddress=127.0.0.1
 
 # Allow port through windows firewall
-New-NetFirewallRule -DisplayName "Allow PHP Server Port 8001" -Direction Inbound -Protocol TCP -LocalPort 8001 -Action Allow -Profile Any
+New-NetFirewallRule -DisplayName "Allow PHP Server Port 8002" -Direction Inbound -Protocol TCP -LocalPort 8002 -Action Allow -Profile Any
 
 ```
 

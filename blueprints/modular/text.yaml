@@ -4,7 +4,8 @@ title: Text
 form:
     fields:
         tabs:
-            active: 1  # Optional; Grav counts tabs from 1
+            type: tabs
+            active: 1
             fields:
                 content:
                     type: tab

@@ -8,7 +8,7 @@
 	{% set image         = image         ?? (page.media.images|first) %}
 	{% set image_url     = image_url     ?? (image ? image.cropZoom(512,320).quality(95).url : '') %}
 	{% set image_alt     = image_alt     ?? image.meta.alt ?? 'Card image' %}
-	{% set image_classes = ['card-img-top ',
+	{% set image_classes = image_classes ?? ['card-img-top ',
 							header.image.custom_classes|default('')|join(" "),
 							header.image.align|default('')|join(" ")
 						] %}

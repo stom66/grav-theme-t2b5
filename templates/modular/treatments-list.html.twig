@@ -19,14 +19,15 @@
 		{% set button_style = t.button_style ?? 'btn-outline-primary' %}
 
 		{% include 'modular/card.html.twig' with {
-				title       : title,
-				summary     : summary,
-				image       : image,
-				button_url  : button_url,
-				button_text : button_text,
-				button_style: button_style,
-				column_class: 'col-6 col-lg-4 col-xxl-3',
-				card_class  : 'shadow-sm h-100',
+				title        : title,
+				summary      : summary,
+				image        : image,
+				image_classes: 'card-img-top animate__animated animate__fadeIn',
+				button_url   : button_url,
+				button_text  : button_text,
+				button_style : button_style,
+				column_class : 'col-6 col-lg-4 col-xxl-3',
+				card_class   : 'shadow-sm h-100',
 				inset_padding: 'px-3 pb-3'
 		} only %}
 	{% endfor %}

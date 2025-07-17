@@ -11088,14 +11088,12 @@ html {
   /* foo */
 }
 .bg-leaves {
-  background-image: url("/user/images/patterns/leaves.png");
-  background-repeat: repeat;
-  max-width: 600px;
-  margin: 0 auto;
-  display: block;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  background-image: url("/user/images/patterns/leaves.png"), linear-gradient(to right, white 0%, white calc(50% - 400px), transparent calc(50% - 400px), transparent calc(50% + 400px), white calc(50% + 400px), white 100%);
+  background-repeat: repeat, no-repeat;
+  background-position: center, top;
+  background-size: auto, 100% 100%;
+  background-blend-mode: multiply;
+  /* or 'normal' depending on your pattern */
 }
 .bg-yso {
   background-image: url("/user/images/patterns/y-so-serious-white.png");
@@ -11232,4 +11230,17 @@ a:focus {
 .footer p a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom center;
+}
+/* Define custom delay classes */
+.delay-1 {
+  --animate-delay: 0s !important;
+}
+.delay-2 {
+  --animate-delay: 0.1s !important;
+}
+.delay-3 {
+  --animate-delay: 0.2s !important;
+}
+.animate__animated {
+  animation-delay: var(--animate-delay) !important;
 }

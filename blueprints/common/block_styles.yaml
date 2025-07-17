@@ -14,19 +14,19 @@ form:
                     validate:
                         type: array
                     options:
-                        col: "Auto (col)"
-                        col-1: "col-1: 1/12"
-                        col-2: "col-2: 1/6"
-                        col-3: "col-3: One-quarter"
-                        col-4: "col-4: One-third"
-                        col-5: "col-5: 5/12"
-                        col-6: "col-6: Half"
-                        col-7: "col-7: 7/12"
-                        col-8: "col-8: Two-thirds"
-                        col-9: "col-9: Three-quarters"
-                        col-10: "col-10: 5/6"
-                        col-11: "col-11: 11/12"
-                        col-12: "col-12: Full"
+                        col: Auto (col)
+                        col-1: 'col-1: 1/12'
+                        col-2: 'col-2: 1/6'
+                        col-3: 'col-3: One-quarter'
+                        col-4: 'col-4: One-third'
+                        col-5: 'col-5: 5/12'
+                        col-6: 'col-6: Half'
+                        col-7: 'col-7: 7/12'
+                        col-8: 'col-8: Two-thirds'
+                        col-9: 'col-9: Three-quarters'
+                        col-10: 'col-10: 5/6'
+                        col-11: 'col-11: 11/12'
+                        col-12: 'col-12: Full'
                         col-sm-1: col-sm-1
                         col-sm-2: col-sm-2
                         col-sm-3: col-sm-3
@@ -87,7 +87,6 @@ form:
                         col-xxl-10: col-xxl-10
                         col-xxl-11: col-xxl-11
                         col-xxl-12: col-xxl-12
-
                 header.block.padding:
                     type: select
                     label: Block padding
@@ -138,7 +137,6 @@ form:
                         pr-3: Right 3
                         pr-4: Right 4
                         pr-5: Right 5
-
                 header.block.margin:
                     type: select
                     label: Block margins
@@ -191,7 +189,6 @@ form:
                         mr-3: Right 3
                         mr-4: Right 4
                         mr-5: Right 5
-
                 header.block.rounding:
                     type: range
                     label: Border rounding
@@ -201,12 +198,10 @@ form:
                     validate:
                         min: 0
                         max: 5
-
                 header.block.custom_classes:
                     type: text
                     label: Custom classes
                     size: medium
-
                 header.block.bg_class:
                     type: select
                     label: Background style
@@ -236,13 +231,11 @@ form:
                         bg-black: Black
                         bg-white: White
                         bg-transparent: Transparent
-
                 header.block.inset:
                     type: checkbox
                     label: Inset
                     default: 0
                     size: medium
-
                 header.block.inset_padding:
                     type: select
                     label: Inset padding

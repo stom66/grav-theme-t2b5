@@ -14,7 +14,6 @@ form:
                         0: Disabled
                         1: Enabled
                     validate: bool
-
                 header.container.class:
                     type: select
                     label: Container style
@@ -29,7 +28,6 @@ form:
                         container-xxl: container-xxl
                         container-fluid: container-fluid
                         container-fluid px-0: container-fluid (no-padding)
-
                 header.container.custom_class:
                     type: text
                     label: Custom classes

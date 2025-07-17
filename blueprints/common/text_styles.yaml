@@ -36,7 +36,6 @@ form:
                         text-body-emphasis: Text Body Emphasis
                         text-body-secondary: Text Body Secondary
                         text-body-tertiary: Text Body Tertiary
-
                 header.text.size:
                     type: select
                     label: Text size
@@ -50,7 +49,6 @@ form:
                         fs-4: Size 4
                         fs-5: Size 5
                         fs-6: Size 6
-
                 header.text.style:
                     type: select
                     label: Text style
@@ -67,7 +65,6 @@ form:
                         fw-lighter: Lighter weight text
                         fst-italic: Italic text
                         fst-normal: Normal
-
                 header.text.alignment:
                     type: select
                     label: Text alignment

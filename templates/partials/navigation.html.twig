@@ -30,12 +30,12 @@
 						<img 
 							src   = "{{ media['user://images/icons/'~navbar_icon].resize(navbar.icon_size ?: 36).url() }}" 
 							alt   = "{{ site.title|e('html') }} logo" 
-							class = "navbar-brand-icon me-2"
+							class = "navbar-brand-icon me-2 animate__animated animate__fadeInLeft"
 							/>
 						{% endif %}
 
 						{% if navbar.show_title_in_navbar %}
-							<span class="">
+							<span class="animate__animated animate__fadeIn">
 								{{ site.title|e('html') }}
 							</span>
 						{% endif %}
@@ -43,7 +43,7 @@
 				</div>
 
 				{# Collapse Button #}
-				<div class="col-auto ms-auto d-xl-none">
+				<div class="col-auto ms-auto d-xl-none animate__animated animate__fadeInRight">
 					<button type       = "button" 
 						class          = "navbar-toggler" 
 						data-bs-toggle = "collapse" 
@@ -56,7 +56,7 @@
 				</div>
 
 				{# Navbar #}
-				<div class="col-12 col-xxl-auto">
+				<div class="col-12 col-xxl-auto animate__animated animate__fadeInDown animate__faster">
 					<div class="navbar-collapse collapse justify-content-center" id="top-navbar">
 						<ul class="navbar-nav">
 							{% for page in pages.children.visible %}

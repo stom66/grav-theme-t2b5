@@ -4,7 +4,7 @@
 {% set treatments   = flex.directory('treatments') %}  
 {% set collection   = treatments.getCollection() %}
 
-{% set current_slug = uri.route|split('/')|last %} 
+{% set current_slug = uri.route|split('/')|filter|last %} 
 {% set is_root      = current_slug == 'treatments' %}
 
 {% block body %}

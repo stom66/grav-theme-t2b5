@@ -4,13 +4,15 @@
 {% set treatments   = flex.directory('treatments') %}  
 {% set collection   = treatments.getCollection() %}
 
-{% set current_slug = uri.route|split('/')|filter|last %} 
-{% set is_root      = current_slug == 'treatments' %}
+{% set segments     = uri.route|split('/')|filter(v => v) %}
+{% set current_slug = segments|last %}
+{% set is_root      = segments|length == 1 and current_slug == 'treatments' %}
 
 {% block body %}
 	{# Debug stuff #}
-	{{ dump("treatment-detail: path: " ~ grav.uri.path) }}
-	{{ dump("treatment-detail: current_slug: " ~ current_slug) }}
+	{{ dump(uri.route) }}
+	{{ dump(current_slug) }}
+	{{ dump(is_root) }}
 
     {% if is_root %}
 		<!-- no slug found, showing list view -->

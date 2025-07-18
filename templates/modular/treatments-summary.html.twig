@@ -5,13 +5,16 @@
 {% set treatments   = flex.directory('treatments') %}  
 {% set collection   = treatments.getCollection() %}
 
-{% set current_slug = uri.route|split('/')|filter|last %} 
-{% set is_root      = current_slug == 'treatments' %}
+
+{% set segments     = uri.route|split('/')|filter(v => v) %}
+{% set current_slug = segments|last %}
+{% set is_root      = segments|length == 1 and current_slug == 'treatments' %}
 
 {% block contents %}
 	{# Debug stuff #}
-	{{ dump("treatment-summary: path: " ~ grav.uri.path) }}
-	{{ dump("treatment-summary: current_slug: " ~ current_slug) }}
+	{{ dump(uri.route) }}
+	{{ dump(current_slug) }}
+	{{ dump(is_root) }}
 
     {% if is_root %}
 		<!-- Root! Showing summary -->

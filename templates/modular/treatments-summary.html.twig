@@ -29,8 +29,16 @@
 		{% set title                = treatment.title %}
 		{% set summary              = treatment.short_description %}
 
-		<!-- <h1>{{ title }}</h1> -->
+		<h1>{{ title }}</h1>
 		
 		{{ summary|markdown }}
+
+		<div class="col-12 col-md-8 offset-md-2 col-xxl-6 offset-xxl-3 pt-4">
+			<a class="btn btn-lg btn-outline-primary text-center align-self-center w-100" href="{{ uri.route }}#readmore">
+				<i class="fa-solid fa-chevron-down"></i>
+				Read more
+			</a>
+		</div>
+
 	{% endif %}
 {% endblock %}

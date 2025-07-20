@@ -40,14 +40,11 @@
 		{% set button_text  = treatment.button_text ?? 'Read more' %}
 		{% set button_style = treatment.button_style ?? 'btn-outline-primary' %}
 
-		<div class="col-12 my-2">
+		<div class="col-12 my-2" id="readmore">
 			<!-- Space -->
 		</div>
 
 		<div class="col-12 col-lg-8">
-			<h1 class="">{{ title }}</h1>
-			
-			<hr class="w-100 my-4" />
 			{{ treatment.long_description|markdown }}
 		</div>
 

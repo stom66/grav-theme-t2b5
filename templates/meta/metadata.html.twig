@@ -49,7 +49,8 @@
 
 		  <!-- Twitter meta data -->
 			<meta name = "twitter:card"        content = "summary" />{% if tw_handle %}
-			<meta name = "twitter:creator"     content = "{{ tw_handle }}" />{% endif %}
+			<meta name = "twitter:creator"     content = "{{ tw_handle }}" />
+			{% endif %} 
 			<meta name = "twitter:description" content = "{{ page.header.description ?: page.metadata.description.content }}" />
 			<meta name = "twitter:domain"      content = "{{ base_url }}/" />
 			<meta name = "twitter:image"       content = "{{ og_image }}" />
@@ -71,6 +72,11 @@
 {% if theme_config.chrome.app_manifest %}
 		  <!-- Web manifest -->
 		    <link rel = "manifest" href = "{{ base_url ~ theme_config.chrome.app_manifest }}" />
+
+{% endif %}
+{% if theme_config.ms.browserconfig %}
+		  <!-- browserconfig.xml -->
+		  <meta name="msapplication-config" content="{{ base_url ~ theme_config.ms.browserconfig }}">
 
 {% endif %}
 {% include 'meta/favicons.html.twig' %}

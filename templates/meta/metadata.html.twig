@@ -9,11 +9,14 @@
 	{% set meta_description = page.header.description ?: page.metadata.description.content %}
 	{% set meta_robots      = page.metadata.robots.content ?: 'index,follow' %}
 
-	{% set og_image         = page.metadata['og:image'].content ?: page.header.ogimage ?: theme_config.ogimage?: media['image://favicons/'~theme_config.favicon.png].url() %}
+	{% set og_image         = page.metadata['og:image'].content ?: page.header.ogimage ?: theme_config.ogimage?: media['image://icons/'~theme_config.favicon.png].url() %}
 	{% set og_title         = page.metadata['og:title'].content ?: meta_title %}
 	{% set og_description   = page.metadata['og:description'].content ?: meta_description %}
 	{% set og_type          = page.metadata['og:type'].content ?: 'website' %}
 	{% set tw_handle        = page.metadata['twitter:creator'] ?: theme_config.twitter_handle %}
+
+	{% set canon_url = page.metadata.canonical.href ?? page.url(true, true) %}
+
 
 {% endspaceless %}
 
@@ -26,12 +29,12 @@
 
 		  <!-- Relevant URLs  -->
 		    <base href = "{{ base_url }}/" />
-			<link rel  = "canonical" href="{{ page.metadata.canonical.href ?? page.url(true, true) }}" />
+			<link rel  = "canonical" href="{{ canon_url }}" />
 		    
 		  <!-- Basic meta data -->
 			<meta name = "application-name"    content = "{{ app_name }}" />
 			<meta name = "author"              content = "{{ meta_author }}" />
-			<meta name = "copyright"           content = "Copyright (C) {{ page.metadata.author.content ?: page.header.author}}, {{ site.title }}, All Rights Reserved" />
+			<meta name = "copyright"           content = "Copyright © {{ "now"|date("Y") }} {{ meta_author }}, {{ site.title }}, All Rights Reserved" />
 			<meta name = "description"         content = "{{ meta_description }}" />
 			<meta name = "generator"           content = "{{ page.metadata.generator.content ?: 'GravCMS' }}" />
 			<meta name = "keywords"            content = "{{ meta_keywords }}" />
@@ -45,18 +48,18 @@
 			<meta property = "og:title"        content = "{{ og_title }}" />
 			<meta property = "og:type"         content = "{{ og_type }}" />
 			<meta property = "og:updated_time" content = "{{ page.metadata['og:updated_time'].content ?: page.date|date("Y-m-d\\TH:i:sP") }}" />
-			<meta property = "og:url"          content = "{{ page.url(true, true) }}" />
+			<meta property = "og:url"          content = "{{ canon_url }}" />
 
 		  <!-- Twitter meta data -->
 			<meta name = "twitter:card"        content = "summary" />{% if tw_handle %}
 			<meta name = "twitter:creator"     content = "{{ tw_handle }}" />
 			{% endif %} 
 			<meta name = "twitter:description" content = "{{ page.header.description ?: page.metadata.description.content }}" />
-			<meta name = "twitter:domain"      content = "{{ base_url }}/" />
+			<meta name = "twitter:domain"      content = "{{ base_url_absolute }}/" />
 			<meta name = "twitter:image"       content = "{{ og_image }}" />
 			<meta name = "twitter:site"        content = "{{ site.title }}" />
 			<meta name = "twitter:title"       content = "{{ page.metadata['og:title'].content ?: meta_title }}" />
-			<meta name = "twitter:url"         content = "{{ page.url(true, true) }}" />
+			<meta name = "twitter:url"         content = "{{ canon_url }}" />
 			<meta name = "tweetmeme-title"     content = "{{ page.metadata['og:title'].content ?: meta_title }}" />
 
 {% if config.plugins.sitemap and config.plugins.sitemap.enabled %}

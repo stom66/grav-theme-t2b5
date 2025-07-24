@@ -9,15 +9,9 @@
 {% set is_root      = segments|length == 1 and current_slug == 'treatments' %}
 
 {% block body %}
-	{# Debug stuff #}
-	{{ dump(uri.route) }}
-	{{ dump(current_slug) }}
-	{{ dump(is_root) }}
-
     {% if is_root %}
 		<!-- no slug found, showing list view -->
 		
-
 		<div class="col-12 my-2">
 			<!-- Space -->
 		</div>
@@ -25,13 +19,10 @@
 		{% include 'modular/treatments-list.html.twig' %}
 
 	{% else %}
-
-	
-		<!-- slug found, detail view -->
+		<!-- slug found: {{ current_slug }} -->
 
 		{% set treatment_collection = collection.filterBy({'slug': current_slug}) %}
 		{% set treatment = treatment_collection|first %}
-		{{ dump(treatment_collection) }}
 
 		{% set title        = treatment.title %}
 		{% set summary      = treatment.short_description %}

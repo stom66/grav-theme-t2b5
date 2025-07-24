@@ -26,7 +26,7 @@
 
 		  <!-- Relevant URLs  -->
 		    <base href = "{{ base_url }}/" />
-		    <link rel = "canonical" href = "{{ page.url(true, true)|e }}" />
+			<link rel  = "canonical" href="{{ page.metadata.canonical.href ?? page.url(true, true) }}" />
 		    
 		  <!-- Basic meta data -->
 			<meta name = "application-name"    content = "{{ app_name }}" />

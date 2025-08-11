@@ -23,9 +23,14 @@
 		"bootstrap"
 	],
 	"dependencies": {
+		"@fortawesome/fontawesome-free": "^7.0.0",
+		"@fortawesome/fontawesome-svg-core": "^7.0.0",
+		"@fortawesome/free-brands-svg-icons": "^7.0.0",
+		"@fortawesome/free-solid-svg-icons": "^7.0.0",
 		"@popperjs/core": "^2.11.8",
 		"animate.css": "^4.1.1",
 		"bootstrap": "^5.3.3",
+		"bootstrap-icons": "^1.13.1",
 		"bootswatch": "^5.3.3",
 		"hover.css": "^2.3.2",
 		"sass-migrator": "^2.3.1"

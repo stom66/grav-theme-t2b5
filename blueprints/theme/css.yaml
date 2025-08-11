@@ -70,15 +70,6 @@ form:
                         yeti: Yeti
                         zephyr: Zephyr
 
-                cdn_fontawesome_css:
-                    type: toggle
-                    label: Include FontAwesome CSS from CDN
-                    highlight: 1
-                    default: 1
-                    options:
-                        0: Disabled
-                        1: Enabled
-
                 cdn_hover_css:
                     type: toggle
                     label: Include Hover.css from CDN

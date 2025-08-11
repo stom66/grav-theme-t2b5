@@ -5,6 +5,10 @@
 	{% set jumbotron  = page.header.jumbotron %}
 	{% set j_image    = page.header.jumbotron.image ? page.media[page.header.jumbotron.image] %}
 
+	{% if j_image %}
+		{% do assets.addLink(j_image.url, {'rel':'preload', 'as':'image'}) %}
+	{% endif %}
+
 	{% set class_array = [
 		block_data.column|default("col")|join(" "),
 		block_data.bg_class|default("bg-light")|join(" "),

@@ -39,6 +39,9 @@
 	{% set block_class = text_classes | merge(block_classes) %}
 
 	{% set image = page.media.images|first %}
+	{% if image %}
+		{% do assets.addLink(image.url, {'rel':'preload', 'as':'image'}) %}
+	{% endif %}
 
 	{% set align_classes = (header.image.align is iterable)
 		? header.image.align|join(' ')

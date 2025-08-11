@@ -16,6 +16,7 @@
 	{% set button_url    = button_url    ?? header.button.url ?? null %}
 	{% set button_text   = button_text   ?? header.button.text ?? 'Read more' %}
   	{% set button_style  = button_style  ?? header.button.style ?? 'btn-outline-primary' %}
+  	{% set button_title  = button_title  ?? header.button.title ?? title %}
 
 	{# Default column wrapping - customize as needed #}
 	{% set column_class = column_class ?? block_data.column|join(" ")|default('col-md-4') %}
@@ -60,6 +61,7 @@
 				<a 
 					href  = "{{ button_url }}" 
 					class = "btn {{ button_style }} position-absolute bottom-0 end-0 m-3 hvr-icon-forward"
+					title = "{{ button_title }}"
 					>
 					{{ button_text }} <i class="fa-solid fa-chevron-right hvr-icon"></i>
 				</a>

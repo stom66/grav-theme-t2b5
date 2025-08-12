@@ -41,7 +41,7 @@
 
 		<div class="col-4 p-3">
 			{% for img in treatment.image %}
-				<img src="{{ media[img.path].url }}" alt="{{ img.alt }}" class="img-fluid rounded-2" />
+				<img src="{{ media[img.path].url }}" alt="{{ title }}" class="img-fluid rounded-2" />
 			{% endfor %}
 		</div>
 	{% endif %}

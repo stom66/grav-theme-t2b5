@@ -46,7 +46,7 @@
 		{% if image %}
 			<img 
 				src   = "{{ image_url }}" 
-				alt   = "{{ image.meta.alt|default('Card image') }}" 
+				alt   = "{{ image.meta.alt|default(title ~ ' image') }}" 
 				class = "{{ image_classes|join(" ") }}"
 				/>
 		{% endif %}

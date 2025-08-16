@@ -4,9 +4,9 @@
 
 	{% block stylesheets %}
 		{% if theme_config.use_minified_css == 1 %}
-			{% do assets.add('theme://dist/theme.min.css', 110) %}
+			{% do assets.add('theme://dist/theme.min.css?v=2', 110) %}
 		{% else %}
-			{% do assets.add('theme://dist/theme.css', 110) %}
+			{% do assets.add('theme://dist/theme.css?v=2', 110) %}
 		{% endif %}
 
 		{% if theme_config.cdn_bootstrap_css %}

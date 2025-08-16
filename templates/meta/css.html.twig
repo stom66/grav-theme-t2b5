@@ -4,10 +4,13 @@
 
 	{% block stylesheets %}
 		{% if theme_config.use_minified_css == 1 %}
-			{% do assets.add('theme://dist/theme.min.css?v=2', 110) %}
+			{% set css_file = 'theme://dist/theme.min.css' %}
 		{% else %}
-			{% do assets.add('theme://dist/theme.css?v=2', 110) %}
+			{% set css_file = 'theme://dist/theme.css' %}
 		{% endif %}
+		
+		{% set version = css_file|filemod|date('YmdHi') %}
+		{% do assets.add(css_file ~ '?v=' ~ version, 110) %}
 
 		{% if theme_config.cdn_bootstrap_css %}
 			{% do assets.add(

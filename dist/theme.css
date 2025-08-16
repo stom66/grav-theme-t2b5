@@ -15291,6 +15291,7 @@ html {
 .top-banner p {
   padding-bottom: 0;
   margin-bottom: 0;
+  font-family: "Koh Santepheap";
 }
 .top-banner a:active,
 a:focus {
@@ -15308,11 +15309,7 @@ a:focus {
   text-decoration: none;
   color: #fff;
 }
-/* .top-banner span {
-	// Vertical pipe separator
-color: #ccc !important;
-} */
-.top-banner a::after {
+.top-banner .tel .top-banner a::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -15327,6 +15324,9 @@ color: #ccc !important;
 .top-banner a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom center;
+}
+.numbers-font {
+  font-family: "Jost";
 }
 .circle-picture {
   overflow: hidden;

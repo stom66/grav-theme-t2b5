@@ -27,6 +27,16 @@
 		    
 		    <title>{{ meta_title }}</title>
 
+{% if theme_config.cdn_preconnect_jsd!='0' or theme_config.cdn_preconnect_gfont!='0' %}
+		  <!-- Preconnects -->
+{% if theme_config.cdn_preconnect_jsd!='0' %}
+		  	<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+{% endif %}
+{% if theme_config.cdn_preconnect_gfont!='0' %}
+			<link rel="preconnect" href="https://fonts.googleapis.com" />
+{% endif %}
+{% endif %}
+
 		  <!-- Relevant URLs  -->
 		    <base href = "{{ base_url }}/" />
 			<link rel  = "canonical" href="{{ canon_url }}" />

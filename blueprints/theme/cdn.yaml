@@ -28,6 +28,24 @@ form:
             title: "Bootstrap"
             underline: true
             fields:
+                cdn_preconnect_jsd:
+                    type: toggle
+                    label: Preconnect to CDN.jsdelivr.net
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
+
+                cdn_preconnect_gfont:
+                    type: toggle
+                    label: Preconnect to fonts.googleapis.com
+                    highlight: 1
+                    default: 1
+                    options:
+                        0: Disabled
+                        1: Enabled
+
                 cdn_bootstrap_css:
                     type: toggle
                     label: Bootstrap CSS from CDN

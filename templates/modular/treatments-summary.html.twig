@@ -2,8 +2,8 @@
 
 
 {% set flex         = grav.get('flex_objects') %}
-{% set treatments   = flex.directory('treatments') %}  
-{% set collection   = treatments.getCollection() %}
+{% set treatments   = flex.directory('treatments') %}
+{% set collection   = treatments.getCollection().orderBy({'order': 'asc'}) %}
 
 
 {% set segments     = uri.route|split('/')|filter(v => v) %}
@@ -16,11 +16,11 @@
 	{{ dump(current_slug) }}
 	{{ dump(is_root) }}
 
-    {% if is_root %}
+	{% if is_root %}
 		<!-- Root! Showing summary -->
 		{{ content|raw }}
 	{% else %}
-	
+
 		<!-- Not root! Showing specific summary -->
 
 		{% set treatment_collection = collection.filterBy({'slug': current_slug}) %}
@@ -30,7 +30,7 @@
 		{% set summary              = treatment.short_description %}
 
 		<h1>{{ title }}</h1>
-		
+
 		{{ summary|markdown }}
 
 		<div class="col-12 col-md-8 offset-md-2 col-xxl-6 offset-xxl-3 pt-4">
